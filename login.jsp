@@ -13,9 +13,20 @@
 	<h2>TMI :: TooMuchItem</h2>
 	
 <%
-	Connection conn = DBUtil.getMySQLConnection();
+	String serverIP = "localhost"; //ifconfig localhost
+	String dbname = "Milymood";
+	String portNum = "3306";
+	String url = "jdbc:mysql://"+serverIP+":"+portNum+"/"+dbname;
+	String user = "root";
+	String pass = "yejin159357";
+	Connection conn = null;
 	PreparedStatement pstmt;
 	ResultSet rs;
+	Class.forName("com.mysql.jdbc.Driver");
+	conn = DriverManager.getConnection(url, user, pass);
+	//Connection conn = DBUtil.getMySQLConnection();
+	//PreparedStatement pstmt;
+	//ResultSet rs;
 	
 	////////query1///////
 	String id = request.getParameter("ID");
@@ -50,11 +61,11 @@
 		out.println("<script> alert('로그인 되었습니다. 환영합니다. :)'); </script>");
 		session.setAttribute("s_id", id);
 		session.setAttribute("userSession", name);
-		response.sendRedirect("lounge.html");
+		response.sendRedirect("lounge.jsp");
 		
 	}else{
 		out.println("<script> alert(\"회원 정보가 없습니다\");</script>"); // history.back(); 
-		response.sendRedirect("lounge.html");
+		response.sendRedirect("lounge.jsp");
 	}
 %>
 </body>
