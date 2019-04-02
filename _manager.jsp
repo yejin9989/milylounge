@@ -9,7 +9,7 @@
 <title></title>
 </head>
 <body>
-	<%
+<%
 	Connection conn = DBUtil.getMySQLConnection();
 	ResultSet rs = null;
 	Statement stmt = null;

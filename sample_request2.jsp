@@ -1,29 +1,24 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ page language="java" import="java.text.*,java.sql.*" %>
-<%@ page language="java" import="myPackage.*" %>
+<%@ page language="java" import="myPackage.*" %> 
 <% request.setCharacterEncoding("UTF-8"); %>
-<% session.setAttribute("page", "index.jsp"); %>
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html>
 <head>
 <link rel="stylesheet" type = "text/css" href="menu.css">
-<link rel="stylesheet" type = "text/css" href="https://static-smartstore.pstatic.net/markup/m/dist/renew/css/smartstore!!!MjAxOS0wMy0xM1QxODo1MjowMFpfbWY%3D.css">
+<link rel="stylesheet" type = "text/css" href="footer.css">
 <style type="text/css">
-body{
-width:100%;
-height:100%;
-padding:0px;
-margin:0px;
-border:0px;
-}
+	body{
+	margin : 0px;
+	}
 </style>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 <title>Milymood</title>
 </head>
 <body>
-<%session.setAttribute("page", "index.jsp");
+<%session.setAttribute("page", "sample_request.jsp");
 String now = session.getAttribute("page")+"";
 String s_id = session.getAttribute("s_id")+"";%>
 <%
@@ -40,39 +35,61 @@ while(rs.next()){
 	img = rs.getString("Img_path");
 }
 %>
-<div id="cover" style="width:100%; height:640px; background:black; z-index:1; opacity:0.5; position: fixed; display:none;">
-</div>
 <div class="topbar">
-	<div class="menu_button" id="menuToggle">
-	<input type="checkbox" id="menubtn"/><img class="menu_icon" src="img/menu.png" style="width:20px;height:20px;">
-	<div class="menu_content">
-		<img src="img/backarrow.png" height="22px">
-		<ul>
-		<li id="content"><a href="https://smartstore.naver.com/milymood" style="color:black;text-decoration:none;"><nobr>밀리무드 공식몰</nobr></a></li>
-		<li id="content"><a href="order_status.jsp"style="color:black;text-decoration:none;"><nobr>신청현황</nobr></a></li>
-		<li id="content"><a href="story.jsp" style="color:black;text-decoration:none;"><nobr>story</nobr></a></li>
-		<li id="content"><nobr>이벤트</nobr></li>
-		<li id="content"><nobr>공지사항</nobr></li>
-		<li id="content"><nobr>QnA</nobr></li>
-		<li id="content"><nobr>출석체크</nobr></li>
-		<li id="content"><nobr>신청후기</nobr></li>
-		</ul>
-	</div>
+	<div id="back">
+	<a href="lounge.jsp">
+	<img src="img/backarrow.png"><span>뒤로</span></a>
 	</div>
 	<div class="milylounge">
 	<a href="index.jsp"><img src="img/milylounge.png" style="width:90px;"></a>
 	</div>
 </div>
+<img src="<%=img%>" width="100%" style="margin: 40px 0 0 0;">
 <%
-if(s_id.equals("admin"))//관리자 계정일 경우
-	{%><br><br><br>
-<form method="post" enctype="multipart/form-data" action="_imgup.jsp">
-<input type="file" name="filename1" size=40>
-<input type="submit" value="업로드"><br><br>
-</form>
-<%}%>
-<div style="margin:40px 0 0 0;">
-<a href="lounge.jsp"><img src="<%=img%>" style="width:100%;height:100%;"></a>
+s_id = session.getAttribute("s_id")+"";
+if(s_id.equals("admin"))
+	{%>
+	<br><br><br>
+	<a href = "result.jsp" style="color:black;text-decoration:none;">
+	신청목록확인
+	</a>
+	&nbsp; &nbsp;
+	<a href = "finish.jsp" style="color:black;text-decoration:none;">
+	신청완료페이지로
+	</a>
+	<br><br>
+	<hr width="75%">
+	<br>
+	<form method="post" enctype="multipart/form-data" action="_imgup.jsp">
+	<input type="file" name="filename1" size=40>
+	<input type="submit" value="업로드"><br><br>
+	</form>
+	<%}	
+else{%>
+<div style="width:100%;text-align:center;">
+	<div style="background:white;width:75%;margin:0px;display:inline-block;text-align:left;"> 
+	<form method="post" action="_sample_request.jsp">
+	<p><input type="text" placeholder="이름" name="name" style ="width:95%;height:25px;padding:0 0 0 5px;margin:3px 0 3px 0;"/></p>
+	<p><input type="text" placeholder="주소" name="address" style ="width:95%;height:25px;padding:0 0 0 5px;margin:3px 0 3px 0;"/></p>
+	<nobr>
+	<select name="first" style="width:22%;height:25px;margin:3px 0 3px 0;">
+	<option value="010" selected>010</option>
+	<option value="011">011</option>
+	<option value="016">016</option>
+	<option value="017">017</option>
+	<option value="019">019</option>
+	</select>
+	-
+	<input type="tel" name="mobile_first" maxlength=4 style="width:32%;height:25px;margin:3px 0 3px 0;">
+	-
+	<input type="tel" name="mobile_last" maxlength=4 style="width:32%;height:25px;margin:3px 0 3px 0;">
+	</nobr>
+	<p style="margin:5px 0 5px 0;position:relative;"><input type="checkbox" name="agree" value="yes">개인정보 활용에 동의함&nbsp;<a href="personal.html" target="_blanck" style="font-size:11px;">전문보기</a></p>
+	<p style="text-align:center;"><input type="submit" value="신청하기" style></p>
+	</form>
+	<br>
+	<%}%>
+	</div>
 </div>
 <div id="footer" class="g_footer _footer">
     <!-- 법적고지 -->
@@ -125,5 +142,5 @@ if(s_id.equals("admin"))//관리자 계정일 경우
 		</div>
     </div>
 </div>
-</body>
+	</body>
 </html>
