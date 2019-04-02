@@ -1,0 +1,139 @@
+@CHARSET "UTF-8"
+@font-face{
+	font-family: 'NanumSquare';
+	src: url(font/NanumSquareReqular.ttf) format('truetype');
+}
+body{
+	font-family: NanumSquare;
+	font-size : 14px;
+}
+table{
+	font-size : 14px;
+}
+.topbar{
+	background:white;
+	width:100%;
+	height:40px;
+	position:fixed;
+	top:0px;
+	left:0px;
+	right:0px;
+	z-index:4;
+	text-align:center;
+}
+.menu_icon{
+	margin:0px;
+	padding:5px;
+	border:0px;
+	position:relative;
+	float:left;
+	top : 5px;
+}
+.milylounge{
+	display: inline-block;
+	margin:0 auto;
+	padding: 5px 0 0 0;	
+	position:relative;
+}
+.menu_button{
+	width:30px;
+	height:30px;
+	margin:0px -31px 0px 0px;
+	display:inline-block;
+	float:left;
+	z-index:2;
+}
+.menu_button input{
+	display: block;
+	width: 40px;
+	height: 32px;
+	position: absolute;
+	top: -7px;
+	left: -5px;
+
+	cursor: pointer;
+
+	opacity: 0; /* hide this */
+	z-index: 3; /* and place it over the hamburger */
+
+	-webkit-touch-callout: none;
+}
+.menu_button:hover > div.menu_content{
+	width:270px;
+}
+div.menu_content{
+	background:white;
+	display:block;
+	width:0px;
+	height:1000px;
+	margin:0px;
+	/*border-right:30px solid rgba(255, 0, 0, .5);*/
+	position:absolute;
+	overflow:hidden;
+	top:0px;
+	left:-2px;
+	text-align:left;
+
+	-webkit-font-smoothing: antialiased;
+	/* to stop flickering of text in safari */
+
+	transform-origin: 0% 0%;
+	transform: translate(-100%, 0);
+
+	transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+
+	z-index:1;
+
+	/*-webkit-transition: width 2s;*/ /* For Safari 3.1 to 6.0 */
+	/*transition: width 0.5s;*/
+	/*opacity:0.8;*/
+	color:gray;
+}
+#menuToggle input:checked ~ div
+{
+	transform: none;
+}
+.menu_content img{
+	padding: 8px 0 0 10px;
+}
+.menu_content ul{
+	padding: 90px 0 0 35px;
+}
+.menu_content li{
+	padding:11px 0 11px;
+	font-size: 13px;
+	list-style-type: none;
+}
+li #content{
+	left: 50px;
+}
+ul.menu_content a{
+	color:black;
+	text-decoration:none;
+}
+ul.menu_content a:hover{
+	color:black;
+	text-decoration:none;
+}
+ul.menu_content a:visited{
+	color:black;
+	text-decoration:none;
+}
+#back{
+	float:left;
+	margin: 10px -14px 0px 6px;
+}
+#back img{
+	width:10px;
+}
+#back span{
+	position: fixed;
+	top:12px;
+	left: 0px;
+	right: 84%;
+	font-size: 14px;
+}
+#back a:link, a:hover, a:visited, a:active{
+	color:black;
+	text-decoration:none;
+}
