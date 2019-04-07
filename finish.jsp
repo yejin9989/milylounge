@@ -67,7 +67,7 @@ while(rs.next()){
     <!-- //법적고지 -->
     <div class="g_info_footer">
         <div class="g_center_area">
-            <a id="toggleme" class="g_fd_info _business_info _click(shopn.mobile.footer.businessInfoToggle()) _stopDefault N=a:fot.info on">밀리무드(주) 사업자정보</a>
+            <a id="toggleme" class="g_fd_info _business_info _click(shopn.mobile.footer.businessInfoToggle()) _stopDefault N=a:fot.info">밀리무드 사업자정보</a>
             <!-- 사업자 기본정보 -->
             <div class="g_info_area _business_info_area">
                 <dl>
@@ -91,9 +91,11 @@ while(rs.next()){
             <script>
             	$(document).ready( function() {
             		$('#toggleme').click( function(){
-            		alert('되는고니?');
-            		if($('this').hasClass('g_fd_info _business_info _click(shopn.mobile.footer.businessInfoToggle()) _stopDefault N=a:fot.info on')
-            			alert('그래된다!');
+            		if($('#toggleme').hasClass('g_fd_info _business_info _click(shopn.mobile.footer.businessInfoToggle()) _stopDefault N=a:fot.info on'))
+            			$('#toggleme').removeClass('g_fd_info _business_info _click(shopn.mobile.footer.businessInfoToggle()) _stopDefault N=a:fot.info on').addClass('g_fd_info _business_info _click(shopn.mobile.footer.businessInfoToggle()) _stopDefault N=a:fot.info');
+            		else
+            			$('#toggleme').removeClass('g_fd_info _business_info _click(shopn.mobile.footer.businessInfoToggle()) _stopDefault N=a:fot.info').addClass('g_fd_info _business_info _click(shopn.mobile.footer.businessInfoToggle()) _stopDefault N=a:fot.info on');
+            		
             		});
             	})
             </script>

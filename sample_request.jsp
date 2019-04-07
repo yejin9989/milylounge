@@ -7,14 +7,10 @@
 <html>
 <head>
 <link rel="stylesheet" type = "text/css" href="menu.css">
-<link rel="stylesheet" type = "text/css" href="https://static-smartstore.pstatic.net/markup/m/dist/renew/css/smartstore!!!MjAxOS0wMy0xM1QxODo1MjowMFpfbWY%3D.css">
+<link rel="stylesheet" type = "text/css" href="footer.css">
 <style type="text/css">
 	body{
 	margin : 0px;
-	text-align:center;
-	}
-	.cen{
-	text-align:center;
 	}
 </style>
 <meta charset="UTF-8">
@@ -70,12 +66,13 @@ if(s_id.equals("admin"))
 	</form>
 	<%}	
 else{%>
-	<div class="cen"> 
+<div style="width:100%;text-align:center;">
+	<div style="background:white;width:75%;margin:0px;display:inline-block;text-align:left;"> 
 	<form method="post" action="_sample_request.jsp">
-	<p><input type="checkbox" name="agree" value="yes">개인정보 활용에 동의함&nbsp;<a href="personal.html" target="_blanck" style="font-size:11px;">전문보기</a></p>
-	<p><input type="text" placeholder="이름" name="name" style ="width:250px;"/></p>
-	<p><input type="text" placeholder="주소" name="address" style ="width:250px;"/></p>
-	<p><select name="first">
+	<p><input type="text" placeholder="이름" name="name" style ="width:95%;height:25px;padding:0 0 0 5px;margin:3px 0 3px 0;"/></p>
+	<p><input type="text" placeholder="주소" name="address" style ="width:95%;height:25px;padding:0 0 0 5px;margin:3px 0 3px 0;"/></p>
+	<nobr>
+	<select name="first" style="width:22%;height:25px;margin:3px 0 3px 0;">
 	<option value="010" selected>010</option>
 	<option value="011">011</option>
 	<option value="016">016</option>
@@ -83,23 +80,24 @@ else{%>
 	<option value="019">019</option>
 	</select>
 	-
-	<input type="tel" name="mobile_first" maxlength=4 style="width:80px;">
+	<input type="tel" name="mobile_first" maxlength=4 style="width:32%;height:25px;margin:3px 0 3px 0;">
 	-
-	<input type="tel" name="mobile_last" maxlength=4 style="width:80px;">
-	</p>
-	<input type="submit" value="신청하기">
+	<input type="tel" name="mobile_last" maxlength=4 style="width:32%;height:25px;margin:3px 0 3px 0;">
+	</nobr>
+	<p style="margin:5px 0 5px 0;position:relative;"><input type="checkbox" name="agree" value="yes">개인정보 활용에 동의함&nbsp;<a href="personal.html" target="_blanck" style="font-size:11px;">전문보기</a></p>
+	<p style="text-align:center;"><input type="submit" value="신청하기" style></p>
 	</form>
 	<br>
 	<%}%>
 	</div>
-	
+</div>
 <div id="footer" class="g_footer _footer">
     <!-- 법적고지 -->
     
     <!-- //법적고지 -->
     <div class="g_info_footer">
         <div class="g_center_area">
-            <a id="toggleme" class="g_fd_info _business_info _click(shopn.mobile.footer.businessInfoToggle()) _stopDefault N=a:fot.info on">밀리무드(주) 사업자정보</a>
+            <a id="toggleme" class="g_fd_info _business_info _click(shopn.mobile.footer.businessInfoToggle()) _stopDefault N=a:fot.info">밀리무드 사업자정보</a>
             <!-- 사업자 기본정보 -->
             <div class="g_info_area _business_info_area">
                 <dl>
@@ -123,9 +121,11 @@ else{%>
             <script>
             	$(document).ready( function() {
             		$('#toggleme').click( function(){
-            		alert('되는고니?');
-            		if($('this').hasClass('g_fd_info _business_info _click(shopn.mobile.footer.businessInfoToggle()) _stopDefault N=a:fot.info on')
-            			alert('그래된다!');
+            		if($('#toggleme').hasClass('g_fd_info _business_info _click(shopn.mobile.footer.businessInfoToggle()) _stopDefault N=a:fot.info on'))
+            			$('#toggleme').removeClass('g_fd_info _business_info _click(shopn.mobile.footer.businessInfoToggle()) _stopDefault N=a:fot.info on').addClass('g_fd_info _business_info _click(shopn.mobile.footer.businessInfoToggle()) _stopDefault N=a:fot.info');
+            		else
+            			$('#toggleme').removeClass('g_fd_info _business_info _click(shopn.mobile.footer.businessInfoToggle()) _stopDefault N=a:fot.info').addClass('g_fd_info _business_info _click(shopn.mobile.footer.businessInfoToggle()) _stopDefault N=a:fot.info on');
+            		
             		});
             	})
             </script>
