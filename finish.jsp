@@ -59,7 +59,6 @@ while(rs.next()){
 	<input type="submit" value="업로드"><br><br>
 	</form>
  <%}%>
-<a href="https://smartstore.naver.com/milymood"><input type="button" value="밀리무드 공식몰 방문하기"></a>
 
 <div id="footer" class="g_footer _footer">
     <!-- 법적고지 -->

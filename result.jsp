@@ -11,9 +11,26 @@
 <link rel="stylesheet" type = "text/css" href="https://static-smartstore.pstatic.net/markup/m/dist/renew/css/smartstore!!!MjAxOS0wMy0xM1QxODo1MjowMFpfbWY%3D.css">
 	<style type="text/css">
 	body{
+	width:100%;
 	margin : 0px;
 	text-align:center;
+	background-color:white;
 	}
+	table {
+    width: 50%;
+   	font-size:0.75em;
+    border-collapse: collapse;
+    text-align:center;
+  	}
+    td {
+    border-bottom: 1px solid #bbbbbb;
+    padding: 5px;
+    }
+    th{
+    border-bottom: 1px solid #444444;
+    padding: 5px;
+    background-color : white;
+    }
 	</style>	
 	<title></title>
 	<meta charset="UTF-8">
@@ -45,13 +62,14 @@
 <b style="color:red;">변경사항이 있을 시 저장 버튼을 꼭 눌러주세요!!</b>
 <br><br>
 	<form action="_result.jsp" method="POST">
-	<table style="text-align:center;">
+	<table style="text-align:center;margin:auto;">
 	<th>no.</th>
 	<th>이름</th>
 	<th>주소</th>
 	<th>휴대폰</th>
 	<th>요청일자</th>
 	<th>현황</th>
+	<th>삭제</th>
 	<%
 	Connection conn = DBUtil.getMySQLConnection();
 	ResultSet rs = null;
@@ -94,6 +112,12 @@
 	<option value="구매완료">구매완료</option>
 	</select>
 	</td>
+	<td><a href="/_delete.jsp?&num=<%=num%>" onclick="return delchk();">X</a></td>
+	<script>
+		function delchk(){
+			return confirm('정말 삭제하시겠습니까?')
+		}
+	</script>
 	</tr>
 	<%
 	}

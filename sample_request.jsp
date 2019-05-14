@@ -49,6 +49,7 @@ while(rs.next()){
 s_id = session.getAttribute("s_id")+"";
 if(s_id.equals("admin"))
 	{%>
+	<div style="text-align:center;">
 	<br><br><br>
 	<a href = "result.jsp" style="color:black;text-decoration:none;">
 	신청목록확인
@@ -64,6 +65,7 @@ if(s_id.equals("admin"))
 	<input type="file" name="filename1" size=40>
 	<input type="submit" value="업로드"><br><br>
 	</form>
+	</div>
 	<%}	
 else{%>
 <div style="width:100%;text-align:center;">

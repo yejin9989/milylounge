@@ -11,10 +11,27 @@
 <link rel="stylesheet" type = "text/css" href="https://static-smartstore.pstatic.net/markup/m/dist/renew/css/smartstore!!!MjAxOS0wMy0xM1QxODo1MjowMFpfbWY%3D.css">
 	<style type="text/css">
 	body{
+	width:100%;
 	margin : 40px 0 0 0;
 	text-align:center;
+	background-color:white;
 	}
-	table{text-align:center;width:60%;margin:auto;}
+	table {
+	margin:auto;
+    width: 80%;
+   	font-size:1em;
+    border-collapse: collapse;
+    text-align:center;
+  	}
+    td {
+    border-bottom: 1px solid #bbbbbb;
+    padding: 5px;
+    }
+    th{
+    border-bottom: 1px solid #444444;
+    padding: 5px;
+    background-color : white;
+    }
 	</style>	
 	<title></title>
 	<meta charset="UTF-8">

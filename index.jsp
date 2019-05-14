@@ -38,6 +38,30 @@ border:0px;
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 <title>Milymood</title>
+<script>
+var naverLogin = new naver.LoginWithNaverId(
+		{
+			clientId: "{YOUR_CLIENT_ID}",
+			callbackUrl: "{YOUR_REDIRECT_URL}",
+			isPopup: false,
+			callbackHandle: false
+		}
+	);
+
+	naverLogin.init();
+	
+	naverLogin.getLoginStatus(function (status) {
+		if (status) {
+			var email = naverLogin.user.getEmail();
+			var name = naverLogin.user.getNickName();
+			var profileImage = naverLogin.user.getProfileImage();
+			var birthday = naverLogin.user.getBirthday();			var uniqId = naverLogin.user.getId();
+			var age = naverLogin.user.getAge();
+		} else {
+			console.log("AccessToken이 올바르지 않습니다.");
+		}
+	});
+</script>
 </head>
 <body>
 <%session.setAttribute("page", "index.jsp");
