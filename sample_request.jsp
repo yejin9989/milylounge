@@ -26,13 +26,13 @@ now = session.getAttribute("page") + "";
 Connection conn = DBUtil.getMySQLConnection();
 ResultSet rs = null;
 PreparedStatement pstmt = null;
-String query = "SELECT Img_path FROM IMG WHERE Page = ?";
+String query = "SELECT ImgPath FROM IMG WHERE Page = ?";
 pstmt = conn.prepareStatement(query);
 pstmt.setString(1, now);
 rs = pstmt.executeQuery();
 String img = "";
 while(rs.next()){
-	img = rs.getString("Img_path");
+	img = rs.getString("ImgPath");
 }
 %>
 <div class="topbar">
@@ -41,7 +41,7 @@ while(rs.next()){
 	<img src="img/backarrow.png"><span>뒤로</span></a>
 	</div>
 	<div class="milylounge">
-	<a href="index.jsp"><img src="img/milylounge.png" style="width:90px;"></a>
+	<a href="index.jsp"><img id="logo" src="img/milylounge.png" style="width:90px;"></a>
 	</div>
 </div>
 <img src="<%=img%>" width="100%" style="margin: 40px 0 0 0;">

@@ -137,3 +137,6 @@ ul.menu_content a:visited{
 	color:black;
 	text-decoration:none;
 }
+#logo{
+	margin:-4px;
+}

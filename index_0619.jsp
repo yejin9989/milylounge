@@ -1,27 +1,52 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ page language="java" import="java.text.*,java.sql.*" %>
+<%@ page language="java" import="java.text.*,java.sql.*,java.util.*,java.security.*,java.math.BigInteger" %>
 <%@ page language="java" import="myPackage.*" %>
 <% request.setCharacterEncoding("UTF-8"); %>
+<% session.setAttribute("page", "index.jsp"); %>
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" type = "text/css" href="menu.css">
+<link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
 <link rel="stylesheet" type = "text/css" href="https://static-smartstore.pstatic.net/markup/m/dist/renew/css/smartstore!!!MjAxOS0wMy0xM1QxODo1MjowMFpfbWY%3D.css">
+<link rel="stylesheet" type = "text/css" href="menu.css">
+<style type="text/css">
+body{
+width:100%;
+height:100%;
+padding:0px;
+margin:0px;
+border:0px;
+}
+</style>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 <title>Milymood</title>
 </head>
-<style>
-body{
-width:100%;
-margin: 0;
-}
-</style>
 <body>
-<%session.setAttribute("page", "story.jsp");
-String now = session.getAttribute("page")+"";
-String s_id = session.getAttribute("s_id")+"";%>
+<%
+// 세션 생성 create session
+session.setAttribute("page", "index.jsp"); // 현재 페이지 current page
+// 세션 가져오기 get session
+String now = session.getAttribute("page")+""; // 현재 페이지 current page
+String s_id = session.getAttribute("s_id")+""; // 현재 사용자 current user
+%>
 <%
 now = session.getAttribute("page") + "";
 Connection conn = DBUtil.getMySQLConnection();
@@ -36,26 +61,48 @@ while(rs.next()){
 	img = rs.getString("ImgPath");
 }
 %>
+<div id="cover" style="width:100%; height:640px; background:black; z-index:1; opacity:0.5; position: fixed; display:none;">
+</div>
 <div class="topbar">
-	<div id="back">
-	<a href="index.jsp">
-	<img src="img/backarrow.png"><span>뒤로</span></a>
+	<div class="menu_button" id="menuToggle">
+	<input type="checkbox" id="menubtn"/><img class="menu_icon" src="img/menu.png" style="width:20px;height:20px;">
+	<div class="menu_content">
+		<img src="img/backarrow.png" height="22px">
+		<ul>
+		<li id="content"><a href="https://smartstore.naver.com/milymood" style="color:black;text-decoration:none;"><nobr>밀리무드 공식몰</nobr></a></li>
+		<li id="content"><a href="order_status.jsp"style="color:black;text-decoration:none;"><nobr>신청현황</nobr></a></li>
+		<li id="content"><a href="story.jsp" style="color:black;text-decoration:none;"><nobr>story</nobr></a></li>
+		<li id="content"><nobr>이벤트</nobr></li>
+		<li id="content"><nobr>공지사항</nobr></li>
+		<li id="content"><nobr>QnA</nobr></li>
+		<li id="content"><nobr>출석체크</nobr></li>
+		<li id="content"><nobr>신청후기</nobr></li>
+		</ul>
+	</div>
 	</div>
 	<div class="milylounge">
 	<a href="index.jsp"><img id="logo" src="img/milylounge.png" style="width:90px;"></a>
 	</div>
 </div>
-<img src="<%=img%>" width="100%" style="padding:40px 0 0 0;">
 <%
 if(s_id.equals("admin"))//관리자 계정일 경우
-	{%><br>
-			
+	{%><br><br><br>
 <form method="post" enctype="multipart/form-data" action="_imgup.jsp">
-	<input type="file" name="filename1" size=40>
-	<input type="submit" value="업로드"><br><br>
+<input type="file" name="filename1" size=40>
+<input type="submit" value="업로드"><br><br>
 </form>
- 	<%}%>
- 	
+<%}%>
+<%
+//CSRF 방지를 위한 상태 토큰 검증
+//세션 또는 별도의 저장 공간에 저장된 상태 토큰과 콜백으로 전달받은 state 파라미터 값이 일치해야 함
+
+//콜백 응답에서 state 파라미터의 값을 가져옴
+String state = request.getParameter("state");
+
+%>
+<div style="margin:40px 0 0 0;">
+<a href="lounge.jsp"><img src="<%=img%>" style="width:100%;height:100%;"></a>
+</div>
 <div id="footer" class="g_footer _footer">
     <!-- 법적고지 -->
     

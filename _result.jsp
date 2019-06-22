@@ -14,6 +14,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 	</head>
 	<body>
+	hellooo1
 		<%
 		int i;
 		Connection conn = DBUtil.getMySQLConnection();
@@ -25,22 +26,21 @@
 			maxnum = rs.getInt("max(Order_num)");
 		}
 		rs.close();
-		
 		String state = "";
 		int statenum = 0;
-		
-		for(i = 1; i < maxnum; i++){
+		for(i = 1; i <= maxnum; i++){
 			String now = "State"+i+"";
 			state = request.getParameter(now);
 			if (state == null) continue;
 			else if(state.equals("신청완료")) statenum = 0;
 			else if(state.equals("발송완료")) statenum = 1;
 			else statenum = 2;
-			
+			%>hellooo5<%
 			String sql =
 					"UPDATE SAMPLE_REQUEST_LIST SET State =" + statenum + " WHERE Order_num = " + i + "";
-			try{stmt.executeUpdate(sql);
-			%><%=state%><br><%}
+			try{
+				stmt.executeUpdate(sql);
+			}
 			catch(SQLException e){
 				e.printStackTrace();%>
 				<script>
@@ -50,6 +50,7 @@
 		}
 		conn.close();
 		stmt.close();
+
 		%>
 		<script>
 		document.location.href="result.jsp";

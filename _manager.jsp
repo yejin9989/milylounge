@@ -28,12 +28,12 @@
 	if(true){
 		session.setAttribute("page", "");
 		session.setAttribute("s_id", "admin");
-		response.sendRedirect("index.jsp");
+		response.sendRedirect("managermenu.jsp");
 	}
 	else{
 		session.setAttribute("page", "");
 		session.setAttribute("s_id", "admin");
-		response.sendRedirect("index.jsp");
+		response.sendRedirect("managermenu.jsp");
 	}
 %>
 </body>

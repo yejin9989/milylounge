@@ -7,6 +7,12 @@
     <title>네이버로그인</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" type = "text/css" href="menu.css">
+  <script>
+  function pValue(){
+	  document.getElementById("userId").value;
+	  
+  }
+  </script>
   </head>
   <body>
   <%
@@ -44,20 +50,10 @@
 </div>
 <div style="text-align:center;">
  <div id="login_section" style="text-align:center; display:inline-block; width:50%;min-width:300px; padding:10px;">
- <h2>LOGIN</h2>
- <p>밀리무드라운지에 오신것을 환영합니다.</p>
- <div style="width:250px;display:inline-block; padding:10px;">
- <form name="myform" method="POST" action="_login.jsp">
- <div style="width:30px;float:left;"><label>id</label></div><input type="text" name="id" style="width:200px;"><br>
- <div style="width:30px;float:left;"><label>pw</label></div><input type="password" name="password" style="width:200px;"><br>
- </form>
- </div>
+ <h2>환영합니다.</h2>
+ <p>회원가입이 완료되었습니다. 이제 밀리무드라운지의 서비스와 혜택을 받아보실 수 있습니다:)</p>
+ <a href="index.jsp">홈으로가기 </a>
  <br>
- <a style="padding:10px;position:relative;" href="javascript:document.myForm.submit();">로그인</a>
- <a style="padding:10px;position:relative;" href="signup.jsp">회원가입</a>
- <hr style="width:200px;margin-top:20px;margin-bottom:20px;">
- <p style="font-size:10px;">소셜계정으로 로그인</p>
- <a href="<%=apiURL%>"><img height="30" src="img/%E1%84%82%E1%85%A6%E1%84%8B%E1%85%B5%E1%84%87%E1%85%A5%20%E1%84%8B%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%83%E1%85%B5%E1%84%85%E1%85%A9%20%E1%84%85%E1%85%A9%E1%84%80%E1%85%B3%E1%84%8B%E1%85%B5%E1%86%AB_%E1%84%8B%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%8F%E1%85%A9%E1%86%AB%E1%84%92%E1%85%A7%E1%86%BC_Green.PNG"/></a>
  </div>
  </div>
  </div>

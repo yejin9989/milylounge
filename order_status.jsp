@@ -44,7 +44,7 @@
 	<img src="img/backarrow.png"><span>뒤로</span></a>
 	</div>
 	<div class="milylounge">
-	<a href="index.jsp"><img src="img/milylounge.png" style="width:90px;"></a>
+	<a href="index.jsp"><img id="logo" src="img/milylounge.png" style="width:90px;"></a>
 	</div>
 </div>
 <br><br><b style="font-size:26px">신청현황</b><br><br>

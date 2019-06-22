@@ -28,12 +28,56 @@
 <link rel="stylesheet" type = "text/css" href="https://static-smartstore.pstatic.net/markup/m/dist/renew/css/smartstore!!!MjAxOS0wMy0xM1QxODo1MjowMFpfbWY%3D.css">
 <link rel="stylesheet" type = "text/css" href="menu.css">
 <style type="text/css">
-body{
-width:100%;
-height:100%;
-padding:0px;
-margin:0px;
-border:0px;
+body {
+  position: absolute;
+  padding: 0;
+  margin: 0;
+  border:0px;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  align-items: center;
+  justify-content: center;
+}
+.playground {
+  border-radius: 6px;
+  width: 100%;
+  height: 200px;
+  padding: 0;
+  position: absolute;
+  display: block;
+  bottom : -5%;
+ }
+.bar-container {
+  position: relative;
+  height: 100%;
+  flex: 0 0 30%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.progressTag {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  display: block;
+  width: 50%;
+  height: 3px;
+  border-radius: 7px;
+  color: #000;
+}
+progress::-webkit-progress-bar {
+  background-color: #999;
+  border-radius: 8px;
+}
+progress::-webkit-progress-value {
+  background-color: #eee;
+  border-radius: 8px;
+}
+progress::-moz-progress-bar {
+  background-color: #eee;
+  border-radius: 8px;
 }
 </style>
 <meta charset="UTF-8">
@@ -143,14 +187,20 @@ state = request.getParameter("state");
 <div style="margin:40px 0 0 0;">
 	<div style="width:100%;display:block;position:relative;">
     <img src="img/angel_1.png" class="modifiable" id="2" style="width:100%;display:block;">
+
     <%if(s_id==null || s_id.equals("") || s_id.equals("null")) {%>
 		<div style="text-align:center;position:absolute;display:block; bottom:25%;left:48%;transform:translate(-50%,-50%);color:white;border:solid 2px white;padding:5px 10px;"><a style="color:white;" href="login.jsp">로그인</a> / <a style="color:white;" href="signup.jsp">가입</a></div>
     <%} 
     else {%>
-    	<div style="text-align:center;position:absolute;display:block; bottom:20%;left:48%;transform:translate(-50%,-50%);color:white;">
+    	<div style="text-align:center;position:absolute;display:block; bottom:15%;left:48%;transform:translate(-50%,-50%);color:white;">
     	<p style="padding:3px;"><span style="font-weight:bold;"><%=name%></span>님 환영합니다!</p>
-    	<p style="padding:3px;">가용포인트&nbsp;:&nbsp;<%=point%>점</p>
+    	<p style="padding:3px;">point<br><%=point%>/100</p>
     	</div>
+    	<div class="playground">
+	<div class="bar-container">
+	<progress class="progressTag" value="0" max="100"></progress>
+	</div>
+	</div>
     	<%} %>
     </div>
     <% if(s_id.equals("admin"))%><a href="#">수정</a><a href="#">삭제</a>
@@ -228,5 +278,30 @@ state = request.getParameter("state");
 		</div>
     </div>
 </div>
+<script>
+//for progress tag in HTML 
+function tag () {
+  var ratio = <%=point%>/100
+  let progress = document.querySelector('.progressTag')
+  let interval = 1
+  let updatesPerSecond = 1000 / 60
+  let end = progress.max * ratio
+
+  function animator () {
+    progress.value = progress.value + interval
+    if ( progress.value + interval < end){
+      setTimeout(animator, updatesPerSecond);
+    } else { 
+      progress.value = end
+    }
+  }
+
+  setTimeout(() => {
+    animator()
+  }, updatesPerSecond)
+}
+
+tag()
+</script>
 </body>
 </html>

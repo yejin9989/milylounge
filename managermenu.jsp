@@ -1,61 +1,64 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ page language="java" import="java.text.*,java.sql.*" %>
-<%@ page language="java" import="myPackage.*" %>
+<%@ page language="java" import="ROOT.*" %>
 <% request.setCharacterEncoding("UTF-8"); %>
 <!DOCTYPE html>
 <html>
 <head>
 <link rel="stylesheet" type = "text/css" href="menu.css">
 <link rel="stylesheet" type = "text/css" href="https://static-smartstore.pstatic.net/markup/m/dist/renew/css/smartstore!!!MjAxOS0wMy0xM1QxODo1MjowMFpfbWY%3D.css">
+<style>
+h2{
+text-align:center;
+}
+p{
+text-align:center;
+}
+a
+{
+text-align:center;
+}
+div{
+text-align:center;
+}
+#pwform{
+text-align:center;
+}
+</style>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 <title>Milymood</title>
 </head>
-<style>
-body{
-width:100%;
-margin: 0;
-}
-</style>
 <body>
-<%session.setAttribute("page", "story.jsp");
-String now = session.getAttribute("page")+"";
-String s_id = session.getAttribute("s_id")+"";%>
+<br>
+<h2>MANAGER MENU</h2>
+<p style="padding-bottom:40px;">매니저 메뉴 화면입니다.</p>
 <%
-now = session.getAttribute("page") + "";
-Connection conn = DBUtil.getMySQLConnection();
-ResultSet rs = null;
-PreparedStatement pstmt = null;
-String query = "SELECT ImgPath FROM IMG WHERE Page = ?";
-pstmt = conn.prepareStatement(query);
-pstmt.setString(1, now);
-rs = pstmt.executeQuery();
-String img = "";
-while(rs.next()){
-	img = rs.getString("ImgPath");
+// 세션 생성 create session
+session.setAttribute("page", "managermenu.jsp"); // 현재 페이지 current page
+// 세션 가져오기 get session
+String now = session.getAttribute("page")+""; // 현재 페이지 current page
+String s_id = session.getAttribute("s_id")+""; // 현재 사용자 current user
+
+if(s_id.equals("admin")){
+	%>
+	<div style="text-align:center;font-size:30px;">
+	<ul>
+	<li style="padding:20px;"><a href="result.jsp">샘플신청목록확인</a>
+	<li style="padding:20px;"><a href="membership.jsp">회원관리</a>
+	<li style="padding:20px;"><a href="index.jsp">메인페이지</a>
+	<li style="padding:20px;"><a href="lounge.jsp">샘플소개페이지</a>
+	<li style="padding:20px;"><a href="sample_request.jsp">샘플신청페이지</a>
+	<li style="padding:20px;"><a href="finish.jsp">샘플신청완료페이지</a>
+	<li style="padding:20px;"><a href="story.jsp">스토리페이지</a>
+	</ul>
+	</div>
+	<%
 }
 %>
-<div class="topbar">
-	<div id="back">
-	<a href="index.jsp">
-	<img src="img/backarrow.png"><span>뒤로</span></a>
-	</div>
-	<div class="milylounge">
-	<a href="index.jsp"><img id="logo" src="img/milylounge.png" style="width:90px;"></a>
-	</div>
-</div>
-<img src="<%=img%>" width="100%" style="padding:40px 0 0 0;">
-<%
-if(s_id.equals("admin"))//관리자 계정일 경우
-	{%><br>
-			
-<form method="post" enctype="multipart/form-data" action="_imgup.jsp">
-	<input type="file" name="filename1" size=40>
-	<input type="submit" value="업로드"><br><br>
-</form>
- 	<%}%>
- 	
+<br>
+
 <div id="footer" class="g_footer _footer">
     <!-- 법적고지 -->
     
