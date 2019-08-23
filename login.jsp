@@ -25,7 +25,7 @@
 	<div class="menu_button" id="menuToggle">
 	<input type="checkbox" id="menubtn"/><img class="menu_icon" src="img/menu.png" style="width:20px;height:20px;">
 	<div class="menu_content">
-		<img src="img/backarrow.png" height="22px">
+		<im  g src="img/backarrow.png" height="22px">
 		<ul>
 		<li id="content"><a href="https://smartstore.naver.com/milymood" style="color:black;text-decoration:none;"><nobr>밀리무드 공식몰</nobr></a></li>
 		<li id="content"><a href="order_status.jsp"style="color:black;text-decoration:none;"><nobr>신청현황</nobr></a></li>

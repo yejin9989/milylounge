@@ -1,121 +1,106 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ page language="java" import="java.text.*,java.sql.*" %>
-<%@ page language="java" import="myPackage.*" %>
-<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script> 
+<%@ page language="java" import="myPackage.*" %> 
 <% request.setCharacterEncoding("UTF-8"); %>
 <!DOCTYPE HTML>
 <html>
 <head>
 <link rel="stylesheet" type = "text/css" href="menu.css">
-<link rel="stylesheet" type = "text/css" href="https://static-smartstore.pstatic.net/markup/m/dist/renew/css/smartstore!!!MjAxOS0wMy0xM1QxODo1MjowMFpfbWY%3D.css">
-	<style type="text/css">
+<link rel="stylesheet" type = "text/css" href="footer.css">
+<style type="text/css">
 	body{
-	width:100%;
-	margin : 40px 0 0 0;
-	text-align:center;
-	background-color:white;
+	margin : 0px;
 	}
-	table {
-	margin:auto;
-    width: 80%;
-   	font-size:1em;
-    border-collapse: collapse;
-    text-align:center;
-  	}
-    td {
-    border-bottom: 1px solid #bbbbbb;
-    padding: 5px;
-    }
-    th{
-    border-bottom: 1px solid #444444;
-    padding: 5px;
-    background-color : white;
-    }
-	</style>	
-	<title></title>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+</style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+<title>Milymood</title>
 </head>
 <body>
+<%session.setAttribute("page", "sample_request.jsp");
+String now = session.getAttribute("page")+"";
+String s_id = session.getAttribute("s_id")+"";%>
+<%
+now = session.getAttribute("page") + "";
+Connection conn = DBUtil.getMySQLConnection();
+ResultSet rs = null;
+PreparedStatement pstmt = null;
+String query = "SELECT ImgPath FROM IMG WHERE Page = ?";
+pstmt = conn.prepareStatement(query);
+pstmt.setString(1, now);
+rs = pstmt.executeQuery();
+String img = "";
+while(rs.next()){
+	img = rs.getString("ImgPath");
+}
+%>
 <div class="topbar">
 	<div id="back">
-	<a href="index.jsp">
+	<a href="lounge.jsp">
 	<img src="img/backarrow.png"><span>뒤로</span></a>
 	</div>
 	<div class="milylounge">
 	<a href="index.jsp"><img id="logo" src="img/milylounge.png" style="width:90px;"></a>
 	</div>
 </div>
-<br><br><b style="font-size:26px">신청현황</b><br><br>
-	<table style="text-align:center;">
-	<th>이름</th>
-	<th>휴대폰</th>
-	<th>현황</th>
-	<%
-	Connection conn = DBUtil.getMySQLConnection();
-	ResultSet rs = null;
-	Statement stmt = null;
-	String query = "SELECT * FROM SAMPLE_REQUEST_LIST ORDER BY Order_num DESC";
-	
-	stmt = conn.createStatement();
-	rs = stmt.executeQuery(query);
-	
-	String name;
-	String mobile;
-	int com;
-	String now ="";//현황 문자
-	
-	while(rs.next()){
-		name = rs.getString("Name");
-		mobile = rs.getString("Mobile");
-		com = rs.getInt("State");
-		if(com == 0) now="신청완료";
-		else if(com == 1) now="발송완료";
-		else now="구매완료";
-
-		String result = mobile.substring(mobile.length()-4, mobile.length());
-		String mob = "010"+"****"+result;
-		
-		String nam1 = "";
-		String nam2 = "";
-		String nm = "";
-		if(name.length()>= 3)
-		{
-			nam1 = name.substring(0, 1);
-			nam2 = name.substring(name.length()-1, name.length());
-			int i;
-			String mid = "";
-			for(i = 0; i < name.length()-2; i++)
-			{
-				mid = mid+"*";
-			}
-			nm = nam1+mid+nam2;
-		}
-		else if(name.length() == 2){
-			nam1 = name.substring(0, 1);
-			nm = nam1+"*";
-		}
-		else{
-			nm = name;
-		}
-	%>
-	<tr>
-	<td><%=nm%></td>
-	<td><%=mob%></td>
-	<td><%=now%></td>
-	</tr>
-	<%
-	}
-	%>
-	</table>
-	<% 
-	conn.close();
-	rs.close();
-	stmt.close();
-	query=null;
-	%>
-	
+<img src="<%=img%>" width="100%" style="margin: 40px 0 0 0;">
+<%
+s_id = session.getAttribute("s_id")+"";
+if(s_id.equals("admin"))
+	{%>
+	<div style="text-align:center;">
+	<br><br><br>
+	<a href = "result.jsp" style="color:black;text-decoration:none;">
+	신청목록확인
+	</a>
+	&nbsp; &nbsp;
+	<a href = "finish.jsp" style="color:black;text-decoration:none;">
+	신청완료페이지로
+	</a>
+	<br><br>
+	<hr width="75%">
+	<br>
+	<form method="post" enctype="multipart/form-data" action="_imgup.jsp">
+	<input type="file" name="filename1" size=40>
+	<input type="submit" value="업로드"><br><br>
+	</form>
+	</div>
+	<%}	
+else{%>
+<div style="width:100%;text-align:center;">
+	<div style="background:white;width:75%;margin:0px;display:inline-block;text-align:left;"> 
+	<form method="post" action="_sample_request.jsp">
+	<p><input type="text" placeholder="이름" name="name" style ="width:95%;height:25px;padding:0 0 0 5px;margin:3px 0 3px 0;"/></p>
+	<p><input type="text" placeholder="주소" name="address" style ="width:95%;height:25px;padding:0 0 0 5px;margin:3px 0 3px 0;"/></p>
+	<nobr>
+	<select name="first" style="width:22%;height:25px;margin:3px 0 3px 0;">
+	<option value="010" selected>010</option>
+	<option value="011">011</option>
+	<option value="016">016</option>
+	<option value="017">017</option>
+	<option value="019">019</option>
+	</select>
+	-
+	<input type="tel" name="mobile_first" maxlength=4 style="width:32%;height:25px;margin:3px 0 3px 0;">
+	-
+	<input type="tel" name="mobile_last" maxlength=4 style="width:32%;height:25px;margin:3px 0 3px 0;">
+	</nobr>
+	<p style="padding-bottom:10px;padding-top:20px;">
+	*샘플 종류를 선택해주세요.
+	</p>
+	<p>
+	<input type="radio" name="type" value="1"><label style="padding:5px;margin-bottom:5px;">커튼 원단 샘플</label><br>
+	<input type="radio" name="type" value="2"><label style="padding:5px;margin-bottom:5px;">기능성 이불 원단 샘플</label><br>
+	<input type="radio" name="type" value="3"><label style="padding:5px;margin-bottom:5px;">모든 샘플 원단</label><br>
+	</p>
+	<p style="margin:5px 0 5px 0;position:relative;"><input type="checkbox" name="agree" value="yes">개인정보 활용에 동의함&nbsp;<a href="personal.html" target="_blanck" style="font-size:11px;">전문보기</a></p>
+	<p style="text-align:center;"><input type="submit" value="신청하기" style></p>
+	</form>
+	<br>
+	<%}%>
+	</div>
+</div>
 <div id="footer" class="g_footer _footer">
     <!-- 법적고지 -->
     

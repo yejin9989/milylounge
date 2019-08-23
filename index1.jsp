@@ -1,6 +1,7 @@
+<%@ page import="java.net.URLEncoder" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ page language="java" import="java.text.*,java.sql.*" %>
+<%@ page language="java" import="java.text.*,java.sql.*,java.util.*,java.security.*,java.math.BigInteger" %>
 <%@ page language="java" import="myPackage.*" %>
 <% request.setCharacterEncoding("UTF-8"); %>
 <% session.setAttribute("page", "index.jsp"); %>
@@ -24,130 +25,59 @@
 <meta name="msapplication-TileColor" content="#ffffff">
 <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
 <meta name="theme-color" content="#ffffff">
-<link rel="stylesheet" type = "text/css" href="menu.css">
 <link rel="stylesheet" type = "text/css" href="https://static-smartstore.pstatic.net/markup/m/dist/renew/css/smartstore!!!MjAxOS0wMy0xM1QxODo1MjowMFpfbWY%3D.css">
+<link rel="stylesheet" type = "text/css" href="menu.css">
 <style type="text/css">
-html {
-  height: 100%;
-}
-
-* {
-  box-sizing: border-box;
-}
-.bg-image {
-  /* The image used */
-  /*background-image: url("img/blurry.jpg");*/
-  background-color:#131313;
-
-  /* Add the blur effect */
-  /*filter: blur(85px);
-  -webkit-filter: blur(85px);*/
-
-  /* Full height */
-  height: 100%; 
-
-  /* Center and scale the image nicely */
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
-/* Position text in the middle of the page/image */
-.bg-text {
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0); /* Black w/opacity/see-through */
-  color: white;
-  border:0;
+body {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 2;
-  height:100%;
+  padding: 0;
+  margin: 0;
+  border:0px;
   width: 100%;
-  padding: 20px;
-  text-align: center;
+  height: 100%;
+  background-color: #fff;
+  align-items: center;
+  justify-content: center;
 }
-body{
-width:100%;
-height:100%;
-padding:0px;
-margin:0px;
-border:0px;
+.playground {
+  border-radius: 6px;
+  width: 100%;
+  height: 200px;
+  padding: 0;
+  position: absolute;
+  display: block;
+  bottom : -5%;
+ }
+.bar-container {
+  position: relative;
+  height: 100%;
+  flex: 0 0 30%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-.wrapper{
-display:grid;
-width:100%;
-height:100%;
-grid-template-columns:10% 10% 10% 10% 10% 10% 10% 10% 10% 10%;
-grid-template-rows:2% 2% 6% 36% 2% 2% 18% 2% 2% 9% 2% 2% 9%;
+.progressTag {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  display: block;
+  width: 50%;
+  height: 3px;
+  border-radius: 7px;
+  color: #000;
 }
-.item{
+progress::-webkit-progress-bar {
+  background-color: #999;
+  border-radius: 8px;
 }
-.item img{
-position:relative;
-/*border:2px solid red;*/
-margin:0px auto;
-width:100px;
+progress::-webkit-progress-value {
+  background-color: #eee;
+  border-radius: 8px;
 }
-#item1{
-grid-column-start:1;
-grid-column-end:6;
-grid-row-start:4;
-grid-row-end:5;
-border-right: 1px solid rgba(255, 255, 255, .1);
-}
-#item2{
-grid-column-start:6;
-grid-column-end:11;
-grid-row-start:4;
-grid-row-end:5;
-}
-#item3{
-grid-column-start:1;
-grid-column-end:7;
-grid-row-start:7;
-grid-row-end:8;
-border-right: 1px solid rgba(255, 255, 255, .1);
-}
-#item4{
-grid-column-start:7;
-grid-column-end:11;
-grid-row-start:7;
-grid-row-end:8;
-}
-#item5{
-grid-column-start:1;
-grid-column-end:11;
-grid-row-start:10;
-grid-row-end:11;
-}
-#item6{
-grid-column-start:1;
-grid-column-end:11;
-grid-row-start:13;
-grid-row-end:14;
-}
-.line{
-border-bottom: 1px solid rgba(255, 255, 255, .1);
-}
-#line1{
-grid-column-start:2;
-grid-column-end:10;
-grid-row-start:5;
-grid-row-end:6;
-}
-#line2{
-grid-column-start:2;
-grid-column-end:10;
-grid-row-start:8;
-grid-row-end:9;
-}
-#line3{
-grid-column-start:2;
-grid-column-end:10;
-grid-row-start:11;
-grid-row-end:12;
+progress::-moz-progress-bar {
+  background-color: #eee;
+  border-radius: 8px;
 }
 </style>
 <meta charset="UTF-8">
@@ -155,13 +85,50 @@ grid-row-end:12;
 <title>Milymood</title>
 </head>
 <body>
-<div class="bg-image"></div>
-<div class="bg-text" style="padding:0">
-<div class="topbar" style="background-color:transparent;">
+  <%
+    String clientId = "RO12hlpvFt7WEiDVKCDB";//애플리케이션 클라이언트 아이디값";
+    String redirectURI = URLEncoder.encode("http://milymoodlounge.com/callback.jsp", "UTF-8");
+    SecureRandom random = new SecureRandom();
+    String state = new BigInteger(130, random).toString();
+    String apiURL = "https://nid.naver.com/oauth2.0/authorize?response_type=code";
+    apiURL += "&client_id=" + clientId;
+    apiURL += "&redirect_uri=" + redirectURI;
+    apiURL += "&state=" + state;
+    session.setAttribute("state", state);
+ %>
+<%
+// 세션 생성 create session
+session.setAttribute("page", "index.jsp"); // 현재 페이지 current page
+// 세션 가져오기 get session
+String now = session.getAttribute("page")+""; // 현재 페이지 current page
+String s_id = session.getAttribute("s_id")+"";// 현재 사용자 current user
+String name = session.getAttribute("name")+"";
+%>
+<%
+now = session.getAttribute("page") + "";
+Connection conn = DBUtil.getMySQLConnection();
+ResultSet rs = null;
+PreparedStatement pstmt = null;
+String query = "SELECT * FROM USERS WHERE Id = ?";
+int point=0;
+pstmt = conn.prepareStatement(query);
+pstmt.setString(1,s_id);
+rs=pstmt.executeQuery();
+while(rs.next()){
+	point = rs.getInt("Point");
+}
+pstmt.close();
+rs.close();
+query="";
+conn.close();
+%>
+<div id="cover" style="width:100%; height:640px; background:black; z-index:1; opacity:0.5; position: fixed; display:none;">
+</div>
+<div class="topbar">
 	<div class="menu_button" id="menuToggle">
-	<input type="checkbox" id="menubtn"/><img class="menu_icon" src="img/menu_white.png" style="width:30px;height:30px;">
+	<input type="checkbox" id="menubtn"/><img class="menu_icon" src="img/menu.png" style="width:20px;height:20px;">
 	<div class="menu_content">
-		<img src="img/backarrow.png" style="width:23px;height:30px;">
+		<img src="img/backarrow.png" height="22px">
 		<ul>
 		<li id="content"><a href="https://smartstore.naver.com/milymood" style="color:black;text-decoration:none;"><nobr>밀리무드 공식몰</nobr></a></li>
 		<li id="content"><a href="order_status.jsp"style="color:black;text-decoration:none;"><nobr>신청현황</nobr></a></li>
@@ -174,18 +141,187 @@ grid-row-end:12;
 		</ul>
 	</div>
 	</div>
+	<div class="milylounge">
+	<a href="index.jsp"><img id="logo" src="img/milylounge.png" style="width:90px;"></a>
+	</div>
 </div>
-<div class="wrapper">
-<div class="item" id="item1" style="background-color:transparent;"><a href="/sample_request.jsp"><img alt="커튼신청" src="img/curtainbtn.png" style="top:40%;"></a></div>
-<div class="item" id="item2" style="background-color:transparent;"><a href="/sample_request.jsp"><img alt="침구신청" src="img/beddingbtn.png" style="top:40%;"></a></div>
-<div class="item" id="item3" style="background-color:transparent;"><a href="/sample_request.jsp"><img alt="블라인드신청" src="img/blindbtn.png" style="height:100%; width:auto;"></a></div>
-<div class="item" id="item4" style="background-color:transparent;"><a href="/sample_request.jsp"><img alt="기타신청" src="img/etcbtn.png"></a></div>
-<div class="item" id="item5" style="background-color:transparent;"><a href="/order_status.jsp"><img alt="신청현황" src="img/orderstatusbtn.png" style="height:100%; width:auto;"></a></div>
-<div class="item" id="item6" style="background-color:transparent;"><a href="https://m.smartstore.naver.com/milymood"><img alt="공식홈가기" src="img/officialmallbtn.png" style="height:100%; width:auto;"></a></div>
-<div class="line" id="line1">&nbsp;</div>
-<div class="line" id="line2">&nbsp;</div>
-<div class="line" id="line3">&nbsp;</div>
+<%
+if(s_id.equals("admin"))//관리자 계정일 경우
+	{%><br><br><br>
+<form method="post" enctype="multipart/form-data" action="_imgup.jsp">
+<input type="file" name="filename1" size=40>
+<input type="submit" value="업로드"><br><br>
+</form>
+<%}%>
+<%
+//CSRF 방지를 위한 상태 토큰 검증
+//세션 또는 별도의 저장 공간에 저장된 상태 토큰과 콜백으로 전달받은 state 파라미터 값이 일치해야 함
+
+//콜백 응답에서 state 파라미터의 값을 가져옴
+state = request.getParameter("state");
+
+%>
+<div id="imgs" style="margin:40px 0 0 0;">
+	<div style="width:100%;display:block;position:relative;">
+
+    <img src="img/angel_1.png" class="modifiable" id="2" style="width:100%;display:block;">
+    <%//비로그인 상태
+    if(s_id==null || s_id.equals("") || s_id.equals("null")) {%>
+		<div style="text-align:center;position:absolute;display:block; bottom:25%;left:48%;transform:translate(-50%,-50%);color:white;border:solid 2px white;padding:5px 10px;"><a style="color:white;" href="login.jsp">로그인</a> / <a style="color:white;" href="signup.jsp">가입</a></div>
+    <%} 
+    else {//로그인 상태, 포인트확인창%>
+    	<div style="text-align:center;position:absolute;display:block; bottom:15%;left:48%;transform:translate(-50%,-50%);color:white;">
+    	<p style="padding:3px;"><span style="font-weight:bold;"><%=name%></span>님 환영합니다!</p>
+    	<p style="padding:3px;">point<br><%=point%>/100</p>
+    	</div>
+    	<div class="playground">
+	<div class="bar-container">
+	<progress class="progressTag" value="0" max="100"></progress>
+	</div>
+	</div>
+    	<%} %>
+    </div>
+    <%
+    conn = DBUtil.getMySQLConnection();
+    now = session.getAttribute("page") + "";
+    rs = null;
+    pstmt = null;
+    query = "SELECT * FROM IMG WHERE Page = ?";
+    pstmt = conn.prepareStatement(query);
+    pstmt.setString(1, now);
+    rs = pstmt.executeQuery();
+    String imgpath;
+    String id;
+    String cls;
+    String uri;
+    while(rs.next()){
+    	id = rs.getString("Id");
+    	cls = rs.getString("Class");
+    	imgpath = rs.getString("ImgPath");
+    	uri = rs.getString("URI");
+    	if(id.equals("1")) continue;
+    	else{
+    	%>
+    	<% if(s_id.equals("admin")){%>
+    	<a href="_changeimg.jsp?id=<%=id%>">수정</a>
+    	<a href="_delimg.jsp?id=<%=id%>">삭제</a>
+    	<%}%>
+    	<a href="<%=uri%>">
+    	<img src="<%=imgpath%>" class="<%=cls%>" id="<%=id%>" style="width:100%;display:block;">
+    	</a>
+    	<%
+    	}
+    }
+    pstmt.close();
+    rs.close();
+    query="";
+    %>
+    <% if(s_id.equals("admin"))%><a href="_changeimg.jsp?id=2">수정</a><a href="_delimg.jsp?id=2">삭제</a>
+    <a href="sample_request.jsp">
+    <img src="img/angel_2.png" class="modifiable" id="2" style="width:100%;display:block;">
+    </a>
+    <div class="imgs">
+    <% if(s_id.equals("admin"))%><a href="_changeimg.jsp?id=3">수정</a><a href="_delimg.jsp?id=3">삭제</a>
+    <a href="sample_request.jsp">
+    <img src="img/copycopy.png" class="modifiable" id="3" style="width:100%;display:block;">
+    </a>
+    </div>
+    <div class="imgs">
+    <% if(s_id.equals("admin"))%><a href="_changeimg.jsp?id=4">수정</a><a href="_delimg.jsp?id=4">삭제</a>
+    <a href="https://m.smartstore.naver.com/milymood">
+    <img src="img/angel_4.png" class="modifiable" id="4" style="width:100%;display:block;">
+    </a>
+    </div>
+    <div class="imgs">
+    <% if(s_id.equals("admin"))%><a href="_changeimg.jsp?id=5">수정</a><a href="_delimg.jsp?id=5">삭제</a>
+    <a href="https://m.smartstore.naver.com/milymood">
+    <img src="img/angel_5.png" class="modifiable" id="5" style="width:100%;display:block;">
+    </a>
+    </div>
+    <% if(s_id.equals("admin"))%><a href="_changeimg.jsp?id=5">배너추가</a>
 </div>
+<div id="footer" class="g_footer _footer">
+    <!-- 법적고지 -->
+    <div style="text-align:center;">
+    <%if(s_id==null || s_id.equals("") || s_id.equals("null")){%> <a href="login.jsp">로그인</a>
+    <%}else{%><a href="_logout.jsp">로그아웃</a><%}%>
+    <a href="signup.jsp">회원가입</a>
+    </div>
+    <!-- //법적고지 -->
+    <div class="g_info_footer">
+        <div class="g_center_area">
+            <a id="toggleme" class="g_fd_info _business_info _click(shopn.mobile.footer.businessInfoToggle()) _stopDefault N=a:fot.info">밀리무드 사업자정보</a>
+            <!-- 사업자 기본정보 -->
+            <div class="g_info_area _business_info_area">
+                <dl>
+                    <dt>대표</dt>
+                    <dd>길영민</dd>
+                    <dt>주소</dt>
+                    <dd>대구광역시 북구 대현동 <span class="g_en">199-8</span>번지</dd>
+                    <dt>전화</dt>
+                    <dd><a class="g_en" href="tel:010-4848-7660">010-4848-7660</a> (대표전화/고객센터)</dd>
+                    <dt>문의</dt>
+                    <dd><a class="g_en" href="mail:zenith9500@naver.com" target="_blank">zenith9500@naver.com</a></dd>
+                    <dt class="g_w2">사업자등록번호</dt>
+                    <dd><span class="g_en">476-30-00276</span></dd>
+                    <dt class="g_w2">통신판매업신고번호</dt>
+                    <dd>제<span class="g_en">2017-</span>대구북구<span class="g_en">-0141</span>호</dd>
+                    <dt class="g_w2">호스팅 서비스 제공</dt>
+                    <dd>카페24</dd>
+                </dl>
+            </div>
+            <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+            <script>
+            	$(document).ready( function() {
+            		$('#toggleme').click( function(){
+            		if($('#toggleme').hasClass('g_fd_info _business_info _click(shopn.mobile.footer.businessInfoToggle()) _stopDefault N=a:fot.info on'))
+            			$('#toggleme').removeClass('g_fd_info _business_info _click(shopn.mobile.footer.businessInfoToggle()) _stopDefault N=a:fot.info on').addClass('g_fd_info _business_info _click(shopn.mobile.footer.businessInfoToggle()) _stopDefault N=a:fot.info');
+            		else
+            			$('#toggleme').removeClass('g_fd_info _business_info _click(shopn.mobile.footer.businessInfoToggle()) _stopDefault N=a:fot.info').addClass('g_fd_info _business_info _click(shopn.mobile.footer.businessInfoToggle()) _stopDefault N=a:fot.info on');
+            		
+            		});
+            	})
+            </script>
+            <!-- //사업자 기본정보 -->
+            <div class="g_link_area">
+                <a href="https://www.ftc.go.kr/www/bizCommList.do?key=232" class="N=a:fot.sellerinfo" target="_blank"><span class="g_txt">사업자정보 확인</span></a>
+            </div>
+        </div>
+        <!-- 안드로이드용 바로가기 -->
+        <iframe id="uriFrame" src="" height="0" width="0" style="border:0px"></iframe>
+		<div class="u_sca N=a:fot.shortcut">
+			<a href="javascript:;;" class="N=a:fot.shortcut g_btn _click(shopn.mobile.shortcut.addShortCut(intent://addshortcut?version=9&amp;url=https%3A%2F%2Fm.smartstore.naver.com%2Finflow%2Foutlink%2Fs%2Fmilymood%3Ftr%3Ddv%26gtme%3D1&amp;icon=https%3A%2F%2Fshop-phinf.pstatic.net%2F20180731_50%2Fgym9510_1533025977890qYSce_PNG%2F15744836740851773_269127316.png%3Ftype%3Dround_160&amp;title=%EB%B0%80%EB%A6%AC%EB%AC%B4%EB%93%9C&amp;serviceCode=shopN#Intent;scheme=naversearchapp;action=android.intent.action.VIEW;category=android.intent.category.BROWSABLE;package=com.nhn.android.search;end,5.0)) u_sc  _stopDefault">
+				<span class="u_ics"><img src="https://shop-phinf.pstatic.net/20180731_50/gym9510_1533025977890qYSce_PNG/15744836740851773_269127316.png?type=round_160" alt=""></span>
+				<em>네이버앱의</em><strong>밀리무드</strong> <span>홈화면에 바로가기 추가</span> <span class="u_ica"></span>
+			</a>
+		</div>
+    </div>
 </div>
+<script>
+//for progress tag in HTML 
+function tag () {
+  var ratio = <%=point%>/100
+  let progress = document.querySelector('.progressTag')
+  let interval = 1
+  let updatesPerSecond = 1000 / 60
+  let end = progress.max * ratio
+
+  function animator () {
+    progress.value = progress.value + interval
+    if ( progress.value + interval < end){
+      setTimeout(animator, updatesPerSecond);
+    } else { 
+      progress.value = end
+    }
+  }
+
+  setTimeout(() => {
+    animator()
+  }, updatesPerSecond)
+}
+
+tag();
+}
+</script>
 </body>
 </html>

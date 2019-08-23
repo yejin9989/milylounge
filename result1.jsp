@@ -12,14 +12,13 @@
 	<style type="text/css">
 	body{
 	width:100%;
-	margin : 40px 0 0 0;
+	margin : 0px;
 	text-align:center;
 	background-color:white;
 	}
 	table {
-	margin:auto;
-    width: 80%;
-   	font-size:1em;
+    width: 50%;
+   	font-size:0.75em;
     border-collapse: collapse;
     text-align:center;
   	}
@@ -39,19 +38,39 @@
 </head>
 <body>
 <div class="topbar">
-	<div id="back">
-	<a href="index.jsp">
-	<img src="img/backarrow.png"><span>뒤로</span></a>
+	<div class="menu_button" id="menuToggle">
+	<input type="checkbox" id="menubtn"/><img class="menu_icon" src="img/menu.png" style="width:20px;height:20px;">
+	<div class="menu_content">
+		<img src="img/backarrow.png" height="22px">
+		<ul>
+		<li id="content"><a href="https://smartstore.naver.com/milymood" style="color:black;text-decoration:none;"><nobr>밀리무드 공식몰</nobr></a></li>
+		<li id="content"><a href="order_status.jsp"style="color:black;text-decoration:none;"><nobr>신청현황</nobr></a></li>
+		<li id="content"><a href="story.jsp" style="color:black;text-decoration:none;"><nobr>story</nobr></a></li>
+		<li id="content"><nobr>이벤트</nobr></li>
+		<li id="content"><nobr>공지사항</nobr></li>
+		<li id="content"><nobr>QnA</nobr></li>
+		<li id="content"><nobr>출석체크</nobr></li>
+		<li id="content"><nobr>신청후기</nobr></li>
+		</ul>
+	</div>
 	</div>
 	<div class="milylounge">
 	<a href="index.jsp"><img id="logo" src="img/milylounge.png" style="width:90px;"></a>
 	</div>
 </div>
-<br><br><b style="font-size:26px">신청현황</b><br><br>
-	<table style="text-align:center;">
+<br><br><br>
+<b style="color:red;">변경사항이 있을 시 저장 버튼을 꼭 눌러주세요!!</b>
+<br><br>
+	<form action="_result.jsp" method="POST">
+	<table style="text-align:center;margin:auto;">
+	<th>no.</th>
 	<th>이름</th>
+	<th>주소</th>
+	<th>샘플종류</th>
 	<th>휴대폰</th>
+	<th>요청일자</th>
 	<th>현황</th>
+	<th>삭제</th>
 	<%
 	Connection conn = DBUtil.getMySQLConnection();
 	ResultSet rs = null;
@@ -61,60 +80,83 @@
 	stmt = conn.createStatement();
 	rs = stmt.executeQuery(query);
 	
+	String num;
 	String name;
+	String addr;
 	String mobile;
+	Date date;
 	int com;
+	int type;
 	String now ="";//현황 문자
+	String sample="";//샘플 문자
 	
 	while(rs.next()){
+		num = rs.getString("Order_num");
 		name = rs.getString("Name");
+		addr = rs.getString("Address");
 		mobile = rs.getString("Mobile");
+		date = rs.getDate("Order_date");
 		com = rs.getInt("State");
 		if(com == 0) now="신청완료";
 		else if(com == 1) now="발송완료";
 		else now="구매완료";
-
-		String result = mobile.substring(mobile.length()-4, mobile.length());
-		String mob = "010"+"****"+result;
-		
-		String nam1 = "";
-		String nam2 = "";
-		String nm = "";
-		if(name.length()>= 3)
-		{
-			nam1 = name.substring(0, 1);
-			nam2 = name.substring(name.length()-1, name.length());
-			int i;
-			String mid = "";
-			for(i = 0; i < name.length()-2; i++)
-			{
-				mid = mid+"*";
-			}
-			nm = nam1+mid+nam2;
-		}
-		else if(name.length() == 2){
-			nam1 = name.substring(0, 1);
-			nm = nam1+"*";
-		}
-		else{
-			nm = name;
-		}
+		type = rs.getInt("Type");
+		if(type == 1) sample="커튼";
+		else if(type == 2) sample="이불";
+		else sample="커튼&이불";
 	%>
 	<tr>
-	<td><%=nm%></td>
-	<td><%=mob%></td>
-	<td><%=now%></td>
+	<td><nobr><%=num%></nobr></td>
+	<td><%=name%></td>
+	<td><%=addr%></td>
+	<td><nobr><%=sample%></nobr></td>
+	<td><nobr><%=mobile%></nobr></td>
+	<td><%=date%></td>
+	<td>
+	<select name = "State<%=num%>">
+	<option selected disabled hidden><%=now%></option>
+	<option value="신청완료">신청완료</option>
+	<option value="발송완료">발송완료</option>
+	<option value="구매완료">구매완료</option>
+	</select>
+	</td>
+	<td><a href="/_delete.jsp?&num=<%=num%>" onclick="return delchk();">X</a></td>
+	<script>
+		function delchk(){
+			return confirm('정말 삭제하시겠습니까?')
+		}
+	</script>
 	</tr>
 	<%
 	}
 	%>
 	</table>
+	<input type="submit" value="저장">
+	</form>
 	<% 
 	conn.close();
 	rs.close();
 	stmt.close();
 	query=null;
 	%>
+	<script src="//code.jquery.com/jquery.min.js"></script>
+	<script>
+	$(function(){
+		$('.btn').click( function() {
+			if($(this).val() == '신청완료')
+				{
+				$(this).val('발송완료');
+				}
+			else if($(this).val() == '발송완료')
+				{
+				$(this).val('구매완료');
+				}
+			else{
+				$(this).val('신청완료');
+			}
+		});
+	});
+	</script>
 	
 <div id="footer" class="g_footer _footer">
     <!-- 법적고지 -->

@@ -38,6 +38,8 @@
 	String mobilesecond = request.getParameter("mobile_last");
 	mobile = first+"-"+mobilefirst+"-"+mobilesecond;
 	String agree = request.getParameter("agree");
+	String type = request.getParameter("type");
+	
 	if(agree == null){%>
 		<script>
 		alert('개인정보 활용에 동의하셔야 신청이 가능합니다.');
@@ -46,6 +48,12 @@
 	<%
 	error++;
 	}
+	else if(type == null){%>
+		<script>
+		alert('샘플 종류를 선택해주세요(커튼, 이불, 모두 중 택1)');
+		history.back();
+		</script>
+	<%}
 	else if(name.equals("") || address.equals("") || mobile.equals(""))
 	{%>
 		<script>
@@ -90,7 +98,7 @@
 			<%
 			PreparedStatement pstmt = null;
 			String sql = "INSERT INTO SAMPLE_REQUEST_LIST VALUES"
-				+ "(?,?,?,?,?,false)";
+				+ "(?,?,?,?,?,false,?)";
 			/*현재날짜 받아오기*/
 			Calendar cal = Calendar.getInstance();
 			String year = Integer.toString(cal.get(Calendar.YEAR));
@@ -105,6 +113,7 @@
 			pstmt.setString(3, address);
 			pstmt.setString(4, mobile);
 			pstmt.setDate(5, d);
+			pstmt.setString(6, type);
 			try{
 				pstmt.executeUpdate();
 			}catch(SQLException e){
