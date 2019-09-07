@@ -66,6 +66,7 @@
 	<th>no.</th>
 	<th>이름</th>
 	<th>주소</th>
+	<th>샘플종류</th>
 	<th>휴대폰</th>
 	<th>요청일자</th>
 	<th>현황</th>
@@ -85,7 +86,9 @@
 	String mobile;
 	Date date;
 	int com;
+	int type;
 	String now ="";//현황 문자
+	String sample="";//샘플 문자
 	
 	while(rs.next()){
 		num = rs.getString("Order_num");
@@ -97,11 +100,16 @@
 		if(com == 0) now="신청완료";
 		else if(com == 1) now="발송완료";
 		else now="구매완료";
+		type = rs.getInt("Type");
+		if(type == 1) sample="커튼";
+		else if(type == 2) sample="이불";
+		else sample="커튼&이불";
 	%>
 	<tr>
 	<td><nobr><%=num%></nobr></td>
 	<td><%=name%></td>
 	<td><%=addr%></td>
+	<td><nobr><%=sample%></nobr></td>
 	<td><nobr><%=mobile%></nobr></td>
 	<td><%=date%></td>
 	<td>

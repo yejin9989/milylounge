@@ -12,6 +12,25 @@
 	body{
 	margin : 0px;
 	}
+	input[type=radio] {
+	display:none;
+	margin:10px;
+	}
+	input[type=radio]+label{
+	display:inline-block;
+	margin:-2px;
+	padding: 8px 19px;
+	background-color: #f5f5f5;
+	border: 1px solid #ccc;
+	font-size:13px !important;
+	width: 110px;
+	text-align: center;
+	}
+	input[type=radio]:radio+label{
+	background-image:none;
+	background-color:#3598dc;
+	color:#fff;
+	}
 </style>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
@@ -89,11 +108,11 @@ else{%>
 	<p style="padding-bottom:10px;padding-top:20px;">
 	*샘플 종류를 선택해주세요.
 	</p>
-	<p>
+	<div class="checks etrans">
 	<input type="radio" name="type" value="1"><label style="padding:5px;margin-bottom:5px;">커튼 원단 샘플</label><br>
 	<input type="radio" name="type" value="2"><label style="padding:5px;margin-bottom:5px;">기능성 이불 원단 샘플</label><br>
 	<input type="radio" name="type" value="3"><label style="padding:5px;margin-bottom:5px;">모든 샘플 원단</label><br>
-	</p>
+	</div>
 	<p style="margin:5px 0 5px 0;position:relative;"><input type="checkbox" name="agree" value="yes">개인정보 활용에 동의함&nbsp;<a href="personal.html" target="_blanck" style="font-size:11px;">전문보기</a></p>
 	<p style="text-align:center;"><input type="submit" value="신청하기" style></p>
 	</form>

@@ -86,6 +86,14 @@ else{%>
 	-
 	<input type="tel" name="mobile_last" maxlength=4 style="width:32%;height:25px;margin:3px 0 3px 0;">
 	</nobr>
+	<p style="padding-bottom:10px;padding-top:20px;">
+	*샘플 종류를 선택해주세요.
+	</p>
+	<p>
+	<input type="radio" name="type" value="1"><label style="padding:5px;margin-bottom:5px;">커튼 원단 샘플</label><br>
+	<input type="radio" name="type" value="2"><label style="padding:5px;margin-bottom:5px;">기능성 이불 원단 샘플</label><br>
+	<input type="radio" name="type" value="3"><label style="padding:5px;margin-bottom:5px;">모든 샘플 원단</label><br><br>
+	</p>
 	<p style="margin:5px 0 5px 0;position:relative;"><input type="checkbox" name="agree" value="yes">개인정보 활용에 동의함&nbsp;<a href="personal.html" target="_blanck" style="font-size:11px;">전문보기</a></p>
 	<p style="text-align:center;"><input type="submit" value="신청하기" style></p>
 	</form>
