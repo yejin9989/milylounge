@@ -7,6 +7,7 @@
     <title>네이버로그인</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" type = "text/css" href="menu.css">
+	<link rel="stylesheet" type="text/css" href="https://pm.pstatic.net/css/webfont_v170623.css"/>
   <script>
   function pValue(){
 	  document.getElementById("userId").value;

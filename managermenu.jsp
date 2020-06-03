@@ -8,6 +8,7 @@
 <head>
 <link rel="stylesheet" type = "text/css" href="menu.css">
 <link rel="stylesheet" type = "text/css" href="https://static-smartstore.pstatic.net/markup/m/dist/renew/css/smartstore!!!MjAxOS0wMy0xM1QxODo1MjowMFpfbWY%3D.css">
+<link rel="stylesheet" type="text/css" href="https://pm.pstatic.net/css/webfont_v170623.css"/>
 <style>
 h2{
 text-align:center;
@@ -41,17 +42,27 @@ session.setAttribute("page", "managermenu.jsp"); // 현재 페이지 current pag
 String now = session.getAttribute("page")+""; // 현재 페이지 current page
 String s_id = session.getAttribute("s_id")+""; // 현재 사용자 current user
 
-if(s_id.equals("admin")){
+if(s_id.equals("0")){
 	%>
 	<div style="text-align:center;font-size:30px;">
 	<ul>
-	<li style="padding:20px;"><a href="result.jsp">샘플신청목록확인</a>
-	<li style="padding:20px;"><a href="membership.jsp">회원관리</a>
-	<li style="padding:20px;"><a href="index.jsp">메인페이지</a>
-	<li style="padding:20px;"><a href="lounge.jsp">샘플소개페이지</a>
-	<li style="padding:20px;"><a href="sample_request.jsp">샘플신청페이지</a>
-	<li style="padding:20px;"><a href="finish.jsp">샘플신청완료페이지</a>
-	<li style="padding:20px;"><a href="story.jsp">스토리페이지</a>
+		<li style="padding:20px;"><a href="result.jsp">샘플신청현황</a></li>
+		<li style="padding:20px;"><a href="pointresult.jsp">포인트신청현황</a></li>
+		<li style="padding:20px;"><a href="membership.jsp">회원정보확인</a></li>
+		<li style="padding:20px;"><a href="login.jsp">로그인</a></li>
+		<li style="padding:20px;"><a href="pointrequest.jsp">포인트신청(로그인 후 테스트해보기)</a></li>
+		<li style="padding:20px;"><a href="sample_request.jsp" style="color:black;text-decoration:none;"><nobr>샘플신청하기</nobr></a></li>
+		<li style="padding:20px;"><a href="travel_request.jsp" style="color:black;text-decoration:none;"><nobr>출장신청하기</nobr></a></li>
+		<li style="padding:20px;"><a href="cal.jsp" style="color:black;text-decoration:none;"><nobr>암막커튼용 계산기</nobr></a></li>
+		<li style="padding:20px;"><a href="cal2.jsp" style="color:black;text-decoration:none;"><nobr>속커튼용 계산기</nobr></a></li>
+		<li style="padding:20px;"><a href="signup.jsp" style="color:black;text-decoration:none;"><nobr>회원가입</nobr></a></li>
+		<li style="padding:20px;"><a href="story.jsp" style="color:black;text-decoration:none;"><nobr>story</nobr></a></li>
+		<li style="padding:20px;"><nobr>이벤트</nobr></li>
+		<li style="padding:20px;"><nobr>공지사항</nobr></li>
+		<li style="padding:20px;"><nobr>QnA</nobr></li>
+		<li style="padding:20px;"><nobr>출석체크</nobr></li>
+		<li style="padding:20px;"><nobr>신청후기</nobr></li>
+		<li style="padding:20px;"><a href="sample_collect.jsp">샘플구독페이지(준비중)</a></li>
 	</ul>
 	</div>
 	<%

@@ -7,6 +7,7 @@
     <title>네이버로그인</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" type = "text/css" href="menu.css">
+	<link rel="stylesheet" type="text/css" href="https://pm.pstatic.net/css/webfont_v170623.css"/>
   <script>
   function pValue(){
 	  document.getElementById("userId").value;
@@ -26,28 +27,8 @@
     apiURL += "&state=" + state;
     session.setAttribute("state", state);
  %>
+ <jsp:include page="navbar.jsp" flush="false"/>
 <div id="container" style="top:200px;position:relative;">
-<div class="topbar">
-	<div class="menu_button" id="menuToggle">
-	<input type="checkbox" id="menubtn"/><img class="menu_icon" src="img/menu.png" style="width:20px;height:20px;">
-	<div class="menu_content">
-		<img src="img/backarrow.png" height="22px">
-		<ul>
-		<li id="content"><a href="https://smartstore.naver.com/milymood" style="color:black;text-decoration:none;"><nobr>밀리무드 공식몰</nobr></a></li>
-		<li id="content"><a href="order_status.jsp"style="color:black;text-decoration:none;"><nobr>신청현황</nobr></a></li>
-		<li id="content"><a href="story.jsp" style="color:black;text-decoration:none;"><nobr>story</nobr></a></li>
-		<li id="content"><nobr>이벤트</nobr></li>
-		<li id="content"><nobr>공지사항</nobr></li>
-		<li id="content"><nobr>QnA</nobr></li>
-		<li id="content"><nobr>출석체크</nobr></li>
-		<li id="content"><nobr>신청후기</nobr></li>
-		</ul>
-	</div>
-	</div>
-	<div class="milylounge">
-	<a href="index.jsp"><img id="logo" src="img/milylounge.png" style="width:90px;"></a>
-	</div>
-</div>
 <div style="text-align:center;">
  <div id="login_section" style="text-align:center; display:inline-block; width:50%;min-width:300px; padding:10px;">
  <h2>환영합니다.</h2>

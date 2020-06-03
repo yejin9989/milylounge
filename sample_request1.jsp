@@ -8,6 +8,7 @@
 <head>
 <link rel="stylesheet" type = "text/css" href="menu.css">
 <link rel="stylesheet" type = "text/css" href="footer.css">
+<link rel="stylesheet" type="text/css" href="https://pm.pstatic.net/css/webfont_v170623.css"/>
 <style type="text/css">
 	body{
 	margin : 0px;

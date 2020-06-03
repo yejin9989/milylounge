@@ -1,8 +1,10 @@
+<%@ page import="java.net.URLEncoder" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ page language="java" import="java.text.*,java.sql.*" %>
+<%@ page language="java" import="java.text.*,java.sql.*,java.util.*,java.security.*,java.math.BigInteger" %>
 <%@ page language="java" import="myPackage.*" %>
 <% request.setCharacterEncoding("UTF-8"); %>
+<% session.setAttribute("page", "subscription.jsp"); %>
 <!DOCTYPE html>
 <html lang="ko-KR" prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb#">
 <head>
@@ -15,7 +17,7 @@
 <script>var dataLayer=[];</script>
 <script>
 	dataLayer.push({
-		"site_type": "m"
+		"site_type": "d"
 	});
 </script>
 <script>
@@ -34,19 +36,26 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 })(window,document,'script','dataLayer','GTM-KNJCD96');</script>
 <!-- End Google Tag Manager -->
 
-<link rel="icon" type="image/png" sizes="16x16" href="https://www.wiselyshave.com/wp-content/themes/wisely/assets/images/favicons/16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="https://www.wiselyshave.com/wp-content/themes/wisely/assets/images/favicons/32x32.png">
-<link rel="icon" type="image/png" sizes="96x96" href="https://www.wiselyshave.com/wp-content/themes/wisely/assets/images/favicons/96x96.png">
-<link rel="icon" type="image/png" sizes="192x192" href="https://www.wiselyshave.com/wp-content/themes/wisely/assets/images/favicons/192x192.png">
-<link rel="apple-touch-icon" sizes="76x76" href="https://www.wiselyshave.com/wp-content/themes/wisely/assets/images/favicons/76x76.png">
-<link rel="apple-touch-icon" sizes="120x120" href="https://www.wiselyshave.com/wp-content/themes/wisely/assets/images/favicons/120x120.png">
-<link rel="apple-touch-icon" sizes="152x152" href="https://www.wiselyshave.com/wp-content/themes/wisely/assets/images/favicons/152x152.png">
-<link rel="apple-touch-icon" sizes="180x180" href="https://www.wiselyshave.com/wp-content/themes/wisely/assets/images/favicons/180x180.png">
-<link rel="mask-icon" href="https://www.wiselyshave.com/wp-content/themes/wisely/assets/images/favicons/safari-pinned-tab.svg" color="#5bbad5">
-<meta name="msapplication-square70x70logo" content="https://www.wiselyshave.com/wp-content/themes/wisely/assets/images/favicons/70x70.png">
-<meta name="msapplication-square150x150logo" content="https://www.wiselyshave.com/wp-content/themes/wisely/assets/images/favicons/150x150.png">
-<meta name="msapplication-square310x310logo" content="https://www.wiselyshave.com/wp-content/themes/wisely/assets/images/favicons/310x310.png">
-<link rel="manifest" href="https://www.wiselyshave.com/wp-content/themes/wisely/assets/images/favicons/manifest.json">
+<link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+<link rel="stylesheet" type = "text/css" href="https://static-smartstore.pstatic.net/markup/m/dist/renew/css/smartstore!!!MjAxOS0wMy0xM1QxODo1MjowMFpfbWY%3D.css">
+<link rel="stylesheet" type = "text/css" href="menu.css">
+<link rel="stylesheet" type="text/css" href="https://pm.pstatic.net/css/webfont_v170623.css"/>
 <meta name="theme-color" content="#ffffff">
 <meta name="msapplication-TileColor" content="#ffffff"/>
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -96,7 +105,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <link rel='stylesheet' id='woocommerce-smallscreen-css'  href='https://www.wiselyshave.com/wp-content/plugins/woocommerce/assets/css/woocommerce-smallscreen.css?ver=3.2.2' type='text/css' media='only screen and (max-width: 768px)' />
 <link rel='stylesheet' id='wp-pagenavi-css'  href='https://www.wiselyshave.com/wp-content/plugins/wp-pagenavi/pagenavi-css.css?ver=2.70' type='text/css' media='all' />
 <link rel='stylesheet' id='jquery-ui-smoothness-css'  href='//ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.min.css?ver=1.11.4' type='text/css' media='all' />
-<link rel='stylesheet' id='arconix-faq-css'  href='https://www.wiselyshave.com/wp-content/plugins/arconix-faq/includes/css/arconix-faq.css?t=1567580219&#038;ver=1.6.1' type='text/css' media='all' />
+<link rel='stylesheet' id='arconix-faq-css'  href='https://www.wiselyshave.com/wp-content/plugins/arconix-faq/includes/css/arconix-faq.css?t=1569140624&#038;ver=1.6.1' type='text/css' media='all' />
 <link rel='stylesheet' id='font-awesome-css'  href='https://www.wiselyshave.com/wp-content/themes/wisely/inc/theme-options/cs-framework/assets/css/font-awesome.min.css?ver=4.8.3.01' type='text/css' media='all' />
 <link rel='stylesheet' id='bootstrap-css-css'  href='https://www.wiselyshave.com/wp-content/themes/wisely/assets/css/bootstrap.min.css?ver=3.3.7' type='text/css' media='all' />
 <link rel='stylesheet' id='seese-own-loader-css'  href='https://www.wiselyshave.com/wp-content/themes/wisely/assets/css/loaders.css?ver=0.9.9' type='text/css' media='all' />
@@ -105,15 +114,15 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <link rel='stylesheet' id='seese-own-popup-css'  href='https://www.wiselyshave.com/wp-content/themes/wisely/assets/css/magnific-popup.min.css?ver=0.9.9' type='text/css' media='all' />
 <link rel='stylesheet' id='seese-own-scrollbar-css'  href='https://www.wiselyshave.com/wp-content/themes/wisely/assets/css/mcustom-scrollbar.min.css?ver=3.1.5' type='text/css' media='all' />
 <link rel='stylesheet' id='seese-own-animate-css'  href='https://www.wiselyshave.com/wp-content/themes/wisely/assets/css/animate.css?ver=1.0.0' type='text/css' media='all' />
-<link rel='stylesheet' id='seese-menu-styles-css'  href='https://www.wiselyshave.com/wp-content/themes/wisely/assets/css/menu.css?ver=1.1.0.02' type='text/css' media='all' />
-<link rel='stylesheet' id='seese-styles-css'  href='https://www.wiselyshave.com/wp-content/themes/wisely/assets/css/styles.css?ver=1.1.0.02' type='text/css' media='all' />
+<link rel='stylesheet' id='seese-menu-styles-css'  href='https://www.wiselyshave.com/wp-content/themes/wisely/assets/css/menu.css?ver=1.1.0.03' type='text/css' media='all' />
+<link rel='stylesheet' id='seese-styles-css'  href='https://www.wiselyshave.com/wp-content/themes/wisely/assets/css/styles.css?ver=1.1.0.03' type='text/css' media='all' />
 <link rel='stylesheet' id='glidejs-styles-css'  href='https://www.wiselyshave.com/wp-content/themes/wisely/assets/glidejs/dist/css/glide.core.min.css?ver=1.0' type='text/css' media='all' />
 <link rel='stylesheet' id='glidejs-styles-theme-css'  href='https://www.wiselyshave.com/wp-content/themes/wisely/assets/glidejs/dist/css/glide.theme.min.css?ver=1.0' type='text/css' media='all' />
-<link rel='stylesheet' id='simple-calendar-styles-css'  href='https://www.wiselyshave.com/wp-content/themes/wisely/assets/simple-calendar/simple-calendar.css?ver=1567580219' type='text/css' media='all' />
+<link rel='stylesheet' id='simple-calendar-styles-css'  href='https://www.wiselyshave.com/wp-content/themes/wisely/assets/simple-calendar/simple-calendar.css?ver=1569140624' type='text/css' media='all' />
 <link rel='stylesheet' id='raty-styles-css'  href='https://www.wiselyshave.com/wp-content/themes/wisely/assets/raty/jquery.raty.css?ver=1.0' type='text/css' media='all' />
-<link rel='stylesheet' id='seese-woocommerce-css'  href='https://www.wiselyshave.com/wp-content/themes/wisely/inc/plugins/woocommerce/woocommerce.css?ver=1.1.0.02' type='text/css' media='all' />
-<link rel='stylesheet' id='seese-woocommerce-responsive-css'  href='https://www.wiselyshave.com/wp-content/themes/wisely/inc/plugins/woocommerce/woocommerce-responsive.css?ver=1.1.0.02' type='text/css' media='all' />
-<link rel='stylesheet' id='seese-responsive-css'  href='https://www.wiselyshave.com/wp-content/themes/wisely/assets/css/responsive.css?ver=1.1.0.02' type='text/css' media='all' />
+<link rel='stylesheet' id='seese-woocommerce-css'  href='https://www.wiselyshave.com/wp-content/themes/wisely/inc/plugins/woocommerce/woocommerce.css?ver=1.1.0.03' type='text/css' media='all' />
+<link rel='stylesheet' id='seese-woocommerce-responsive-css'  href='https://www.wiselyshave.com/wp-content/themes/wisely/inc/plugins/woocommerce/woocommerce-responsive.css?ver=1.1.0.03' type='text/css' media='all' />
+<link rel='stylesheet' id='seese-responsive-css'  href='https://www.wiselyshave.com/wp-content/themes/wisely/assets/css/responsive.css?ver=1.1.0.03' type='text/css' media='all' />
 <link rel='stylesheet' id='seese-google-fonts-css'  href='//fonts.googleapis.com/css?family=Noto+Sans%3A400%2C400i%2C500%2C600%7CLora%3A400%2C400i%2C500%2C600&#038;subset=latin' type='text/css' media='all' />
 <script type='text/javascript' src='https://www.wiselyshave.com/wp-includes/js/jquery/jquery.js?ver=1.12.4'></script>
 <script type='text/javascript' src='https://www.wiselyshave.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1'></script>
@@ -133,6 +142,66 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 	</head>
 
 <body class="page-template-default page page-id-3021">
+  <%
+    String clientId = "RO12hlpvFt7WEiDVKCDB";//애플리케이션 클라이언트 아이디값";
+    String redirectURI = URLEncoder.encode("http://milymoodlounge.com/callback.jsp", "UTF-8");
+    SecureRandom random = new SecureRandom();
+    String state = new BigInteger(130, random).toString();
+    String apiURL = "https://nid.naver.com/oauth2.0/authorize?response_type=code";
+    apiURL += "&client_id=" + clientId;
+    apiURL += "&redirect_uri=" + redirectURI;
+    apiURL += "&state=" + state;
+    session.setAttribute("state", state);
+ %>
+<%
+// 세션 생성 create session
+session.setAttribute("page", "index.jsp"); // 현재 페이지 current page
+// 세션 가져오기 get session
+String now = session.getAttribute("page")+""; // 현재 페이지 current page
+String s_id = session.getAttribute("s_id")+"";// 현재 사용자 current user
+String name = session.getAttribute("name")+"";
+%>
+<%
+now = session.getAttribute("page") + "";
+Connection conn = DBUtil.getMySQLConnection();
+ResultSet rs = null;
+PreparedStatement pstmt = null;
+String query = "SELECT * FROM IMG WHERE Page = ?";
+pstmt = conn.prepareStatement(query);
+pstmt.setString(1, now);
+rs = pstmt.executeQuery();
+String imgpath;
+String id;
+String cls;
+String[][] img = new String[100][3];
+int i = 0;
+while(rs.next()){
+	id = rs.getString("Id");
+	cls = rs.getString("Class");
+	imgpath = rs.getString("ImgPath");
+	img[i][0] = id;
+	img[i][1] = cls;
+	img[i][2] = imgpath;
+	i++;
+}
+int imgnum = i;
+pstmt.close();
+rs.close();
+query="";
+
+int point=0;
+query="SELECT * FROM USERS WHERE Id = ?";
+pstmt = conn.prepareStatement(query);
+pstmt.setString(1,s_id);
+rs=pstmt.executeQuery();
+while(rs.next()){
+	point = rs.getInt("Point");
+}
+pstmt.close();
+rs.close();
+query="";
+conn.close();
+%>
 
 
 	  <div class="seese-aside" id="seese-aside"><h2>장바구니</h2><div class="widget_shopping_cart_content">
@@ -144,21 +213,32 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 		        <a href="">
 		          		        </a>
 		      </div>
-
+		    
     <!-- Seese Wrap Start -->
     <div id="seese-wrap" class="simple seese-fixed-header">
 
-	    	      <header class="seese-header" style="">
-
-            <div class="header_logo simple">
-                <a href="https://www.wiselyshave.com/">
-                    <svg xmlns="http://www.w3.org/2000/svg" id="wisely-logo-svg" viewBox="0 0 123 47" id="logo" width="100%" height="100%">
-<g><path d="M.213 15.352h5.236l5.235 11.484 5.7-13.299 5.7 13.299 5.194-11.484h5.192L21.957 36.968l-5.573-12.96-5.657 12.96L.213 15.352zM40.875 4.923c2.027 1.688.465 5.277-2.068 5.151a3.029 3.029 0 0 1-3.041-3.041c-.127-2.532 3.42-4.053 5.109-2.11zm-4.434 10.429h4.644V35.45h-4.644V15.352zM55.652 20.84c-.59-1.224-1.351-1.858-2.238-1.858-.844 0-1.562.675-1.562 1.521 0 .675.887 1.435 2.703 2.279l1.773.845c3.336 1.562 4.434 2.998 4.434 5.657 0 1.941-.676 3.547-2.069 4.856-1.393 1.265-3.082 1.899-5.067 1.899-3.419 0-5.783-1.647-7.177-4.94l3.969-1.815c1.14 2.026 1.858 2.619 3.251 2.619 1.562 0 2.364-.719 2.364-2.154 0-.972-.591-1.731-1.815-2.322l-2.575-1.225c-3.04-1.478-4.138-2.702-4.138-5.362 0-1.731.592-3.166 1.816-4.307 1.225-1.14 2.702-1.731 4.433-1.731 2.575 0 4.476 1.309 5.742 3.969l-3.844 2.069zM84.11 26.498H69.713c.296 3.251 2.238 5.405 5.236 5.405 1.14 0 2.11-.254 2.829-.804.759-.548 1.604-1.562 2.575-3.082l3.926 2.154c-2.364 4.094-5.277 5.868-9.499 5.868-2.999 0-5.405-.972-7.22-2.914-1.815-1.941-2.702-4.517-2.702-7.684 0-3.208.887-5.785 2.617-7.726 1.772-1.943 4.138-2.914 7.052-2.914 5.952 0 9.583 4.137 9.583 10.598v1.099zm-4.77-3.8c-.634-2.491-2.196-3.716-4.688-3.716-2.236 0-4.095 1.478-4.644 3.716h9.332zM89.518.616h4.645v26.009c0 1.941.295 3.293.844 4.095.55.761 1.52 1.141 2.913 1.141l-1.267 4.18c-2.321 0-4.137-.718-5.447-2.195-1.14-1.226-1.688-3.293-1.688-6.123V.616zM101.508 46.384l7.811-14.651-9.035-16.381h5.404l6.122 11.569 5.742-11.569h5.235l-16.002 31.032h-5.277z"/></g></svg>                    <span>
-                    와이즐리 :: Wisely                    </span>
-                </a>
-            </div>
-	      </header>
-
+<div class="topbar">
+	<div class="menu_button" id="menuToggle">
+	<input type="checkbox" id="menubtn"/><img class="menu_icon" src="img/menu.png" style="width:20px;height:20px;">
+	<div class="menu_content">
+		<img src="img/backarrow.png" height="22px">
+		<ul>
+		<li id="content"><a href="https://smartstore.naver.com/milymood" style="color:black;text-decoration:none;"><nobr>밀리무드 공식몰</nobr></a></li>
+		<li id="content"><a href="order_status.jsp"style="color:black;text-decoration:none;"><nobr>신청현황</nobr></a></li>
+		<li id="content"><a href="story.jsp" style="color:black;text-decoration:none;"><nobr>story</nobr></a></li>
+		<li id="content"><nobr>이벤트</nobr></li>
+		<li id="content"><nobr>공지사항</nobr></li>
+		<li id="content"><nobr>QnA</nobr></li>
+		<li id="content"><nobr>출석체크</nobr></li>
+		<li id="content"><nobr>신청후기</nobr></li>
+		</ul>
+	</div>
+	</div>
+	<div class="milylounge">
+	<a href="index.jsp"><img id="logo" src="img/milylounge.png" style="width:90px;"></a>
+	</div>
+</div>
+	    
 	    <!-- Seese Wrapper Start -->
 	    <div class="seese-wrapper">
 
@@ -168,7 +248,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 			<div class="seese-background-inner  seese-container-inner" style="">
 				<div class="row">
 
-
+					
 					<!-- Content Col Start -->
 					<div class="seese-contentCol">
 						<div class="seese-content-area">
@@ -178,10 +258,10 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 
 <div id="subscription-product" class="subsection subscription-product" style="display:none;">
-
+	
 
 	<div class="subsection-wrapper wrapper1120 paddingtb">
-
+	
 	<!--
 	<div style="text-align:center;">
 		<div style="display:inline-block; width:100%; max-width:1120px; margin-top:-40px; margin-bottom:40px; background-color:#d4edda; border:1px solid #c3e6cb; padding:20px 10px; text-align:center; font-size:14px; font-weight:bold; color:#000000;">
@@ -203,17 +283,17 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 					<div id="subscription-products">
 																		<div class="roundBox-col-2">
-
+						
 							<div class="roundselectBox col-xs-12 col-sm-12 col-md-6">
-								<div id="product-item-3079" class="product-item roundBox selected "
+								<div id="product-item-3079" class="product-item roundBox selected " 
 									product-id="3079"
 									product-price="8900"
 									product-price-formatted="8,900 원"
 									product-quantity="1"
 									product-type="variable-subscription"
 									product-img="https://www.wiselyshave.com/wp-content/uploads/2017/11/shave-blade-4-refills-01.jpg"
-									product-name="리필 면도날 4개"
-									product-excerpt=""
+									product-name="리필 면도날 2세대"
+									product-excerpt="4개입"
 									product-unsellable=""
 									product-attributes="3109,3110,3111,3112,3113,3114"
 									product-itemized-info="<li>인체공학적 디자인
@@ -225,16 +305,16 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 											<span>필수</span>
 										</div>
 																		<div class="product-img"><img width="100" height="100" src="https://www.wiselyshave.com/wp-content/uploads/2017/11/shave-blade-4-refills-01.jpg" /></div>
-									<div class="product-name">리필 면도날 4개</div>
+									<div class="product-name">커튼</div>
 									<div class="product-quantity" style="display:none;">수량: <span class="quantity">1</span></div>
 									<div class="product-price">8,900 원</div>
 								</div>
 								<div class="infomark"><img src="https://www.wiselyshave.com/wp-content/themes/wisely/assets/images/ico-infomark.png" /></div>
 							</div>
 
-
+																		
 							<div class="roundselectBox col-xs-12 col-sm-12 col-md-6">
-								<div id="product-item-3291" class="product-item roundBox unselected "
+								<div id="product-item-3291" class="product-item roundBox unselected " 
 									product-id="3291"
 									product-price="3900"
 									product-price-formatted="3,900 원"
@@ -261,15 +341,15 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 													<div class="clear"></div>
 						</div>
 																								</div>
-
-
+											
+					
 					<div class="small-title">1회 구매</div>
 					<div class="title-desc">오늘 주문에만 1회 포함되고, 이후 정기구매에는 포함되지 않습니다.<br />첫 구매라면, 꼭 면도기를 추가해 주세요.</div>
 
 					<div id="simple-products">
 																		<div class="roundBox-col-2">
 													<div class="roundselectBox col-xs-12 col-sm-12 col-md-6">
-								<div id="product-item-2172" class="product-item roundBox unselected disable"
+								<div id="product-item-2172" class="product-item roundBox unselected disable" 
 									product-id="2172"
 									product-price="6000"
 									product-price-formatted="6,000 원"
@@ -283,7 +363,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 									product-itemized-info="<li>인체공학적 디자인
 </li><li>오픈 카트리지 구조
 </li><li>간편한 세척</li>"
-									product-images="<li class='glide__slide'><img src='https://www.wiselyshave.com/wp-content/uploads/2019/02/razor_navy_1.png' width='400'/></li><li class='glide__slide'><img src='https://www.wiselyshave.com/wp-content/uploads/2018/12/WISELY-2019-008-copy.jpg' width='400'/></li><li class='glide__slide'><img src='https://www.wiselyshave.com/wp-content/uploads/2018/12/starter_4.jpg' width='400'/></li><li class='glide__slide'><img src='https://www.wiselyshave.com/wp-content/uploads/2018/12/starter_6.jpg' width='400'/></li><li class='glide__slide'><img src='https://www.wiselyshave.com/wp-content/uploads/2018/12/starter_7.jpg' width='400'/></li><li class='glide__slide'><img src='https://www.wiselyshave.com/wp-content/uploads/2019/02/WISELY-2019-003-copy.jpg' width='400'/></li>">
+									product-images="<li class='glide__slide'><img src='https://www.wiselyshave.com/wp-content/uploads/2018/12/WISELY-2019-008-copy.jpg' width='400'/></li><li class='glide__slide'><img src='https://www.wiselyshave.com/wp-content/uploads/2019/09/2nd-sliders-top-3.jpg' width='400'/></li><li class='glide__slide'><img src='https://www.wiselyshave.com/wp-content/uploads/2019/09/2nd-sliders-top-4.jpg' width='400'/></li><li class='glide__slide'><img src='https://www.wiselyshave.com/wp-content/uploads/2019/09/2nd-sliders-top-5.jpg' width='400'/></li><li class='glide__slide'><img src='https://www.wiselyshave.com/wp-content/uploads/2018/12/starter_4.jpg' width='400'/></li><li class='glide__slide'><img src='https://www.wiselyshave.com/wp-content/uploads/2018/12/starter_7.jpg' width='400'/></li><li class='glide__slide'><img src='https://www.wiselyshave.com/wp-content/uploads/2019/02/razor_navy_1.png' width='400'/></li><li class='glide__slide'><img src='https://www.wiselyshave.com/wp-content/uploads/2019/02/WISELY-2019-003-copy.jpg' width='400'/></li>">
 									<div class="product-img">
 										<img class="product-img-selected product-img-selected-2172" style="" width="100" src="https://www.wiselyshave.com/wp-content/uploads/2017/02/starter-set-04-modified.jpg" /><img class="product-img-selected product-img-selected-1118383" style="display:none;" width="100" src="https://www.wiselyshave.com/wp-content/uploads/2019/02/red.png" /><img class="product-img-selected product-img-selected-1118384" style="display:none;" width="100" src="https://www.wiselyshave.com/wp-content/uploads/2019/02/khaki.png" />										<!--
 										<img width="100" height="100" src="https://www.wiselyshave.com/wp-content/uploads/2017/02/starter-set-04-modified.jpg" />
@@ -311,7 +391,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 								<div class="infomark"><img src="https://www.wiselyshave.com/wp-content/themes/wisely/assets/images/ico-infomark.png" /></div>
 							</div>
 																									<div class="roundselectBox col-xs-12 col-sm-12 col-md-6">
-								<div id="product-item-2979" class="product-item roundBox unselected disable"
+								<div id="product-item-2979" class="product-item roundBox unselected disable" 
 									product-id="2979"
 									product-price="4500"
 									product-price-formatted="4,500 원"
@@ -342,7 +422,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 						</div>
 																								<div class="roundBox-col-2">
 													<div class="roundselectBox col-xs-12 col-sm-12 col-md-6">
-								<div id="product-item-859643" class="product-item roundBox unselected disable"
+								<div id="product-item-859643" class="product-item roundBox unselected disable" 
 									product-id="859643"
 									product-price="2900"
 									product-price-formatted="2,900 원"
@@ -445,7 +525,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <div class="lightBox addProduct-2 bills-css" product-id="3079" style="display:none;" id="lb-type2-3079">
 	<a class="btn-close"></a>
 
-	<div class="d-table">
+	<div class="d-table"> 
 		<div class="d-table-cell v-middle">
 			<div class="product-img glide-wrapper ">
 								<div id="glide-3079" class="glide">
@@ -458,8 +538,8 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 							</div>
 			</div>
 		<div class="product-info d-table-cell v-middle">
-			<div class="product-name">리필 면도날 4개</div>
-			<div class="product-desc"></div>
+			<div class="product-name">리필 면도날 2세대</div>
+			<!--<div class="product-desc">4개입</div>-->
 						<div class="product-price">8,900 원</div>
 
 
@@ -475,7 +555,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 		</div>
 
 
-
+		
 	</div>
 
 	<div class="d-table w270">
@@ -492,7 +572,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <div class="lightBox addProduct-2 bills-css" product-id="3291" style="display:none;" id="lb-type2-3291">
 	<a class="btn-close"></a>
 
-	<div class="d-table">
+	<div class="d-table"> 
 		<div class="d-table-cell v-middle">
 			<div class="product-img glide-wrapper ">
 								<div id="glide-3291" class="glide">
@@ -506,7 +586,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 			</div>
 		<div class="product-info d-table-cell v-middle">
 			<div class="product-name">쉐이빙젤</div>
-			<div class="product-desc"></div>
+			<!--<div class="product-desc"></div>-->
 						<div class="product-price">3,900 원</div>
 
 
@@ -522,7 +602,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 		</div>
 
 
-
+		
 	</div>
 
 	<div class="d-table w270">
@@ -557,14 +637,14 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 										</div>
 			</div>
 		</div>
-
+		
 	<div class="product-order-num">
-		<a class="product-order-minus"><span class="icon minus-roundbutton"></span></a>
+		<a class="product-order-minus"><span class="icon minus-roundbutton"></span></a> 
 		<span class="quantity">1</span>
 		<a class="product-order-plus"><span class="icon plus-roundbutton"></span></a>
 	</div>
 	<div class="lastbtnBox">
-		<a href="javascript:;" class="btn-fillgrey btn-last-close btn-width250"><span>닫기</span></a>&nbsp;&nbsp;&nbsp;
+		<a href="javascript:;" class="btn-fillgrey btn-last-close btn-width250"><span>닫기</span></a>&nbsp;&nbsp;&nbsp; 
 		<a href="javascript:;" class="btn-add-lightbox btn-fillBlue btn-width250"><span>1회 구매 추가</span></a>
 	</div>
 </div>
@@ -572,13 +652,13 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <div class="lightBox addProduct-2 bills-css" product-id="2172" style="display:none;" id="lb-type2-2172">
 	<a class="btn-close"></a>
 
-	<div class="d-table">
+	<div class="d-table"> 
 		<div class="d-table-cell v-middle">
 			<div class="product-img glide-wrapper ">
 								<div id="glide-2172" class="glide">
 					<div class="glide__wrapper">
 						<ul class="glide__track">
-							<li class='glide__slide'><img src='https://www.wiselyshave.com/wp-content/uploads/2019/02/razor_navy_1.png' width='400'/></li><li class='glide__slide'><img src='https://www.wiselyshave.com/wp-content/uploads/2018/12/WISELY-2019-008-copy.jpg' width='400'/></li><li class='glide__slide'><img src='https://www.wiselyshave.com/wp-content/uploads/2018/12/starter_4.jpg' width='400'/></li><li class='glide__slide'><img src='https://www.wiselyshave.com/wp-content/uploads/2018/12/starter_6.jpg' width='400'/></li><li class='glide__slide'><img src='https://www.wiselyshave.com/wp-content/uploads/2018/12/starter_7.jpg' width='400'/></li><li class='glide__slide'><img src='https://www.wiselyshave.com/wp-content/uploads/2019/02/WISELY-2019-003-copy.jpg' width='400'/></li>						</ul>
+							<li class='glide__slide'><img src='https://www.wiselyshave.com/wp-content/uploads/2018/12/WISELY-2019-008-copy.jpg' width='400'/></li><li class='glide__slide'><img src='https://www.wiselyshave.com/wp-content/uploads/2019/09/2nd-sliders-top-3.jpg' width='400'/></li><li class='glide__slide'><img src='https://www.wiselyshave.com/wp-content/uploads/2019/09/2nd-sliders-top-4.jpg' width='400'/></li><li class='glide__slide'><img src='https://www.wiselyshave.com/wp-content/uploads/2019/09/2nd-sliders-top-5.jpg' width='400'/></li><li class='glide__slide'><img src='https://www.wiselyshave.com/wp-content/uploads/2018/12/starter_4.jpg' width='400'/></li><li class='glide__slide'><img src='https://www.wiselyshave.com/wp-content/uploads/2018/12/starter_7.jpg' width='400'/></li><li class='glide__slide'><img src='https://www.wiselyshave.com/wp-content/uploads/2019/02/razor_navy_1.png' width='400'/></li><li class='glide__slide'><img src='https://www.wiselyshave.com/wp-content/uploads/2019/02/WISELY-2019-003-copy.jpg' width='400'/></li>						</ul>
 					</div>
 					<div class="glide__bullets"></div>
 				</div>
@@ -586,7 +666,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 			</div>
 		<div class="product-info d-table-cell v-middle">
 			<div class="product-name">면도기</div>
-			<div class="product-desc"></div>
+			<!--<div class="product-desc"></div>-->
 							<div class="product-color-variations">
 					<div class="ipw-attribute-color">
 						<div class="color-buttons">
@@ -616,14 +696,14 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 		</div>
 
 
-
+		
 	</div>
 
 	<div class="d-table w270">
-			<div class="d-table-cell">
+			<div class="d-table-cell"> 
 			<div class="product-order-num2 ">
 
-			<a class="product-order-minus"><span class="icon minus-roundbutton"></span></a>
+			<a class="product-order-minus"><span class="icon minus-roundbutton"></span></a> 
 			<span class="quantity">1</span>
 			<a class="product-order-plus"><span class="icon plus-roundbutton"></span></a>
 
@@ -646,14 +726,14 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 	<div class="product-name">쉐이빙젤</div>
 	<div class="product-price">4,500 원</div>
 	<div class="product-desc">용량 : 150ml</div>
-
+	
 	<div class="product-order-num">
-		<a class="product-order-minus"><span class="icon minus-roundbutton"></span></a>
+		<a class="product-order-minus"><span class="icon minus-roundbutton"></span></a> 
 		<span class="quantity">1</span>
 		<a class="product-order-plus"><span class="icon plus-roundbutton"></span></a>
 	</div>
 	<div class="lastbtnBox">
-		<a href="javascript:;" class="btn-fillgrey btn-last-close btn-width250"><span>닫기</span></a>&nbsp;&nbsp;&nbsp;
+		<a href="javascript:;" class="btn-fillgrey btn-last-close btn-width250"><span>닫기</span></a>&nbsp;&nbsp;&nbsp; 
 		<a href="javascript:;" class="btn-add-lightbox btn-fillBlue btn-width250"><span>1회 구매 추가</span></a>
 	</div>
 </div>
@@ -661,7 +741,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <div class="lightBox addProduct-2 bills-css" product-id="2979" style="display:none;" id="lb-type2-2979">
 	<a class="btn-close"></a>
 
-	<div class="d-table">
+	<div class="d-table"> 
 		<div class="d-table-cell v-middle">
 			<div class="product-img glide-wrapper ">
 								<div id="glide-2979" class="glide">
@@ -675,7 +755,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 			</div>
 		<div class="product-info d-table-cell v-middle">
 			<div class="product-name">쉐이빙젤</div>
-			<div class="product-desc">용량 : 150ml</div>
+			<!--<div class="product-desc">용량 : 150ml</div>-->
 						<div class="product-price">4,500 원</div>
 
 
@@ -691,14 +771,14 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 		</div>
 
 
-
+		
 	</div>
 
 	<div class="d-table w270">
-			<div class="d-table-cell">
+			<div class="d-table-cell"> 
 			<div class="product-order-num2 ">
 
-			<a class="product-order-minus"><span class="icon minus-roundbutton"></span></a>
+			<a class="product-order-minus"><span class="icon minus-roundbutton"></span></a> 
 			<span class="quantity">1</span>
 			<a class="product-order-plus"><span class="icon plus-roundbutton"></span></a>
 
@@ -721,14 +801,14 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 	<div class="product-name">스타터 쉐이빙젤</div>
 	<div class="product-price">2,900 원</div>
 	<div class="product-desc">용량 : 75ml</div>
-
+	
 	<div class="product-order-num">
-		<a class="product-order-minus"><span class="icon minus-roundbutton"></span></a>
+		<a class="product-order-minus"><span class="icon minus-roundbutton"></span></a> 
 		<span class="quantity">1</span>
 		<a class="product-order-plus"><span class="icon plus-roundbutton"></span></a>
 	</div>
 	<div class="lastbtnBox">
-		<a href="javascript:;" class="btn-fillgrey btn-last-close btn-width250"><span>닫기</span></a>&nbsp;&nbsp;&nbsp;
+		<a href="javascript:;" class="btn-fillgrey btn-last-close btn-width250"><span>닫기</span></a>&nbsp;&nbsp;&nbsp; 
 		<a href="javascript:;" class="btn-add-lightbox btn-fillBlue btn-width250"><span>1회 구매 추가</span></a>
 	</div>
 </div>
@@ -736,7 +816,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <div class="lightBox addProduct-2 bills-css" product-id="859643" style="display:none;" id="lb-type2-859643">
 	<a class="btn-close"></a>
 
-	<div class="d-table">
+	<div class="d-table"> 
 		<div class="d-table-cell v-middle">
 			<div class="product-img glide-wrapper ">
 								<div id="glide-859643" class="glide">
@@ -750,7 +830,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 			</div>
 		<div class="product-info d-table-cell v-middle">
 			<div class="product-name">스타터 쉐이빙젤</div>
-			<div class="product-desc">용량 : 75ml</div>
+			<!--<div class="product-desc">용량 : 75ml</div>-->
 						<div class="product-price">2,900 원</div>
 
 
@@ -766,14 +846,14 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 		</div>
 
 
-
+		
 	</div>
 
 	<div class="d-table w270">
-			<div class="d-table-cell">
+			<div class="d-table-cell"> 
 			<div class="product-order-num2 ">
 
-			<a class="product-order-minus"><span class="icon minus-roundbutton"></span></a>
+			<a class="product-order-minus"><span class="icon minus-roundbutton"></span></a> 
 			<span class="quantity">1</span>
 			<a class="product-order-plus"><span class="icon plus-roundbutton"></span></a>
 
@@ -809,7 +889,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 window.onload = function(){
     jQuery(document).ready(function($){
 
-
+		
 		var page_order_type = "product-first";
 
 		if(page_order_type == "product-first"){
@@ -850,7 +930,7 @@ window.onload = function(){
 			});
 
 			// 2. light-up the button "Next"
-			set_btn_color($("#btn-next"),
+			set_btn_color($("#btn-next"), 
 				(page_order_type == "product-first" ?
 					(subscription_selected ? "blue" : "grey") :
 					(period_selected ? "blue" : "grey")));
@@ -887,12 +967,12 @@ window.onload = function(){
 				return;
 			}
 			if(o.hasClass("disable")){ return; }
-
+			
 			// open-up a lightbox or unselect the roundbox
 			if(o.hasClass("selected")){ select_roundBox(o, false); }
 			else{
 				if(product_type == "simple"){
-					show_lightbox(1, product_id);
+					show_lightbox(2, product_id);
 				}else{
 					select_roundBox(o, true);
 				}
@@ -908,7 +988,7 @@ window.onload = function(){
 			$("#subscription-period .roundBox.selected-border").each(function(){ $(this).removeClass("selected-border"); });
 			// select this
 			$(this).addClass("selected-border");
-
+			
 			validate_elements();
 		});
 
@@ -916,7 +996,7 @@ window.onload = function(){
 		$("#btn-next").click(function(e){
 			e.preventDefault();
 			if(!$(this).hasClass("btn-fillBlue")){ return; }
-
+			
 			var curr_element = "#subscription-period";
 			var target_element = "#subscription-product";
 			if(page_order_type == "product-first"){
@@ -941,7 +1021,7 @@ window.onload = function(){
 				$("#glide-2172").glide({ type:'carousel', autoplay:false });
 				$("#glide-2979").glide({ type:'carousel', autoplay:false });
 				$("#glide-859643").glide({ type:'carousel', autoplay:false });
-
+		
 		// show/hide lightbox
 		function show_lightbox(lb_type, product_id){
 			var target_id = "lb-type"+lb_type+"-"+product_id;
@@ -973,6 +1053,9 @@ window.onload = function(){
 			if(o.hasClass("disable")){ return; }
 			// show lightbox
 			show_lightbox(2, product_id);
+			jQuery("#lb-type2-"+product_id).style("max-height",(jQuery(window).height()-30)+"px","important");
+			jQuery("#lb-type2-"+product_id).style("bottom","unset","important");
+			jQuery("#lb-type2-"+product_id).style("top",(jQuery(window).height()-jQuery("#lb-type2-"+product_id).height())/2+"px","important");
 		});
 
 		// close light-box
@@ -984,7 +1067,7 @@ window.onload = function(){
 			e.preventDefault();
 			hide_lightbox($(this).parent().parent());
 		});
-
+		
 		// plus (+)
 		$(".lightBox .product-order-plus").click(function(e){
 			e.preventDefault();
@@ -1060,7 +1143,7 @@ window.onload = function(){
 			if(!$(this).hasClass("btn-fillBlue")){ return; }
 
 			// [[type, id, attr-id, bililng-period, quantity], ...]
-			var arr_items = [];
+			var arr_items = []; 
 			// subscription items + biling period
 			var billing_period = $("#subscription-period .roundBox.selected-border").attr("billing-period");
 			$("#subscription-products .roundBox.selected").each(function(){
@@ -1078,7 +1161,7 @@ window.onload = function(){
 			{
 				$(this).removeClass("btn-fillBlue");
 				$(this).addClass("btn-fillgrey");
-
+				
 				$.post(
 					"/wp-admin/admin-ajax.php", {
 						action: 'add_subscription_items',
@@ -1115,8 +1198,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <style>
 a, .infomark{ cursor:pointer; }
 #bg-lightbox-product-detail { pointer-events:none; }
-#ajax-loading-div {
-	background-image:url(https://www.wiselyshave.com/wp-content/themes/wisely/assets/images/ico-ajax-spinner-70x70.gif);
+#ajax-loading-div { 
+	background-image:url(https://www.wiselyshave.com/wp-content/themes/wisely/assets/images/ico-ajax-spinner-70x70.gif); 
 	background-size:cover;
 	width:70px; height:70px; z-index:9998;
 	top: 50%; left: 50%;
@@ -1141,6 +1224,16 @@ a, .infomark{ cursor:pointer; }
 <div id="ajax-loading-div"></div>
 
 </div>
+
+<script>
+function after_notice_call(){
+	jQuery("#lb-notification").style("max-height",jQuery(window).height()+"px","important");
+	jQuery("#lb-notification").style("bottom","unset","important");
+	jQuery("#lb-notification").style("top",(jQuery(window).height()-jQuery("#lb-notification").height())/2+"px","important");
+	jQuery("#lb-notification .lb-message").style("margin-top","40px","important");
+
+};
+</script>
 <!-- Seese Wrapper End -->
 
   <div class="container-fluid seese-bottomboxes">
@@ -1169,7 +1262,7 @@ a, .infomark{ cursor:pointer; }
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"><div class=" seese-widget footer-1-widget widget_nav_menu"><ul id="menu-footer-menu" class="main-navigation"><li id="menu-item-3969" class="wisely-ext-lightbox menu-item menu-item-type-custom menu-item-object-custom menu-item-3969 seese-dropdown-menu"><a  href="#privacy">개인정보처리방침</a></li>
 <li id="menu-item-3971" class="wisely-ext-lightbox menu-item menu-item-type-custom menu-item-object-custom menu-item-3971 seese-dropdown-menu"><a  href="#terms">이용약관</a></li>
 <li id="menu-item-3972" class="wisely-ext-lightbox menu-item menu-item-type-custom menu-item-object-custom menu-item-3972 seese-dropdown-menu"><a  href="#guide">이용안내</a></li>
-</ul><div class="clear"></div></div> <!-- end widget --><div class=" seese-widget footer-1-widget widget_text">			<div class="textwidget"><p><b>와이즐리(주)</b> 경기도 성남시 분당구 판교로289번길 20, 판교테크노밸리 스타트업 캠퍼스 2동 8층 (삼평동)<br />
+</ul><div class="clear"></div></div> <!-- end widget --><div class=" seese-widget footer-1-widget widget_text">			<div class="textwidget"><p><b>주식회사 와이즐리컴퍼니</b> 서울특별시 성동구 왕십리로 125, 8층 801호(성수동1가, KD타워)<br />
 <b>대표자:</b> 김동욱 <b>사업자등록번호:</b> 344-88-00965 <a class="underline wisely-ext-lightbox" href="#company-info" rel="noopener">사업자정보확인</a><br />
 <b>통신판매업신고번호:</b> 제 2018-성남분당-0624 <b>개인정보보호책임자:</b> 김윤호 <a class="link-email" href="mailto:yhkim@wiselyshave.com" target="_blank" rel="noopener">yhkim@wiselyshave.com</a><br />
 <b>전화번호:</b> <a class="link-email" href="tel:1833-9133">1833-9133</a> <b>E-mail:</b> <a class="link-email" href="mailto:help@wiselyshave.com" target="_blank" rel="noopener">help@wiselyshave.com</a></p>
@@ -1183,12 +1276,12 @@ a, .infomark{ cursor:pointer; }
                 </div>
             </div>
         </div>
-
+        
 	</div>
 </div>
 <!-- Footer Widgets End -->    </footer>
     <!-- Footer End-->
-
+  
 </div><!-- Seese Wrap End -->
 
   <a href="javascript:void(0)" id="seese-closebtn"><i class="fa fa-times" aria-hidden="true"></i></a>
@@ -1225,10 +1318,10 @@ var wc_cart_fragments_params = {"ajax_url":"\/wp-admin\/admin-ajax.php","wc_ajax
 </script>
 <script type='text/javascript' src='https://www.wiselyshave.com/wp-content/plugins/woocommerce/assets/js/frontend/cart-fragments.min.js?ver=3.2.2'></script>
 <script type='text/javascript' src='https://www.wiselyshave.com/wp-content/themes/wisely/assets/js/bootstrap.min.js?ver=3.3.6'></script>
-<script type='text/javascript' src='https://www.wiselyshave.com/wp-content/themes/wisely/assets/js/plugins.js?ver=1.1.0.02'></script>
-<script type='text/javascript' src='https://www.wiselyshave.com/wp-content/themes/wisely/assets/js/scripts.js?ver=1.1.0.02'></script>
+<script type='text/javascript' src='https://www.wiselyshave.com/wp-content/themes/wisely/assets/js/plugins.js?ver=1.1.0.03'></script>
+<script type='text/javascript' src='https://www.wiselyshave.com/wp-content/themes/wisely/assets/js/scripts.js?ver=1.1.0.03'></script>
 <script type='text/javascript' src='https://www.wiselyshave.com/wp-content/themes/wisely/assets/glidejs/dist/glide.min.js?ver=1.0'></script>
-<script type='text/javascript' src='https://www.wiselyshave.com/wp-content/themes/wisely/assets/simple-calendar/jquery.simple-calendar.js?ver=1567580219'></script>
+<script type='text/javascript' src='https://www.wiselyshave.com/wp-content/themes/wisely/assets/simple-calendar/jquery.simple-calendar.js?ver=1569140624'></script>
 <script type='text/javascript' src='https://www.wiselyshave.com/wp-content/themes/wisely/assets/raty/jquery.raty.js?ver=1.0'></script>
 <script type='text/javascript' src='https://www.wiselyshave.com/wp-content/themes/wisely/assets/js/jquery.validate.min.js?ver=1.9.0'></script>
 <script type='text/javascript'>

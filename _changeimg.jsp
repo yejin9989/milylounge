@@ -10,10 +10,12 @@
 	<%
 	String now = session.getAttribute("page")+"";
 	request.setCharacterEncoding("euc-kr");
+	String id = request.getParameter("id");
+	String greet = request.getParameter("greet");
 	 String realFolder = "";
 	 String filename1 = "";
 	 int maxSize = 1024*1024*5;
-	 String encType = "euc-kr";
+	 String encType = "utf-8";
 	 String savefile = "img";
 	 ServletContext scontext = getServletContext();
 	 realFolder = scontext.getRealPath(savefile);
@@ -32,10 +34,11 @@
 	String fullpath = "img" + "/" + filename1;
 	
 	PreparedStatement pstmt = null;
-	String sql = "UPDATE IMG SET Img_path = ? WHERE Page = ?";
+	String sql = "UPDATE IMG SET ImgPath = ? WHERE Page = ? AND Id = ?";
 	pstmt = conn.prepareStatement(sql);
 	pstmt.setString(1, fullpath);
 	pstmt.setString(2, now);
+	pstmt.setString(3, id);
 	pstmt.executeUpdate();
 	pstmt.close();
 	conn.close();
@@ -48,5 +51,8 @@
 <body>
 <img src="<%=fullpath%>" width=512 height=384></img>
 <%=fullpath%>
+<%=now%>
+<%=id%>
+<%=greet%>
 </body>
 </html>

@@ -8,8 +8,8 @@
 <html>
 <head>
 	<%
-	String now = session.getAttribute("page")+"";
-	request.setCharacterEncoding("euc-kr");
+	 String now = session.getAttribute("page")+"";
+	 request.setCharacterEncoding("euc-kr");
 	 String realFolder = "";
 	 String filename1 = "";
 	 int maxSize = 1024*1024*5;

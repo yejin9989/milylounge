@@ -1,0 +1,7 @@
+@charset "UTF-8";
+
+/***************************************************/
+/* 이미지 */
+/***************************************************/
+/* 회사 로고 이미지 이미지 크기는 149 * 14px */
+.pop-address-search .pop-address-search-inner .logo { background: url(http://milymoodlounge.com/img/milyloungelogo.png) no-repeat; background-position:center;}

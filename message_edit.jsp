@@ -8,6 +8,7 @@
 <!DOCTYPE HTML>
 <html>
 	<head>
+	<link rel="stylesheet" type="text/css" href="https://pm.pstatic.net/css/webfont_v170623.css"/>
 	<style type="text/css">
 	body{
 	text-align:center;

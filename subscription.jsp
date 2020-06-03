@@ -1,8 +1,10 @@
+<%@ page import="java.net.URLEncoder" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ page language="java" import="java.text.*,java.sql.*" %>
-<%@ page language="java" import="myPackage.*" %> 
+<%@ page language="java" import="java.text.*,java.sql.*,java.util.*,java.security.*,java.math.BigInteger" %>
+<%@ page language="java" import="myPackage.*" %>
 <% request.setCharacterEncoding("UTF-8"); %>
+<% session.setAttribute("page", "subscription.jsp"); %>
 <!DOCTYPE html>
 <html lang="ko-KR" prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb#">
 <head>
@@ -33,20 +35,26 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 })(window,document,'script','dataLayer','GTM-KNJCD96');</script>
 <!-- End Google Tag Manager -->
-
-<link rel="icon" type="image/png" sizes="16x16" href="https://www.wiselyshave.com/wp-content/themes/wisely/assets/images/favicons/16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="https://www.wiselyshave.com/wp-content/themes/wisely/assets/images/favicons/32x32.png">
-<link rel="icon" type="image/png" sizes="96x96" href="https://www.wiselyshave.com/wp-content/themes/wisely/assets/images/favicons/96x96.png">
-<link rel="icon" type="image/png" sizes="192x192" href="https://www.wiselyshave.com/wp-content/themes/wisely/assets/images/favicons/192x192.png">
-<link rel="apple-touch-icon" sizes="76x76" href="https://www.wiselyshave.com/wp-content/themes/wisely/assets/images/favicons/76x76.png">
-<link rel="apple-touch-icon" sizes="120x120" href="https://www.wiselyshave.com/wp-content/themes/wisely/assets/images/favicons/120x120.png">
-<link rel="apple-touch-icon" sizes="152x152" href="https://www.wiselyshave.com/wp-content/themes/wisely/assets/images/favicons/152x152.png">
-<link rel="apple-touch-icon" sizes="180x180" href="https://www.wiselyshave.com/wp-content/themes/wisely/assets/images/favicons/180x180.png">
-<link rel="mask-icon" href="https://www.wiselyshave.com/wp-content/themes/wisely/assets/images/favicons/safari-pinned-tab.svg" color="#5bbad5">
-<meta name="msapplication-square70x70logo" content="https://www.wiselyshave.com/wp-content/themes/wisely/assets/images/favicons/70x70.png">
-<meta name="msapplication-square150x150logo" content="https://www.wiselyshave.com/wp-content/themes/wisely/assets/images/favicons/150x150.png">
-<meta name="msapplication-square310x310logo" content="https://www.wiselyshave.com/wp-content/themes/wisely/assets/images/favicons/310x310.png">
-<link rel="manifest" href="https://www.wiselyshave.com/wp-content/themes/wisely/assets/images/favicons/manifest.json">
+<link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+<link rel="stylesheet" type = "text/css" href="https://static-smartstore.pstatic.net/markup/m/dist/renew/css/smartstore!!!MjAxOS0wMy0xM1QxODo1MjowMFpfbWY%3D.css">
+<link rel="stylesheet" type = "text/css" href="menu.css">
+<link rel="stylesheet" type="text/css" href="https://pm.pstatic.net/css/webfont_v170623.css"/>
 <meta name="theme-color" content="#ffffff">
 <meta name="msapplication-TileColor" content="#ffffff"/>
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -63,24 +71,6 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <title>정기구매 - 와이즐리 :: 정직한 가격의 독일산 프리미엄 면도날</title>
 
 <!-- This site is optimized with the Yoast SEO plugin v6.0 - https://yoast.com/wordpress/plugins/seo/ -->
-<meta name="description" content="와이즐리 정기구매, 시간과 돈을 아끼는 현명한 선택"/>
-<link rel="canonical" href="https://www.wiselyshave.com/subscription/" />
-<meta property="og:locale" content="ko_KR" />
-<meta property="og:type" content="article" />
-<meta property="og:title" content="정기구매 - 와이즐리 :: 정직한 가격의 독일산 프리미엄 면도날" />
-<meta property="og:description" content="와이즐리 정기구매, 시간과 돈을 아끼는 현명한 선택" />
-<meta property="og:url" content="https://www.wiselyshave.com/subscription/" />
-<meta property="og:site_name" content="와이즐리 :: Wisely" />
-<meta property="article:publisher" content="https://www.facebook.com/wiselyshave/" />
-<meta property="fb:app_id" content="157635171692412" />
-<meta property="og:image" content="https://www.wiselyshave.com/wp-content/uploads/2018/02/wisely-main-06.jpg" />
-<meta property="og:image:secure_url" content="https://www.wiselyshave.com/wp-content/uploads/2018/02/wisely-main-06.jpg" />
-<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:description" content="와이즐리 정기구매, 시간과 돈을 아끼는 현명한 선택" />
-<meta name="twitter:title" content="정기구매 - 와이즐리 :: 정직한 가격의 독일산 프리미엄 면도날" />
-<meta name="twitter:image" content="https://www.wiselyshave.com/wp-content/uploads/2018/02/wisely-main-06.jpg" />
-<script type='application/ld+json'>{"@context":"http:\/\/schema.org","@type":"WebSite","@id":"#website","url":"https:\/\/www.wiselyshave.com\/","name":"\uc640\uc774\uc990\ub9ac :: Wisely","potentialAction":{"@type":"SearchAction","target":"https:\/\/www.wiselyshave.com\/?s={search_term_string}","query-input":"required name=search_term_string"}}</script>
-<!-- / Yoast SEO plugin. -->
 
 <link rel='dns-prefetch' href='//cdn.iamport.kr' />
 <link rel='dns-prefetch' href='//d3sfvyfh4b9elq.cloudfront.net' />
@@ -95,7 +85,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <link rel='stylesheet' id='woocommerce-smallscreen-css'  href='https://www.wiselyshave.com/wp-content/plugins/woocommerce/assets/css/woocommerce-smallscreen.css?ver=3.2.2' type='text/css' media='only screen and (max-width: 768px)' />
 <link rel='stylesheet' id='wp-pagenavi-css'  href='https://www.wiselyshave.com/wp-content/plugins/wp-pagenavi/pagenavi-css.css?ver=2.70' type='text/css' media='all' />
 <link rel='stylesheet' id='jquery-ui-smoothness-css'  href='//ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.min.css?ver=1.11.4' type='text/css' media='all' />
-<link rel='stylesheet' id='arconix-faq-css'  href='https://www.wiselyshave.com/wp-content/plugins/arconix-faq/includes/css/arconix-faq.css?t=1567531901&#038;ver=1.6.1' type='text/css' media='all' />
+<link rel='stylesheet' id='arconix-faq-css'  href='https://www.wiselyshave.com/wp-content/plugins/arconix-faq/includes/css/arconix-faq.css?t=1568989718&#038;ver=1.6.1' type='text/css' media='all' />
 <link rel='stylesheet' id='font-awesome-css'  href='https://www.wiselyshave.com/wp-content/themes/wisely/inc/theme-options/cs-framework/assets/css/font-awesome.min.css?ver=4.8.3.01' type='text/css' media='all' />
 <link rel='stylesheet' id='bootstrap-css-css'  href='https://www.wiselyshave.com/wp-content/themes/wisely/assets/css/bootstrap.min.css?ver=3.3.7' type='text/css' media='all' />
 <link rel='stylesheet' id='seese-own-loader-css'  href='https://www.wiselyshave.com/wp-content/themes/wisely/assets/css/loaders.css?ver=0.9.9' type='text/css' media='all' />
@@ -104,15 +94,15 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <link rel='stylesheet' id='seese-own-popup-css'  href='https://www.wiselyshave.com/wp-content/themes/wisely/assets/css/magnific-popup.min.css?ver=0.9.9' type='text/css' media='all' />
 <link rel='stylesheet' id='seese-own-scrollbar-css'  href='https://www.wiselyshave.com/wp-content/themes/wisely/assets/css/mcustom-scrollbar.min.css?ver=3.1.5' type='text/css' media='all' />
 <link rel='stylesheet' id='seese-own-animate-css'  href='https://www.wiselyshave.com/wp-content/themes/wisely/assets/css/animate.css?ver=1.0.0' type='text/css' media='all' />
-<link rel='stylesheet' id='seese-menu-styles-css'  href='https://www.wiselyshave.com/wp-content/themes/wisely/assets/css/menu.css?ver=1.1.0.02' type='text/css' media='all' />
-<link rel='stylesheet' id='seese-styles-css'  href='https://www.wiselyshave.com/wp-content/themes/wisely/assets/css/styles.css?ver=1.1.0.02' type='text/css' media='all' />
+<link rel='stylesheet' id='seese-menu-styles-css'  href='https://www.wiselyshave.com/wp-content/themes/wisely/assets/css/menu.css?ver=1.1.0.03' type='text/css' media='all' />
+<link rel='stylesheet' id='seese-styles-css'  href='https://www.wiselyshave.com/wp-content/themes/wisely/assets/css/styles.css?ver=1.1.0.03' type='text/css' media='all' />
 <link rel='stylesheet' id='glidejs-styles-css'  href='https://www.wiselyshave.com/wp-content/themes/wisely/assets/glidejs/dist/css/glide.core.min.css?ver=1.0' type='text/css' media='all' />
 <link rel='stylesheet' id='glidejs-styles-theme-css'  href='https://www.wiselyshave.com/wp-content/themes/wisely/assets/glidejs/dist/css/glide.theme.min.css?ver=1.0' type='text/css' media='all' />
-<link rel='stylesheet' id='simple-calendar-styles-css'  href='https://www.wiselyshave.com/wp-content/themes/wisely/assets/simple-calendar/simple-calendar.css?ver=1567531901' type='text/css' media='all' />
+<link rel='stylesheet' id='simple-calendar-styles-css'  href='https://www.wiselyshave.com/wp-content/themes/wisely/assets/simple-calendar/simple-calendar.css?ver=1568989718' type='text/css' media='all' />
 <link rel='stylesheet' id='raty-styles-css'  href='https://www.wiselyshave.com/wp-content/themes/wisely/assets/raty/jquery.raty.css?ver=1.0' type='text/css' media='all' />
-<link rel='stylesheet' id='seese-woocommerce-css'  href='https://www.wiselyshave.com/wp-content/themes/wisely/inc/plugins/woocommerce/woocommerce.css?ver=1.1.0.02' type='text/css' media='all' />
-<link rel='stylesheet' id='seese-woocommerce-responsive-css'  href='https://www.wiselyshave.com/wp-content/themes/wisely/inc/plugins/woocommerce/woocommerce-responsive.css?ver=1.1.0.02' type='text/css' media='all' />
-<link rel='stylesheet' id='seese-responsive-css'  href='https://www.wiselyshave.com/wp-content/themes/wisely/assets/css/responsive.css?ver=1.1.0.02' type='text/css' media='all' />
+<link rel='stylesheet' id='seese-woocommerce-css'  href='https://www.wiselyshave.com/wp-content/themes/wisely/inc/plugins/woocommerce/woocommerce.css?ver=1.1.0.03' type='text/css' media='all' />
+<link rel='stylesheet' id='seese-woocommerce-responsive-css'  href='https://www.wiselyshave.com/wp-content/themes/wisely/inc/plugins/woocommerce/woocommerce-responsive.css?ver=1.1.0.03' type='text/css' media='all' />
+<link rel='stylesheet' id='seese-responsive-css'  href='https://www.wiselyshave.com/wp-content/themes/wisely/assets/css/responsive.css?ver=1.1.0.03' type='text/css' media='all' />
 <link rel='stylesheet' id='seese-google-fonts-css'  href='//fonts.googleapis.com/css?family=Noto+Sans%3A400%2C400i%2C500%2C600%7CLora%3A400%2C400i%2C500%2C600&#038;subset=latin' type='text/css' media='all' />
 <script type='text/javascript' src='https://www.wiselyshave.com/wp-includes/js/jquery/jquery.js?ver=1.12.4'></script>
 <script type='text/javascript' src='https://www.wiselyshave.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1'></script>
@@ -130,9 +120,72 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <link rel="alternate" type="text/xml+oembed" href="https://www.wiselyshave.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.wiselyshave.com%2Fsubscription%2F&#038;format=xml" />
 	<noscript><style>.woocommerce-product-gallery{ opacity: 1 !important; }</style></noscript>
 	</head>
-
+<style>
+#ch-plugin{
+display:none;
+}
+</style>
 <body class="page-template-default page page-id-22">
+  <%
+    String clientId = "RO12hlpvFt7WEiDVKCDB";//애플리케이션 클라이언트 아이디값";
+    String redirectURI = URLEncoder.encode("http://milymoodlounge.com/callback.jsp", "UTF-8");
+    SecureRandom random = new SecureRandom();
+    String state = new BigInteger(130, random).toString();
+    String apiURL = "https://nid.naver.com/oauth2.0/authorize?response_type=code";
+    apiURL += "&client_id=" + clientId;
+    apiURL += "&redirect_uri=" + redirectURI;
+    apiURL += "&state=" + state;
+    session.setAttribute("state", state);
+ %>
+<%
+// 세션 생성 create session
+session.setAttribute("page", "index.jsp"); // 현재 페이지 current page
+// 세션 가져오기 get session
+String now = session.getAttribute("page")+""; // 현재 페이지 current page
+String s_id = session.getAttribute("s_id")+"";// 현재 사용자 current user
+String name = session.getAttribute("name")+"";
+%>
+<%
+now = session.getAttribute("page") + "";
+Connection conn = DBUtil.getMySQLConnection();
+ResultSet rs = null;
+PreparedStatement pstmt = null;
+String query = "SELECT * FROM IMG WHERE Page = ?";
+pstmt = conn.prepareStatement(query);
+pstmt.setString(1, now);
+rs = pstmt.executeQuery();
+String imgpath;
+String id;
+String cls;
+String[][] img = new String[100][3];
+int i = 0;
+while(rs.next()){
+	id = rs.getString("Id");
+	cls = rs.getString("Class");
+	imgpath = rs.getString("ImgPath");
+	img[i][0] = id;
+	img[i][1] = cls;
+	img[i][2] = imgpath;
+	i++;
+}
+int imgnum = i;
+pstmt.close();
+rs.close();
+query="";
 
+int point=0;
+query="SELECT * FROM USERS WHERE Id = ?";
+pstmt = conn.prepareStatement(query);
+pstmt.setString(1,s_id);
+rs=pstmt.executeQuery();
+while(rs.next()){
+	point = rs.getInt("Point");
+}
+pstmt.close();
+rs.close();
+query="";
+conn.close();
+%>
 
 	  <div class="seese-aside" id="seese-aside"><h2>장바구니</h2><div class="widget_shopping_cart_content">
 
@@ -145,158 +198,27 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 		      </div>
 		    
     <!-- Seese Wrap Start -->
-    <div id="seese-wrap" class="seese-fixed-header">
-
-	    	      <header class="seese-header" style="">
-	        
-<!-- Menubar Starts -->
-<div class="hd-wrapper" style="">
-  <div class="container-fluid">
-  	<div class="row">
-
-	  <div class="header_logo">
-		<a href="https://www.wiselyshave.com/">
-		<svg xmlns="http://www.w3.org/2000/svg" id="wisely-logo-svg" viewBox="0 0 123 47" id="logo" width="100%" height="100%">
-<g><path d="M.213 15.352h5.236l5.235 11.484 5.7-13.299 5.7 13.299 5.194-11.484h5.192L21.957 36.968l-5.573-12.96-5.657 12.96L.213 15.352zM40.875 4.923c2.027 1.688.465 5.277-2.068 5.151a3.029 3.029 0 0 1-3.041-3.041c-.127-2.532 3.42-4.053 5.109-2.11zm-4.434 10.429h4.644V35.45h-4.644V15.352zM55.652 20.84c-.59-1.224-1.351-1.858-2.238-1.858-.844 0-1.562.675-1.562 1.521 0 .675.887 1.435 2.703 2.279l1.773.845c3.336 1.562 4.434 2.998 4.434 5.657 0 1.941-.676 3.547-2.069 4.856-1.393 1.265-3.082 1.899-5.067 1.899-3.419 0-5.783-1.647-7.177-4.94l3.969-1.815c1.14 2.026 1.858 2.619 3.251 2.619 1.562 0 2.364-.719 2.364-2.154 0-.972-.591-1.731-1.815-2.322l-2.575-1.225c-3.04-1.478-4.138-2.702-4.138-5.362 0-1.731.592-3.166 1.816-4.307 1.225-1.14 2.702-1.731 4.433-1.731 2.575 0 4.476 1.309 5.742 3.969l-3.844 2.069zM84.11 26.498H69.713c.296 3.251 2.238 5.405 5.236 5.405 1.14 0 2.11-.254 2.829-.804.759-.548 1.604-1.562 2.575-3.082l3.926 2.154c-2.364 4.094-5.277 5.868-9.499 5.868-2.999 0-5.405-.972-7.22-2.914-1.815-1.941-2.702-4.517-2.702-7.684 0-3.208.887-5.785 2.617-7.726 1.772-1.943 4.138-2.914 7.052-2.914 5.952 0 9.583 4.137 9.583 10.598v1.099zm-4.77-3.8c-.634-2.491-2.196-3.716-4.688-3.716-2.236 0-4.095 1.478-4.644 3.716h9.332zM89.518.616h4.645v26.009c0 1.941.295 3.293.844 4.095.55.761 1.52 1.141 2.913 1.141l-1.267 4.18c-2.321 0-4.137-.718-5.447-2.195-1.14-1.226-1.688-3.293-1.688-6.123V.616zM101.508 46.384l7.811-14.651-9.035-16.381h5.404l6.122 11.569 5.742-11.569h5.235l-16.002 31.032h-5.277z"/></g></svg>		<span>
-		  와이즐리 :: Wisely		  </span>
-		</a>
-	  </div>
-
-	  <div class="seese-mainmenu hidden-xs">
-		<ul id="seese-menu" class="main-navigation"><li id="menu-item-28" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-28 seese-dropdown-menu"><a  href="https://www.wiselyshave.com/store/">상품 리스트</a></li>
-<li id="menu-item-27" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-22 current_page_item menu-item-27 seese-dropdown-menu"><a  href="https://www.wiselyshave.com/subscription/">정기구매 신청</a></li>
-<li id="menu-item-26" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-26 seese-dropdown-menu"><a  href="https://www.wiselyshave.com/brand-story/">브랜드 스토리</a></li>
-</ul>	  </div>
-
-	  <div class="seese-topright" id="seese-topright">
+<div class="topbar">
+	<div class="menu_button" id="menuToggle">
+	<input type="checkbox" id="menubtn"/><img class="menu_icon" src="img/menu.png" style="width:20px;height:20px;">
+	<div class="menu_content">
+		<img src="img/backarrow.png" height="22px">
 		<ul>
-			<li class="hidden-xs"><a href="/help/">고객센터</a></li>
-		  				<li class="hidden-xs">
-										<a href="/login/">로그인</a>
-									</li><li>
-				<a href="/cart/" id="seese-cart-trigger">
-				  				  <img src="https://www.wiselyshave.com/wp-content/themes/wisely/assets/images/cart_icon.png" alt="cart_icon" width="30" class="hidden-xs" />
-				  <img src="https://www.wiselyshave.com/wp-content/themes/wisely/assets/images/cart_icon_grey.png" alt="cart_icon" width="30" class="hidden-sm hidden-md hidden-lg" />
-				</a>
-			  </li>		  		</ul>
-	  </div>
-	  <div class="hd-bar"></div>
-	  
-  </div>
-  </div>
-
-<style>
-#seese-mobilemenu .mobileSide { margin-left:-100%;}
-</style>
-
-<script>
-jQuery(document).ready(function($){
-	$("#btn-mobile-menu").click(function(e){
-		e.preventDefault();
-		$("#seese-mobilemenu .lightBoxBg").show();
-		$("#seese-mobilemenu .mobileSide").show();
-		$("#seese-mobilemenu .mobileSide").animate({'margin-left':'0'}, 500);
-	});
-	$("#btn-mobile-close").click(function(e){
-		e.preventDefault();
-		$("#seese-mobilemenu .mobileSide").animate({'margin-left':'-100%'}, 500, function(){ 
-			$(this).hide(); 
-			$("#seese-mobilemenu .lightBoxBg").hide();
-		});
-	});
-	$("#seese-mobilemenu .lightBoxBg").click(function(e){
-		e.preventDefault();
-		if($(this).css("display") != "none"){
-			$("#btn-mobile-close").click();
-		}
-	});
-
-	// mobile navigation links
-	$("#seese-mobilemenu ul li.m_store").click(function(e){
-		e.preventDefault();
-		location.href = "/store/";
-	});
-	$("#seese-mobilemenu ul li.m_subscription").click(function(e){
-		e.preventDefault();
-		location.href = "/subscription/";
-	});
-});
-</script>
-
-<div class="container" id="seese-mobilemenu">
-	<div class="slicknav_menu">
-		<a id="btn-mobile-menu" aria-haspopup="true" tabindex="0" class="slicknav_btn slicknav_collapsed">
-			<span class="slicknav_menutxt"></span>
-			<span class="slicknav_icon slicknav_no-text">
-				<span class="slicknav_icon-bar"></span>
-				<span class="slicknav_icon-bar"></span>
-				<span class="slicknav_icon-bar"></span>
-			</span>
-		</a>
+		<li id="content"><a href="https://smartstore.naver.com/milymood" style="color:black;text-decoration:none;"><nobr>밀리무드 공식몰</nobr></a></li>
+		<li id="content"><a href="order_status.jsp"style="color:black;text-decoration:none;"><nobr>신청현황</nobr></a></li>
+		<li id="content"><a href="story.jsp" style="color:black;text-decoration:none;"><nobr>story</nobr></a></li>
+		<li id="content"><nobr>이벤트</nobr></li>
+		<li id="content"><nobr>공지사항</nobr></li>
+		<li id="content"><nobr>QnA</nobr></li>
+		<li id="content"><nobr>출석체크</nobr></li>
+		<li id="content"><nobr>신청후기</nobr></li>
+		</ul>
 	</div>
-	<ul class="mobileSide hidden-sm hidden-md hidden-lg" style="display:none;">
-		<a href="#" id="btn-mobile-close" class="btn-close taphover" style="left:22px;"></a>
-		<li style="padding:80px 20px 10px 20px; font-size:20px; font-family:'notokr-medium';">
-			
-			<div style="line-height:56px;">
-				<div style="margin-left:10px;"><a class="taphover" href="/store/">상품 리스트</a></div>
-				<div style="margin-left:10px;"><a class="taphover" href="/subscription/">정기구매 신청</a></div>
-				<div style="margin-left:10px;"><a class="taphover" href="/brand-story/">브랜드 스토리</a></div>
-				<div style="margin-left:10px;"><a class="taphover" href="/help/">고객센터</a></div>
-			</div>
-
-			<div style="height:35px;"></div>
-
-			<div style="line-height:46px;">
-									<div style="border:1px solid #dddddd; border-radius:3px; text-align:center;">
-						<a class="taphover" href="/login/"">로그인</a>
-					</div>
-							</div>
-		</li>
-		<style>
-		a.taphover:hover, a.taphover.hover{ color:#0096ff; }
-		</style>
-		<!--
-		<script>
-		jQuery('a.taphover').on('touchstart', function (e) {
-			'use strict'; //satisfy code inspectors
-			var link = jQuery(this); //preselect the link
-			if (link.hasClass('hover')) {
-				return true;
-			} else {
-				link.addClass('hover');
-				jQuery('a.taphover').not(this).removeClass('hover');
-				e.preventDefault();
-				return false;
-			}
-		});
-		</script>
-		-->
-
-		<!--
-		<li class="m_logo"><a href="https://www.wiselyshave.com/"><svg xmlns="http://www.w3.org/2000/svg" id="wisely-logo-svg" viewBox="0 0 123 47" id="logo" width="100%" height="100%">
-<g><path d="M.213 15.352h5.236l5.235 11.484 5.7-13.299 5.7 13.299 5.194-11.484h5.192L21.957 36.968l-5.573-12.96-5.657 12.96L.213 15.352zM40.875 4.923c2.027 1.688.465 5.277-2.068 5.151a3.029 3.029 0 0 1-3.041-3.041c-.127-2.532 3.42-4.053 5.109-2.11zm-4.434 10.429h4.644V35.45h-4.644V15.352zM55.652 20.84c-.59-1.224-1.351-1.858-2.238-1.858-.844 0-1.562.675-1.562 1.521 0 .675.887 1.435 2.703 2.279l1.773.845c3.336 1.562 4.434 2.998 4.434 5.657 0 1.941-.676 3.547-2.069 4.856-1.393 1.265-3.082 1.899-5.067 1.899-3.419 0-5.783-1.647-7.177-4.94l3.969-1.815c1.14 2.026 1.858 2.619 3.251 2.619 1.562 0 2.364-.719 2.364-2.154 0-.972-.591-1.731-1.815-2.322l-2.575-1.225c-3.04-1.478-4.138-2.702-4.138-5.362 0-1.731.592-3.166 1.816-4.307 1.225-1.14 2.702-1.731 4.433-1.731 2.575 0 4.476 1.309 5.742 3.969l-3.844 2.069zM84.11 26.498H69.713c.296 3.251 2.238 5.405 5.236 5.405 1.14 0 2.11-.254 2.829-.804.759-.548 1.604-1.562 2.575-3.082l3.926 2.154c-2.364 4.094-5.277 5.868-9.499 5.868-2.999 0-5.405-.972-7.22-2.914-1.815-1.941-2.702-4.517-2.702-7.684 0-3.208.887-5.785 2.617-7.726 1.772-1.943 4.138-2.914 7.052-2.914 5.952 0 9.583 4.137 9.583 10.598v1.099zm-4.77-3.8c-.634-2.491-2.196-3.716-4.688-3.716-2.236 0-4.095 1.478-4.644 3.716h9.332zM89.518.616h4.645v26.009c0 1.941.295 3.293.844 4.095.55.761 1.52 1.141 2.913 1.141l-1.267 4.18c-2.321 0-4.137-.718-5.447-2.195-1.14-1.226-1.688-3.293-1.688-6.123V.616zM101.508 46.384l7.811-14.651-9.035-16.381h5.404l6.122 11.569 5.742-11.569h5.235l-16.002 31.032h-5.277z"/></g></svg></a></li>
-		<li class="m_store"><a href="/store/">스토어</a></li>
-		<li class="m_subscription"><a href="/subscription/">정기구매</a></li>
-		<li class="m_brandstory"><a href="/brand-story/">브랜드 스토리</a></li>
-		<li class="m_help"><a href="/help/">고객센터</a></li>
-		<li class="m_login" style="border-top:1px solid #dddddd; padding-top:35px;">
-					<div style="border:1px solid #cccccc; margin:0px 10px 10px 10px; padding:10px; border-radius:5px;">
-				<a style="border:0px !important;" href="/login/">로그인</a>
-			</div>
-				</li>
-		-->
-	</ul>
-	<div class="lightBoxBg hidden-sm hidden-md hidden-lg"></div>
+	</div>
+	<div class="milylounge">
+	<a href="index.jsp"><img id="logo" src="img/milylounge.png" style="width:90px;"></a>
+	</div>
 </div>
-
-</div>
-<!-- Menubar End -->
-	      </header>
-	    
-	    <!-- Seese Wrapper Start -->
-	    <div class="seese-wrapper">
-
 <style>
 a { cursor: pointer; }
 #section-faq{ display:none; }
@@ -327,7 +249,7 @@ window.onload = function(){
 </script>
 
 <div class="seese-containerWrap seese-extra-width">
-  <div class="seese-background seese-background-outer">
+  <div style="top:40px;" class="seese-background seese-background-outer">
     <div class="container-fluid">
       <div class="seese-background-inner seese-padding-none seese-container-inner" style="">
         <div class="row">
@@ -351,12 +273,12 @@ window.onload = function(){
                   </div>
               </div>
               
-              <div class="subsection underline mobile-subscription col-xs-12 hidden-sm hidden-md hidden-lg">
+              <div style="background-image:url(img/1.png)"class="subsection underline mobile-subscription col-xs-12 hidden-sm hidden-md hidden-lg">
                   <div class="subsection-wrapper paddingtb">
                       <div class="section-content aligncenter">
                       	<div class="subsection-text">
-                              <div class="title">시간과 돈을 아끼는<br>현명한 선택</div>
-                              <div class="image"><img src="/wp-content/themes/wisely/assets/images/bg-subscription-mobile.jpg" border="0"/></div>
+                              <div class="title" style="top:100px;">밀리무드라운지에서<br>정기구매를 시작해보세요</div>
+                              <div style="padding:0px;" class="image"><img src="/wp-content/themes/wisely/assets/images/bg-subscription-mobile.jpg" border="0"/></div>
                               <div class="desc">
                                 <a href="/subscription-products/" class="btn-fillBlue  btn-aligncenter  btn-width250"><span>정기구매 시작</span></a>
                               </div>
@@ -364,174 +286,18 @@ window.onload = function(){
                       </div>
                   </div>
               </div>
-
-              <div class="subsection col-xs-12 col-sm-12 col-md-12 col-lg-12 hidden-xs">
-                  <div class="subsection-wrapper paddingtb wrapper1120">
-                      <div class="section-content aligncenter">
-                          <div class="subsection-text col-sm-4 col-md-4">
-                              <div class="image"><img src="/wp-content/themes/wisely/assets/images/subscription-ico-01.jpg" /></div>
-                              <div class="stitle">경험해보세요<br>잊고 사는 편리함</div>
-                              <div class="desc">
-                              마트 가고, 최저가 검색하고... 매번 귀찮지 않으세요?<br>
-                              고객님이 원하는 주기에 맞춰 와이즐리가<br>
-                              정기적으로 배송해 드립니다.
-                              </div>
-                          </div>
-                          <div class="subsection-text col-sm-4 col-md-4">
-                              <div class="image"><img src="/wp-content/themes/wisely/assets/images/subscription-ico-02.jpg" /></div>
-                              <div class="stitle">추가 할인에<br>무료배송까지!</div>
-                              <div class="desc">
-                              정기구매는 더 저렴합니다<br>
-                              최대 10% 할인과 상시 무료배송 혜택!
-                              </div>
-                          </div>
-                          <div class="subsection-text col-sm-4 col-md-4">
-                              <div class="image"><img src="/wp-content/themes/wisely/assets/images/subscription-ico-03.jpg" /></div>
-                              <div class="stitle">안심하세요<br>변경이나 해지도 쉽습니다</div>
-                              <div class="desc">
-                              면도날이 남거나 부족할까봐 걱정되시나요?<br>
-                              클릭 한번으로 배송 일정을 변경할 수 있습니다.
-                              </div>
-                          </div>
-                      </div>
-                  </div>
-                </div>
-                
-                <div class="subsection fillbackground mobile-subscription2 col-xs-12 hidden-sm hidden-md hidden-lg">
-                  <div class="subsection-wrapper paddingtb">
-                      <div class="section-content">
-                          <div class="subsection-text col-xs-12">
-                              <div class="image">
-                              	<img src="/wp-content/themes/wisely/assets/images/subscription-ico-01.png" class="floatL img-subscription1"/>
-                                <span class="stitle floatL">경험해보세요<br>잊고 사는 편리함</span>
-                              </div>
-                              <div class="desc btn-mgBottom100">
-                              마트 가고, 최저가 검색하고... 매번 귀찮지 않으세요?<br>
-                              고객님이 원하는 주기에 맞춰 와이즐리가<br>
-                              정기적으로 배송해 드립니다.
-                              </div>
-                          </div>
-                          <div class="subsection-text col-xs-12">
-                              <div class="image">
-                                <span class="stitle floatR text-right">추가 할인에<br>무료배송까지!</span>
-                                <img src="/wp-content/themes/wisely/assets/images/subscription-ico-02.png" class="floatR img-subscription2"/>
-                              </div>
-                              <div class="desc text-right btn-mgBottom100">
-                              정기구매는 더 저렴합니다<br>
-                              최대 10% 할인과 상시 무료배송 혜택!
-                              </div>
-                          </div>
-                          <div class="subsection-text col-xs-12">
-                              <div class="image">
-                              	<img src="/wp-content/themes/wisely/assets/images/subscription-ico-03.png" class="img-subscription3"/>
-                                <span class="stitle floatL">안심하세요<br>변경이나 해지도 쉽습니다</span>
-                              </div>
-                              <div class="desc">
-                              면도날이 남거나 부족할까봐 걱정되시나요?<br>
-                              클릭 한번으로 배송 일정을 변경할 수 있습니다.
-                              </div>
-                          </div>
-                      </div>
-                  </div>
-                </div>
-              
-                <div class="subsection subscription-faq col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                    <div class="subsection-wrapper paddingtb col-sm-12 col-md-8 col-md-offset-2 col-lg-8 col-lg-offset-2">
-                        <div class="section-content aligncenter">
-                            <div class="subsection-text">
-                                <div class="title hidden-xs">내 사용량에 맞는 플랜으로<br />시작해보세요</div>
-                                <div class="title hidden-sm hidden-md hidden-lg">내 사용량에 맞는<br />플랜으로<br />시작해보세요</div>
-                                <div class="desc">
-                                    <a href="/subscription-products/" class="btn-fillBlue btn-aligncenter btn-width250 btn-mgTop50"><span>정기구매 시작</span></a><br />
-                                    <a class="btn-strokeblue btn-aligncenter btn-width250 btn-mgTop7 subscription-faq-toggle"><span>자주 묻는 질문</span></a>
-                                </div>
-                                <div class="desc">
-									<a class="subscription-faq-arrow aligncenter btn-mgTop50 faq-arrow-open"></a>
-								</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="subsection col-xs-12 col-sm-12 col-md-12 col-lg-12" id="section-faq">
-                    <div class="subsection-wrapper subscription-faq btn-mgBottom50">
-                        <div class="section-content">
-                            <div class="subsection-text">
-                                <div class="desc col-sm-12 col-md-6 col-md-offset-3">
-                                    <h3 id="faq-subscription" class="arconix-faq-term-title arconix-faq-term-subscription">정기구매</h3><div id="faq-4315" class="arconix-faq-wrap"><div id="faq-" class="arconix-faq-title faq-closed">가족이랑 같이 쓰려고 하는데 어떻게 하나요?<a class="faq-arrow faq-arrow-open pull-right"></a></div><div class="arconix-faq-content faq-closed"><ul>
-<li>가족들을 위한 면도기를 추가로 구매하세요. 홈페이지 &#8220;마이페이지&#8221;내의 &#8220;정기구매 관리&#8221;에서 구매할 수 있습니다.</li>
-<li>면도날이 부족하다면, 배송주기를 더 잦게 설정해보세요. 1개월에 한 번부터 6개월에 한 번까지 원하는대로 설정이 가능합니다.</li>
-<li>문제가 있는 경우, 고객센터로 문의해주세요</li>
-</ul>
-</div></div><div id="faq-4321" class="arconix-faq-wrap"><div id="faq-" class="arconix-faq-title faq-closed">결제 수단을 변경할 수 있나요?<a class="faq-arrow faq-arrow-open pull-right"></a></div><div class="arconix-faq-content faq-closed"><ul>
-<li>홈페이지 &#8220;마이페이지&#8221;내의 &#8220;정기구매 관리&#8221;에서 결제 수단을 변경할 수 있습니다.
-<ul>
-<li>홈페이지에서 로그인 후 &#8220;마이 페이지&#8221;로 접속하세요</li>
-<li>&#8220;정기구매 관리&#8221; 메뉴를 클릭하세요</li>
-<li>페이지 하단에 &#8220;결제 수단&#8221; 칸의 오른쪽 파란색 화살표를 클릭하세요.</li>
-<li>변경하실 결제수단을 입력하고, 변경 버튼을 눌러주세요.</li>
-</ul>
-</li>
-<li>문제가 있는 경우, 고객센터로 문의해주세요</li>
-</ul>
-</div></div><div id="faq-4317" class="arconix-faq-wrap"><div id="faq-" class="arconix-faq-title faq-closed">면도기를 추가 구매할 수 있나요?<a class="faq-arrow faq-arrow-open pull-right"></a></div><div class="arconix-faq-content faq-closed"><ul>
-<li>홈페이지 &#8220;마이페이지&#8221;내의 &#8220;정기구매 관리&#8221;에서 추가 면도기를 쉽게 구매할 수 있습니다.</li>
-<li>처음 정기구매 제품을 선택하실 때, &#8220;1회 구매&#8221; 제품으로 면도기를 선택하시면 추가 면도기를 구매할 수 있습니다.</li>
-</ul>
-</div></div><div id="faq-4319" class="arconix-faq-wrap"><div id="faq-" class="arconix-faq-title faq-closed">배송받는 주소를 변경할 수 있나요?<a class="faq-arrow faq-arrow-open pull-right"></a></div><div class="arconix-faq-content faq-closed"><ul>
-<li>홈페이지 &#8220;마이페이지&#8221;내의 &#8220;정기구매 관리&#8221;에서 배송 주소를 변경할 수 있습니다.</li>
-<li>문제가 있는 경우, 고객센터로 문의해주세요</li>
-</ul>
-</div></div><div id="faq-3141" class="arconix-faq-wrap"><div id="faq-" class="arconix-faq-title faq-closed">사용하다보니 면도날이 부족하거나, 너무 많이 쌓였습니다.<a class="faq-arrow faq-arrow-open pull-right"></a></div><div class="arconix-faq-content faq-closed"><ul>
-<li>다음 배송일이나 배송주기를 변경해보세요. 다음 배송을 앞당기거나, 미룰 수 있습니다.</li>
-<li>홈페이지 &#8220;마이페이지&#8221; 내의 &#8220;정기구매 관리&#8221;에서 변경할 수 있습니다.</li>
-<li>문제가 있는 경우, 고객센터로 문의해주세요</li>
-</ul>
-</div></div><div id="faq-3145" class="arconix-faq-wrap"><div id="faq-" class="arconix-faq-title faq-closed">얼마나 자주 면도날을 배송 받나요?<a class="faq-arrow faq-arrow-open pull-right"></a></div><div class="arconix-faq-content faq-closed"><ul>
-<li>나에게 맞는 배송주기를 선택할 수 있습니다. 1개월에 한 번부터 6개월에 한 번까지, 원하는대로 설정이 가능합니다.</li>
-<li>홈페이지 &#8220;마이페이지&#8221; 내의 &#8220;정기구매 관리&#8221;에서 설정할 수 있습니다.</li>
-<li>문제가 있는 경우, 고객센터로 문의해주세요</li>
-</ul>
-</div></div><div id="faq-4324" class="arconix-faq-wrap"><div id="faq-" class="arconix-faq-title faq-closed">오류 메시지와 함께 결제가 되지 않습니다.<a class="faq-arrow faq-arrow-open pull-right"></a></div><div class="arconix-faq-content faq-closed"><ul>
-<li>고객센터로 문의해주세요</li>
-<li>전화: 1833-9133, 이메일: help@wiselyshave.com, 카카오톡: @와이즐리</li>
-</ul>
-</div></div><div id="faq-3147" class="arconix-faq-wrap"><div id="faq-" class="arconix-faq-title faq-closed">정기구매는 어떻게 변경할 수 있나요?<a class="faq-arrow faq-arrow-open pull-right"></a></div><div class="arconix-faq-content faq-closed"><ul>
-<li>홈페이지 &#8220;마이페이지&#8221; 내의 &#8220;정기구매 관리&#8221; 메뉴를 이용해주세요. 다음 배송일, 배송상품, 배송주기, 주소 및 결제수단 등을 변경할 수 있습니다.</li>
-<li>문제가 있는 경우, 고객센터로 문의해주세요</li>
-</ul>
-</div></div><div id="faq-4326" class="arconix-faq-wrap"><div id="faq-" class="arconix-faq-title faq-closed">정기구매는 어떻게 해지하나요?<a class="faq-arrow faq-arrow-open pull-right"></a></div><div class="arconix-faq-content faq-closed"><ul>
-<li>홈페이지 &#8220;마이페이지&#8221;내의 &#8220;정기구매 관리&#8221;에서 해지할 수 있습니다.</li>
-<li>문제가 있는 경우, 고객센터로 문의해주세요</li>
-</ul>
-</div></div><div id="faq-4313" class="arconix-faq-wrap"><div id="faq-" class="arconix-faq-title faq-closed">정기구매를 잠시 멈출 수 있나요?<a class="faq-arrow faq-arrow-open pull-right"></a></div><div class="arconix-faq-content faq-closed"><ul>
-<li>다음 결제 예정일을 원하는 날짜로 미뤄주세요. 설정하신 날짜 전까지는 구매가 이루어지지 않습니다.</li>
-<li>홈페이지 &#8220;마이페이지&#8221;내의 &#8220;정기구매 관리&#8221;에서 다음 결제예정일을 변경할 수 있습니다.</li>
-</ul>
-</div></div><div id="faq-3149" class="arconix-faq-wrap"><div id="faq-" class="arconix-faq-title faq-closed">항상 최저가가 보장되나요?<a class="faq-arrow faq-arrow-open pull-right"></a></div><div class="arconix-faq-content faq-closed"><ul>
-<li>안심하세요. 와이즐리는 와이즐리 공식 홈페이지에서만 판매되며, 항상 최저가에 구매할 수 있습니다.</li>
-<li>가격에 변동이 생길 경우, 변동 2주 전 고객님들께 문자와 이메일로 공지드립니다.</li>
-</ul>
-</div></div><div id="faq-3143" class="arconix-faq-wrap"><div id="faq-" class="arconix-faq-title faq-closed">해지 시 위약금이나 불이익이 있나요?<a class="faq-arrow faq-arrow-open pull-right"></a></div><div class="arconix-faq-content faq-closed"><ul>
-<li>위약금이나 불이익은 전혀 없습니다. 부담없이 정기구매를 이용해보세요!</li>
-</ul>
-</div></div>                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-            </div>
-          </div>
           <!-- Content Col End -->
-
-          
         </div>
       </div>
     </div>
   </div>
 </div>
 
+<div>
+<a href="subscription2.jsp">
+<img style="width:100%" src="img/123.jpg">
+</a>
+</div>
 
 <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KNJCD96"
@@ -567,6 +333,16 @@ a, .infomark{ cursor:pointer; }
 <div id="ajax-loading-div"></div>
 
 </div>
+
+<script>
+function after_notice_call(){
+	jQuery("#lb-notification").style("max-height",jQuery(window).height()+"px","important");
+	jQuery("#lb-notification").style("bottom","unset","important");
+	jQuery("#lb-notification").style("top",(jQuery(window).height()-jQuery("#lb-notification").height())/2+"px","important");
+	jQuery("#lb-notification .lb-message").style("margin-top","40px","important");
+
+};
+</script>
 <!-- Seese Wrapper End -->
 
   <div class="container-fluid seese-bottomboxes">
@@ -574,46 +350,64 @@ a, .infomark{ cursor:pointer; }
           </div>
   </div>
     <!-- Footer Start -->
-    <footer class="seese-footer">
-      <!-- Footer Widgets Start -->
-        <div class="center-block">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="ft-left col-sm-4 col-md-4 col-lg-4">
-                        <ul class="ft-sns">
-                        	<li><a href="http://pf.kakao.com/_xkFAmxl" target="_blank"><i class="fa fa-comment fa-2x" aria-hidden="true"></i></a></li>
-                            <li><a href="https://www.facebook.com/wiselyshave" target="_blank"><i class="fa fa-facebook-official fa-2x" aria-hidden="true"></i></a></li>
-                            <li><a href="https://www.instagram.com/wiselyshave" target="_blank"><i class="fa fa-instagram fa-2x" aria-hidden="true"></i></a></li>
-                        </ul>
-                        <div class="footer_logo hidden-xs">
-                            <a href="https://www.wiselyshave.com/">
-                                <svg xmlns="http://www.w3.org/2000/svg" id="wisely-logo-svg" viewBox="0 0 123 47" id="logo" width="100%" height="100%">
-<g><path d="M.213 15.352h5.236l5.235 11.484 5.7-13.299 5.7 13.299 5.194-11.484h5.192L21.957 36.968l-5.573-12.96-5.657 12.96L.213 15.352zM40.875 4.923c2.027 1.688.465 5.277-2.068 5.151a3.029 3.029 0 0 1-3.041-3.041c-.127-2.532 3.42-4.053 5.109-2.11zm-4.434 10.429h4.644V35.45h-4.644V15.352zM55.652 20.84c-.59-1.224-1.351-1.858-2.238-1.858-.844 0-1.562.675-1.562 1.521 0 .675.887 1.435 2.703 2.279l1.773.845c3.336 1.562 4.434 2.998 4.434 5.657 0 1.941-.676 3.547-2.069 4.856-1.393 1.265-3.082 1.899-5.067 1.899-3.419 0-5.783-1.647-7.177-4.94l3.969-1.815c1.14 2.026 1.858 2.619 3.251 2.619 1.562 0 2.364-.719 2.364-2.154 0-.972-.591-1.731-1.815-2.322l-2.575-1.225c-3.04-1.478-4.138-2.702-4.138-5.362 0-1.731.592-3.166 1.816-4.307 1.225-1.14 2.702-1.731 4.433-1.731 2.575 0 4.476 1.309 5.742 3.969l-3.844 2.069zM84.11 26.498H69.713c.296 3.251 2.238 5.405 5.236 5.405 1.14 0 2.11-.254 2.829-.804.759-.548 1.604-1.562 2.575-3.082l3.926 2.154c-2.364 4.094-5.277 5.868-9.499 5.868-2.999 0-5.405-.972-7.22-2.914-1.815-1.941-2.702-4.517-2.702-7.684 0-3.208.887-5.785 2.617-7.726 1.772-1.943 4.138-2.914 7.052-2.914 5.952 0 9.583 4.137 9.583 10.598v1.099zm-4.77-3.8c-.634-2.491-2.196-3.716-4.688-3.716-2.236 0-4.095 1.478-4.644 3.716h9.332zM89.518.616h4.645v26.009c0 1.941.295 3.293.844 4.095.55.761 1.52 1.141 2.913 1.141l-1.267 4.18c-2.321 0-4.137-.718-5.447-2.195-1.14-1.226-1.688-3.293-1.688-6.123V.616zM101.508 46.384l7.811-14.651-9.035-16.381h5.404l6.122 11.569 5.742-11.569h5.235l-16.002 31.032h-5.277z"/></g></svg>                            </a>
-                        </div>
-                    </div>
-                    <div class="ft-right col-xs-12 col-sm-8 col-sm-offset col-md-8 col-md-offset col-lg-8 col-lg-offset">
-                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"><div class=" seese-widget footer-1-widget widget_nav_menu"><ul id="menu-footer-menu" class="main-navigation"><li id="menu-item-3969" class="wisely-ext-lightbox menu-item menu-item-type-custom menu-item-object-custom menu-item-3969 seese-dropdown-menu"><a  href="#privacy">개인정보처리방침</a></li>
-<li id="menu-item-3971" class="wisely-ext-lightbox menu-item menu-item-type-custom menu-item-object-custom menu-item-3971 seese-dropdown-menu"><a  href="#terms">이용약관</a></li>
-<li id="menu-item-3972" class="wisely-ext-lightbox menu-item menu-item-type-custom menu-item-object-custom menu-item-3972 seese-dropdown-menu"><a  href="#guide">이용안내</a></li>
-</ul><div class="clear"></div></div> <!-- end widget --><div class=" seese-widget footer-1-widget widget_text">			<div class="textwidget"><p><b>와이즐리(주)</b> 경기도 성남시 분당구 판교로289번길 20, 판교테크노밸리 스타트업 캠퍼스 2동 8층 (삼평동)<br />
-<b>대표자:</b> 김동욱 <b>사업자등록번호:</b> 344-88-00965 <a class="underline wisely-ext-lightbox" href="#company-info" rel="noopener">사업자정보확인</a><br />
-<b>통신판매업신고번호:</b> 제 2018-성남분당-0624 <b>개인정보보호책임자:</b> 김윤호 <a class="link-email" href="mailto:yhkim@wiselyshave.com" target="_blank" rel="noopener">yhkim@wiselyshave.com</a><br />
-<b>전화번호:</b> <a class="link-email" href="tel:1833-9133">1833-9133</a> <b>E-mail:</b> <a class="link-email" href="mailto:help@wiselyshave.com" target="_blank" rel="noopener">help@wiselyshave.com</a></p>
-<div>고객님은 안전거래를 위해 현금 등으로 결제 시 저희 쇼핑몰에서 가입한 나이스페이먼츠(주)의 구매안전서비스를 이용하실 수 있습니다. <a class="underline wisely-ext-lightbox" href="#nicepay" rel="noopener">서비스 가입사실 확인</a></div>
-</div>
-		<div class="clear"></div></div> <!-- end widget --></div>                        <div class="seese-copyright col-xs-12">
-                          <div class="">
-                                    Copyright &copy;2019 WISELY. All rights reserved.                          </div>
-                        </div>
-                    </div>
-                </div>
+    <div id="footer" class="g_footer _footer">
+    <!-- 법적고지 -->
+    <div style="text-align:center;">
+    <%if(s_id==null || s_id.equals("") || s_id.equals("null")){%> <a href="login.jsp">로그인</a>
+    <%}else{%><a href="_logout.jsp">로그아웃</a><%}%>
+    <a href="signup.jsp">회원가입</a>
+    </div>
+    <!-- //법적고지 -->
+    <div class="g_info_footer">
+        <div class="g_center_area">
+            <a id="toggleme" class="g_fd_info _business_info _click(shopn.mobile.footer.businessInfoToggle()) _stopDefault N=a:fot.info">밀리무드 사업자정보</a>
+            <!-- 사업자 기본정보 -->
+            <div class="g_info_area _business_info_area">
+                <dl>
+                    <dt>대표</dt>
+                    <dd>길영민</dd>
+                    <dt>주소</dt>
+                    <dd>대구광역시 북구 대현동 <span class="g_en">199-8</span>번지</dd>
+                    <dt>전화</dt>
+                    <dd><a class="g_en" href="tel:010-4848-7660">010-4848-7660</a> (대표전화/고객센터)</dd>
+                    <dt>문의</dt>
+                    <dd><a class="g_en" href="mail:zenith9500@naver.com" target="_blank">zenith9500@naver.com</a></dd>
+                    <dt class="g_w2">사업자등록번호</dt>
+                    <dd><span class="g_en">476-30-00276</span></dd>
+                    <dt class="g_w2">통신판매업신고번호</dt>
+                    <dd>제<span class="g_en">2017-</span>대구북구<span class="g_en">-0141</span>호</dd>
+                    <dt class="g_w2">호스팅 서비스 제공</dt>
+                    <dd>카페24</dd>
+                </dl>
+            </div>
+            <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+            <script>
+            	$(document).ready( function() {
+            		$('#toggleme').click( function(){
+            		if($('#toggleme').hasClass('g_fd_info _business_info _click(shopn.mobile.footer.businessInfoToggle()) _stopDefault N=a:fot.info on'))
+            			$('#toggleme').removeClass('g_fd_info _business_info _click(shopn.mobile.footer.businessInfoToggle()) _stopDefault N=a:fot.info on').addClass('g_fd_info _business_info _click(shopn.mobile.footer.businessInfoToggle()) _stopDefault N=a:fot.info');
+            		else
+            			$('#toggleme').removeClass('g_fd_info _business_info _click(shopn.mobile.footer.businessInfoToggle()) _stopDefault N=a:fot.info').addClass('g_fd_info _business_info _click(shopn.mobile.footer.businessInfoToggle()) _stopDefault N=a:fot.info on');
+            		
+            		});
+            	})
+            </script>
+            <!-- //사업자 기본정보 -->
+            <div class="g_link_area">
+                <a href="https://www.ftc.go.kr/www/bizCommList.do?key=232" class="N=a:fot.sellerinfo" target="_blank"><span class="g_txt">사업자정보 확인</span></a>
             </div>
         </div>
-        
-	</div>
+        <!-- 안드로이드용 바로가기 -->
+        <iframe id="uriFrame" src="" height="0" width="0" style="border:0px"></iframe>
+		<div class="u_sca N=a:fot.shortcut">
+			<a href="javascript:;;" class="N=a:fot.shortcut g_btn _click(shopn.mobile.shortcut.addShortCut(intent://addshortcut?version=9&amp;url=https%3A%2F%2Fm.smartstore.naver.com%2Finflow%2Foutlink%2Fs%2Fmilymood%3Ftr%3Ddv%26gtme%3D1&amp;icon=https%3A%2F%2Fshop-phinf.pstatic.net%2F20180731_50%2Fgym9510_1533025977890qYSce_PNG%2F15744836740851773_269127316.png%3Ftype%3Dround_160&amp;title=%EB%B0%80%EB%A6%AC%EB%AC%B4%EB%93%9C&amp;serviceCode=shopN#Intent;scheme=naversearchapp;action=android.intent.action.VIEW;category=android.intent.category.BROWSABLE;package=com.nhn.android.search;end,5.0)) u_sc  _stopDefault">
+				<span class="u_ics"><img src="https://shop-phinf.pstatic.net/20180731_50/gym9510_1533025977890qYSce_PNG/15744836740851773_269127316.png?type=round_160" alt=""></span>
+				<em>네이버앱의</em><strong>밀리무드</strong> <span>홈화면에 바로가기 추가</span> <span class="u_ica"></span>
+			</a>
+		</div>
+    </div>
 </div>
-<!-- Footer Widgets End -->    </footer>
-    <!-- Footer End-->
+      <!-- Footer End-->
   
 </div><!-- Seese Wrap End -->
 
@@ -651,10 +445,10 @@ var wc_cart_fragments_params = {"ajax_url":"\/wp-admin\/admin-ajax.php","wc_ajax
 </script>
 <script type='text/javascript' src='https://www.wiselyshave.com/wp-content/plugins/woocommerce/assets/js/frontend/cart-fragments.min.js?ver=3.2.2'></script>
 <script type='text/javascript' src='https://www.wiselyshave.com/wp-content/themes/wisely/assets/js/bootstrap.min.js?ver=3.3.6'></script>
-<script type='text/javascript' src='https://www.wiselyshave.com/wp-content/themes/wisely/assets/js/plugins.js?ver=1.1.0.02'></script>
-<script type='text/javascript' src='https://www.wiselyshave.com/wp-content/themes/wisely/assets/js/scripts.js?ver=1.1.0.02'></script>
+<script type='text/javascript' src='https://www.wiselyshave.com/wp-content/themes/wisely/assets/js/plugins.js?ver=1.1.0.03'></script>
+<script type='text/javascript' src='https://www.wiselyshave.com/wp-content/themes/wisely/assets/js/scripts.js?ver=1.1.0.03'></script>
 <script type='text/javascript' src='https://www.wiselyshave.com/wp-content/themes/wisely/assets/glidejs/dist/glide.min.js?ver=1.0'></script>
-<script type='text/javascript' src='https://www.wiselyshave.com/wp-content/themes/wisely/assets/simple-calendar/jquery.simple-calendar.js?ver=1567531901'></script>
+<script type='text/javascript' src='https://www.wiselyshave.com/wp-content/themes/wisely/assets/simple-calendar/jquery.simple-calendar.js?ver=1568989718'></script>
 <script type='text/javascript' src='https://www.wiselyshave.com/wp-content/themes/wisely/assets/raty/jquery.raty.js?ver=1.0'></script>
 <script type='text/javascript' src='https://www.wiselyshave.com/wp-content/themes/wisely/assets/js/jquery.validate.min.js?ver=1.9.0'></script>
 <script type='text/javascript'>

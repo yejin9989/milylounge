@@ -1,0 +1,1018 @@
+@charset "utf-8";
+
+/*컨텐츠*/
+/*기본*/
+.border {border:1px solid #ddd;}
+
+.sub_container p.title {font-size:20px; border-left:3px solid #357ed7; padding:0 0 0 6px; margin:0 0 16px 0; color:#333;}
+
+.sub_container h3{ font-size:22px;  padding:10px 0; letter-spacing:-1px; line-height:normal ; color:#333 }
+.sub_container h4{ font-size:20px ; padding:10px 0;  letter-spacing:-1px;  color:#333 }
+.sub_container h5{ font-size:18px ; padding:10px 0;  letter-spacing:-1px; color:#333 }
+
+.sub_container .text_lar1{ font-size:28px; letter-spacing:-1px; line-height:normal ; line-height:1.3em;} /*포인트 큰 글자*/
+.sub_container .text_lar2{ font-size:25px; letter-spacing:-1px; line-height:normal; line-height:1.3em;} /*포인트 큰 글자*/
+.sub_container .text_lar3{ font-size:20px; letter-spacing:-1px;/* line-height:normal*/ color:#333} /*포인트 큰 글자*/
+.sub_container .text_lar4{ font-size:18px; letter-spacing:-1px;/* line-height:normal*/ color:#333} /*포인트 큰 글자*/
+
+.basic_tab{ display:block; text-align:center;  width:100%;overflow:hidden; margin:0 0 2em 0;/*float:left;*/}/*탭: 공통*/
+.basic_tab:after { clear:both; display:block; content:"";}
+.basic_tab ul {border-bottom:1px solid #ddd;}
+.basic_tab ul:after {clear:both; display:block; content:"";}
+.basic_tab ul li {width:16.666%; float:left;}
+.basic_tab.tab5 ul li {width:20%;}
+.basic_tab.tab4 ul li {width:25%;}
+.basic_tab.tab3 ul li {width:33.333%;}
+.basic_tab.tab2 ul li {width:50%;}
+.basic_tab ul li:first-child{margin-left:0%; background:none}
+.basic_tab ul li a {display:block; color:#555; background:#fff; cursor:pointer; text-align:center;  line-height:42px; border-left:1px solid #ddd; border-top:1px solid #ddd; overflow:hidden ; text-overflow:ellipsis; word-wrap:break-word; white-space:nowrap;  font-size:15px; text-align:center; }
+.basic_tab ul li a.basic_tab6 {border-right:1px solid #ddd; }
+.basic_tab ul li:last-child a {border-right:1px solid #ddd; }
+.basic_tab ul li a:hover {background:#f7f7f7;}
+.basic_tab ul li.on a {font-weight:500; color:#fff; background:#333; border-left:1px solid #333; border-right:1px solid #333; border-top:1px solid #333; }
+.basic_tab_con {}
+
+.basic_table_area {overflow-x: auto; width:100% }/*표*/
+.basic_table_area .guide {color:#939393; font-size:13px;}
+.basic_table_area .guide.right {text-align:right;}
+.basic_table_area .guide.left {text-align:left;}
+.basic_tb{table-layout:fixed; width:100%;  word-break:break-all; vertical-align:middle;}
+.basic_tb tr th { padding:10px 20px; border-bottom:1px solid #ddd ; border-right:0px solid #fff ; line-height:1.2em;  text-align:center}
+.basic_tb tr td  { padding:10px 20px; border-bottom:1px solid #e9e9e9 ; border-right:2px solid #fff ; line-height:1.2em;  text-align:center;vertical-align:middle;}
+.basic_tb tr th {background:#fcfcfc; border-top:1px solid #555; vertical-align:middle; font-size:13px;}
+.basic_tb tr th:last-child {border-right:0px;}
+.basic_tb tr td:last-child {border-right:0px;}
+.basic_tb .left { text-align: left }
+.basic_tb .right { text-align: right }
+.basic_tb td img{ max-width:100%}
+.basic_tb tr td p {line-height:1.5em;}
+
+.con_box .con_tit {color:#1bacf6; font-size:20px; font-weight:600; margin:0 0 15px 0;}
+.con_box .con_tit span {border-bottom:1px solid #1bacf6; }
+.con_box .con_boxing:after {clear:both; display:block; content:"";}
+.con_box .con_boxing .con_list {float:left; width:60%;}
+.con_box .con_boxing .con_list.w100 {float:left; width:100%;}
+.con_box .con_boxing .con_list_box {float:left; width:60%;}
+.con_box .con_boxing .con_list_box.w100 {float:left; width:100%;}
+.con_box .con_boxing .con_list li dl {border-bottom:1px solid #e9e9e9;}
+.con_box .con_boxing .con_list li dl:after {clear:both; display:block; content:"";}
+.con_box .con_boxing .con_list li dl p {line-height:52px; vertical-align:middle;}
+.con_box .con_boxing .con_list li dl dt {float:left; width:22%;}
+.con_box .con_boxing .con_list li dl dd {float:left; width:78%;}
+.con_box .con_boxing .con_list.w100 li dl dt {width:18%;}
+.con_box .con_boxing .con_list.w100 li dl dd {width:82%;}
+.con_box .con_boxing .con_img {float:right; width:40%;}
+.con_box .con_boxing .con_img img {width:100%;}
+.con_box .con_boxing .map_img iframe {width:100%; height:497px; }
+
+@media screen and (max-width:1000px){
+.sub_container p.title {font-size:18px;margin:0 0 12px 0; }
+
+.sub_container h3{ font-size:20px; padding:5px 0 }
+.sub_container h4{ font-size:18px; padding:5px 0}
+.sub_container h5{ font-size:16px; padding:5px 0 }
+
+.sub_container .text_lar1{ font-size:19px;}
+.sub_container .text_lar2{ font-size:17px;}
+.sub_container .text_lar3{ font-size:16px;}
+.sub_container .text_lar4{ font-size:16px;}
+}
+@media screen and (max-width:640px){
+.sub_container h3{ font-size:18px;  }
+.sub_container h4{ font-size:16px}
+.sub_container h5{ font-size:15px ; }
+
+.sub_container .text_lar1{ font-size:17px;}
+.sub_container .text_lar2{ font-size:16px}
+.sub_container .text_lar3{ font-size:15px}
+.sub_container .text_lar4{ font-size:15px}
+
+.basic_tab {margin:0 0 1em 0; }
+.basic_tab ul li a{ font-size:14px;}
+.basic_tab ul li a span{ display:none}
+
+.basic_tb tr th,.basic_tb tr td  { padding:5px 8px; }
+}
+@media screen and (max-width:600px){
+.basic_tab ul {border-bottom:0px solid #333; margin:0 0 0 -5px;}
+.basic_tab ul li {width:33.333%; }
+.basic_tab.tab5 ul li {width:33.333%;}
+.basic_tab.tab4 ul li {width:;}
+.basic_tab.tab3 ul li {width:33.333%;}
+.basic_tab ul li a {margin:0 0 5px 5px; border-bottom:1px solid #ddd; border-right:1px solid #ddd; }
+.basic_tab ul li.on a {border-bottom:1px solid #333;}
+}
+
+@media screen and (max-width:420px){
+.basic_tb {font-size:14px;}
+.basic_tb tr th br {display:none;}
+}
+@media screen and (max-width:380px){
+.basic_tab ul {margin:0 0 0 -3px;}
+.basic_tab ul li a {margin:0 0 3px 3px;}
+}
+
+
+
+.line_tab {text-align:center;}
+.line_tab ul {font-size:0;}
+.line_tab ul li {display:inline-block;letter-spacing:0;}
+.line_tab ul li a {display:block; padding:0 24px; line-height:36px; border-bottom:1px solid #ddd; font-size:15px; cursor:pointer;}
+.line_tab ul li.on a {border-bottom:3px solid #555; line-height:32px; }
+
+@media screen and (max-width:1000px){
+.line_tab ul {margin:0 0 0 -5px;}
+.line_tab ul:after {clear:both; display:block; content:"";}
+.line_tab ul li {float:left; width:20%;}
+.line_tab ul li a {padding:0 0; line-height:36px; border:1px solid #ddd; margin:0 0 5px 5px;}
+.line_tab ul li.on a {border:1px solid #555; background:#555; color:#fff; line-height:36px;}
+}
+@media screen and (max-width:640px){
+.line_tab ul li {width:33.333%;}
+.line_tab ul li a {font-size:14px;}
+}
+@media screen and (max-width:400px){
+.line_tab ul li {width:50%;}
+.line_tab ul li a {line-height:32px;}
+.line_tab ul li.on a {line-height:32px;}
+}
+
+
+
+.more_button a {display:inline-block; line-height:48px; vertical-align:middle; padding:0 50px; border-radius:25px; letter-spacing:0px;}
+.more_button.normal a {border:1px solid #ddd; }
+.more_button.normal a:hover {border:1px solid #222; background:#222; color:#fff;}
+.more_button.black a {border:1px solid #222; background:#222; color:#fff;}
+.more_button.black a:hover {border:1px solid #11c266; background:#11c266; color:#fff;}
+.more_button.white a {border:1px solid #fff; background:none; color:#fff;}
+.more_button.white a:hover {border:1px solid #222; background:#222; color:#fff;}
+.more_button.line a {border:1px solid #222; background:none; color:#222;}
+.more_button.line a:hover {border:1px solid #222; background:#222; color:#fff;}
+
+@media screen and (max-width:1280px) {
+.more_button a {line-height:36px; padding:0 28px; border-radius:18px; font-size:14px;}
+}
+
+@media screen and (max-width:640px) {
+.more_button a {line-height:32px; padding:0 24px; border-radius:16px; }
+}
+
+
+
+
+
+
+
+/* 이용안내 */
+
+/* 자주묻는질문 / 시공전체크사항 - 아코디언 탭 */
+.basic_search_box2{width:50%; text-align:center; margin:4px auto 0 auto}
+.basic_search_box2 img{ padding:5px}
+.basic_search_box2 input[type=text]{ width:50%; border:0; height:36px; line-height:36px; padding:0 5px; margin:0 ; background:none; border-bottom: 1px solid #ccc;}
+.basic_search_box2 .search_gobtn{ background:#666; color:#fff; width:50px; text-align:center; display:inline-block; border:0; height:36px; line-height:36px; border-radius:3px}
+
+.basic_tab2{ display:block; text-align:center;  font-size:0;}/*탭: 공통: 네모박스 라인 붙은 디자인*/
+.basic_tab2 ul{ margin:0 0 0 0; padding:0; font-size:0;line-height:0 }
+.basic_tab2 ul:after{ clear:both; display:block; content:"";}
+.basic_tab2 ul li {width:20%; float:left;}
+.basic_tab2 ul li a {display:block; color:#333;background:#fff; cursor:pointer; text-align:center;  line-height:45px; border:1px solid #e9e9e9; overflow:hidden ; text-overflow:ellipsis; word-wrap:break-word; white-space:nowrap;  font-size:15px; margin:0 0 0 0;}
+.basic_tab2 ul li.on a {color:#fff; background:#1bacf6 ;  border:1px solid #1bacf6 !important; z-index:1}
+.basic_tab2 ul li a span.num {opacity:0.6; font-size:14px;}
+.basic_tab2_con {clear:both;}
+.basic_tab2{ text-align:left;}
+
+.disease_tab{ position:relative; border-top:1px solid #333333}
+.disease_tab .hgroup{position: absolute; right:0; width:100px;}
+.disease_tab .hgroup .trigger{overflow:visible;position:absolute;top:50%;right:0;margin:-7px 0 0 0;padding:0;border:0;cursor:pointer; color:#666; font-size:11px; }
+.disease_tab > ul{border-top:1px solid #ddd; }
+.disease_tab .q{margin:0;border-bottom:1px solid #ddd;}
+.disease_tab .q a strong{ }
+.disease_tab ul li .q span{position:absolute; left:4%; color:#999; display:inline-block; text-decoration:none !important; border-bottom:0px; font-weight:600; margin:0 8px 0 0;}
+.disease_tab ul li.show .q span{ color:#222;}
+.disease_tab ul li .q a{display:block;padding:2% 6%;color:#333;text-align:left;text-decoration:none !important;background:url("../img/common/tab_more.gif") no-repeat 98%  50%; font-size:1.2em;  }
+.disease_tab ul li .q.c a{padding:2% 6% 2% 106px;}
+.disease_tab ul li.show .q a{background:url("../img/common/tab_close.gif") no-repeat 98%  50%;}
+.disease_tab .a{display: none; margin:0;border-bottom:1px solid #ddd;line-height:1.5; background:#f7f7f7;}
+.disease_box {padding:2% 6%; color:#666}
+.disease_box:after{ clear:both; display:block; content:"";}
+.disease_box p { line-height: 1.4em;  text-align: left; font-size:1em; /*height: 2.8em; overflow: hidden; white-space: normal; word-wrap: break-word; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; text-overflow: ellipsis;*/ }
+.disease_box .click_icon {display:none; width:5%; float:left; text-align:right; margin:10px 0 0 0;}
+
+
+@media screen and (max-width:860px){
+.disease_tab ul li .q a{display:block;padding:4% 6%; }
+.disease_tab ul li .q.c a{padding:4% 6% 4% 80px; }
+.disease_tab ul li .q a{background:url("../img/common/tab_more.gif") no-repeat 98%  50%; background-size:20px; font-size:1.1em;}
+.disease_tab ul li.show .q a{background:url("../img/common/tab_close.gif") no-repeat 98%  50%; background-size:20px}
+.disease_box {padding:4% 6%;}
+}
+@media screen and (max-width:640px){
+.basic_search_box2{width:90%;}
+.basic_search_box2 input{ width:60%; }
+
+.disease_tab ul li .q a {padding:4% 8%; }
+.disease_tab ul li .q.c a{padding:4% 8% 4% 60px; }
+.disease_box {padding:4% 8%;}
+
+.basic_tab2 ul{ margin:0 0 0 -5px;}
+.basic_tab2 ul li {width:33.333%;}
+.basic_tab2 ul li a {font-size:14px; margin:0 0 5px 5px;}
+.disease_tab ul li .q a{font-size:1.0em;}
+}
+@media screen and (max-width:400px){
+.basic_tab2 ul li a {font-size:13px; }
+.disease_box p br {display:none;}
+}
+
+
+
+
+/* 변경/환불안내 */
+.refund {position:relative;}
+.refund ul {position:relative; border-top:1px solid #e9e9e9;}
+.refund ul li {position:relative; border-bottom:1px solid #e9e9e9;}
+.refund ul li dl {padding:40px 0;}
+.refund ul li dl:after {clear:both; display:block; content:"";}
+.refund ul li dl dt {width:30%; float:left;}
+.refund ul li dl dd {width:70%; float:left;}
+.refund ul li dl p {margin:0 20px; line-height:normal;}
+.refund ul li dl dt p {font-size:18px; font-weight:500; color:#333;}
+.refund ul li dl dd p {padding:0 0 4px 10px; background:url("../img/common/bullet_grey.png")left 9px no-repeat;}
+.refund ul li.refund02 dl dd p {padding:0 0 24px 10px;}
+.refund ul li dl dd p.bullet_black {background:url("../img/common/bullet_black.png")left 9px no-repeat;}
+.refund ul li dl dd p:last-child {padding:0 0 0 10px;}
+
+@media screen and (max-width:640px){
+.refund ul li dl {padding:24px 0;}
+.refund ul li dl dt {width:100%; margin:0 0 12px 0;}
+.refund ul li dl dd {width:100%;}
+.refund ul li dl p {margin:0 12px;}
+.refund ul li dl dt p {font-size:16.5px; font-weight:600;}
+.refund ul li dl dd p {padding:0 0 3px 10px;}
+.refund ul li.refund02 dl dd p {padding:0 0 12px 10px;}
+}
+
+
+
+/* 개인정보취급방침 */
+.privacy {position:relative;}
+.privacy .privacy_con {position:relative; margin:0 10%;}
+.privacy .privacy_con ul li.privacy_intro {padding:0 0 30px 0; border-bottom:1px solid #e9e9e9;}
+.privacy .privacy_con ul li.privacy_intro p {margin:0 0 12px 0;}
+.privacy .privacy_con ul li.privacy_intro p:last-child {margin:0 0 0 0;}
+.privacy .privacy_con ul li.privacy_intro p span {font-weight:600; color:#333;}
+.privacy .privacy_con ul li dl {position:relative; padding:30px 0; border-bottom:1px solid #e9e9e9;}
+.privacy .privacy_con ul li dl dt {font-size:24px; font-weight:600; color:#333; line-height:30px; margin:0 0 18px 0;}
+.privacy .privacy_con ul li dl dd {position:relative;}
+.privacy .privacy_con ul li dl dd .prp {position:relative; margin:0 0 12px 24px; padding:0 0 0 24px;}
+.privacy .privacy_con ul li dl dd .prp:last-child {margin:0 0 0 24px;}
+.privacy .privacy_con ul li dl dd .prp.sol {padding:0 0 0 0;}
+.privacy .privacy_con ul li dl dd .prp span {position:absolute;left:0; top:0; }
+.privacy .privacy_con ul li dl dd .prp dl.depth {padding:0 0; border-bottom:0px; margin:6px 0 0 0;}
+.privacy .privacy_con ul li dl dd .prp dl.depth dt {font-size:15px; font-weight:400;color:#555; line-height:1.6em; margin:0 0 0 0;}
+.privacy .privacy_con ul li dl dd .prp dl.depth dd {margin:0 0 4px 12px;}
+.privacy .privacy_con ul li dl dd .prp dl.depth dd:last-child {margin:0 0 0 12px;}
+.privacy .privacy_con ul li dl dd .prp dl.depth dd span.depthp {position:relative; display:block; margin:0 0 0 12px;}
+
+@media screen and (max-width:1000px){
+.privacy .privacy_con {margin:0 0;}
+.privacy .privacy_con ul li dl dt {font-size:18px; line-height:24px; margin:0 0 12px 0;}
+.privacy .privacy_con ul li dl dd .prp dl.depth dd {margin:0 0 4px 8px;}
+}
+@media screen and (max-width:640px){
+.privacy .privacy_con ul li dl dt {font-size:17px; line-height:22px;}
+}
+
+
+
+
+
+
+
+/* 회사소개 */
+.about_pc {display:block; margin:42px 0 0 0;}
+.about_mobile {display:none;}
+
+.intro {position:relative; background:url("../img/contents/about_intro_bg.jpg")center center no-repeat; display:;}
+.intro .img {position:relative; z-index:18;}
+.intro .text {position:absolute; z-index:20; text-align:center; margin:0 auto; width:100%; top:50%; transform:translate(0, -50%);}
+.intro .text p {margin:42px 0 0 0; color:rgba(255,255,255,.85); font-size:18px; line-height:1.4em; font-weight:200;}
+.intro .text p span {display:inline-block; margin:0 0 10px 0; font-weight:600; color:#fff; font-size:24px;}
+
+.ab_section {padding:180px 0;}
+.ab_section.left {text-align:left;}
+.ab_section.right {text-align:right;}
+.ab_section span.sp_num {display:inline-block; font-size:13px; font-weight:800; letter-spacing:3px; color:#11c266; border-bottom:1px solid #11c266;}
+.ab_section p {line-height:normal;}
+.ab_section p.about_tit {margin:42px 0 0 0; font-size:36px; color:#222; font-weight:600;}
+.ab_section p.about_sub {margin:6px 0 0 0; font-size:17px;}
+.ab_section p.about_sub .p_sub {display:block; font-size:22px; color:#222; font-weight:300;}
+.ab_section p.about_sub .p_sub span {font-weight:600;}
+
+.about01 {background:url("../img/contents/about01_1.jpg")center center no-repeat;}
+.about02 {background:url("../img/contents/about02.jpg")center center no-repeat;}
+.about03 {background:url("../img/contents/about03.jpg")center center no-repeat; background-attachment:fixed;}
+.about04 {background:url("../img/contents/about04.jpg")center center no-repeat;}
+.about05 {background:url("../img/contents/about05.jpg")center center no-repeat;}
+
+.about03.ab_section p.about_tit {color:#fff;}
+.about03.ab_section p.about_sub {color:#fff;}
+
+.about05.ab_section span.sp_num {color:#fff; border-bottom:1px solid #fff;}
+.about05.ab_section p.about_tit {color:#fff;}
+.about05.ab_section p.about_sub {color:#fff;}
+
+
+@media screen and (max-width:1280px){
+.intro {margin:42px 0 0 0;}
+}
+@media screen and (max-width:1000px){
+.about_pc {display:none;}
+.about_mobile {display:block;}
+
+.intro {padding:60px 0; background:#fff; text-align:center;}
+.intro .icons {margin:0 0 24px 0;}
+.intro .icons span {margin:0 4px;}
+.intro .text {position:relative; top:0; transform:translate(0, 0);}
+.intro .text p {margin:0 0 0 0; color:#444; font-weight:400;}
+.intro .text p span {margin:0 0 6px 0; font-size:20px; color:#222;}
+
+.ab_section {padding:60px 0;}
+.ab_section span.sp_num {font-size:13px; letter-spacing:2px;}
+.ab_section p.about_tit {margin:24px 0 0 0; font-size:26px;}
+.ab_section p.about_tit img {width:164px;}
+.ab_section p.about_sub {margin:6px 0 0 0; font-size:15px;}
+.ab_section p.about_sub .p_sub {font-size:18px;}
+}
+@media screen and (max-width:640px){
+.ab_section span.sp_num {font-size:12px;}
+.ab_section p.about_tit {font-size:20px;}
+.ab_section p.about_tit img {width:132px;}
+.ab_section p.about_sub br {display:none;}
+.ab_section p.about_sub .p_sub {font-size:16px; font-weight:500; color:#065961;}
+.ab_section p.about_sub .p_sub span {font-weight:500;}
+
+.about01 {background-size:cover;}
+.about02 {background-size:cover;}
+.about03 {background-size:cover;}
+.about04 {background-size:cover;}
+.about05 {background-size:cover;}
+}
+@media screen and (max-width:520px){
+.intro .icons {margin:0 0 16px 0;}
+.intro .icons span {margin:0 2px;}
+.intro .icons span img {width:52px;}
+.ab_section p.about_tit img {width:120px;}
+}
+
+
+
+/* 5D 서비스 소개 */
+.service_view {position:relative;}
+.service_view .service_t_icons {margin:0 0 12px 0;}
+.service_view .service_t_icons span {font-size:0px;}
+.service_view .service_t_icons span img {width:80px;}
+.service_view .service_t_lar {font-size:40px; color:#222; text-align:center; line-height:50px;}
+.service_view .service_t_lar span {font-weight:600;}
+.service_view .service_t_lar br.m {display:none;}
+
+.service_view .service_grid li {margin:0 0 30px 0;}
+.service_view .service_grid li dl:after {clear:both; display:block; content:"";}
+.service_view .service_grid li dl dt {width:40%; float:left;}
+.service_view .service_grid li dl dt p img {width:100%;}
+.service_view .service_grid li dl dd {width:60%; float:left;}
+.service_view .service_grid li dl dd .service_gin {margin:20px 0 0 50px;}
+.service_view .service_grid li dl dd .service_gtit {font-size:48px; font-weight:200; color:#888; line-height:normal;}
+.service_view .service_grid li dl dd .service_gtit span {font-weight:600; font-size:24px; color:#222;}
+.service_view .service_grid li dl dd .service_gsub {font-size:16px; color:#333; margin:4px 0 20px 0;}
+.service_view .service_grid li dl dd .service_glist {} 
+.service_view .service_grid li dl dd .service_glist p {background:url("../img/common/bullet_grey.png")left 8px no-repeat; padding:0 0 0 12px;}
+
+@media screen and (max-width:1280px){
+.service_view {margin:42px 0 0 0; padding:20px 0 40px 0;}
+}
+@media screen and (max-width:1000px){
+.service_view .service_t_lar {font-size:32px; line-height:42px;}
+.service_view .service_grid li dl dd .service_gin {margin:8px 0 0 40px;}
+.service_view .service_grid li dl dd .service_gtit {font-size:36px;}
+.service_view .service_grid li dl dd .service_gtit span {font-size:20px;}
+.service_view .service_grid li dl dd .service_gsub {font-size:15px; margin:4px 0 12px 0;}
+.service_view .service_grid li dl dd .service_glist p {color:#777;}
+}
+@media screen and (max-width:720px){
+.service_view .service_t_icons {margin:0 0 8px 0;}
+.service_view .service_t_icons span img {width:68px;}
+.service_view .service_t_lar {font-size:28px; line-height:38px;}
+.service_view .service_grid li dl dd .service_gin {margin:0 0 0 20px;}
+.service_view .service_grid li dl dd .service_gtit {font-size:30px;}
+.service_view .service_grid li dl dd .service_gtit span {font-size:18px;}
+.service_view .service_grid li dl dd .service_glist p {font-size:14px;}
+}
+@media screen and (max-width:640px){
+.service_view .service_t_icons span img {width:56px;}
+.service_view .service_t_lar {font-size:20px; line-height:28px;}
+.service_view .service_t_lar br.m {display:block;}
+.service_view .service_grid li dl dt {width:100%;}
+.service_view .service_grid li dl dd {width:100%;}
+.service_view .service_grid li dl dd .service_gin {margin:10px 0 0 0;}
+.service_view .service_grid li dl dd .service_gsub {margin:2px 0 8px 0;}
+.service_view .service_grid li dl dd .service_gsub br {display:none;}
+}
+
+
+
+
+/* 시공자 모집 */
+.partner {position:relative; padding:0 0 0 0;}
+.partner_about {position:relative; margin:42px 0 0 0;}
+.partner_about .pa {position:relative; padding:180px 0;}
+.partner_about .pa .pa_tit {color:#222; font-weight:600; font-size:36px; line-height:normal; margin:0 0 24px 0;}
+.partner_about .pa .pa_sub {margin:0 0 8px 0; font-size:17px;}
+.partner_about .pa .pa_sub:last-child {margin:0 0 0 0;}
+.partner_about .pa .pa_point {font-size:14px; font-weight:800; letter-spacing:4px; margin:0 0 10px 0; color:#11c266;}
+
+.partner_about .pa_img {position:absolute; top:50%; right:0; transform:translate(0, -50%);}
+
+.partner_about .p_s01 {background:url("../img/contents/partner01.jpg") center center no-repeat;}
+.partner_about .p_s02 {background:url("../img/contents/partner02.jpg") center center no-repeat; background-attachment:fixed; color:#fff;}
+.partner_about .p_s02 .pa_tit {color:#fff;}
+.partner_about .p_s02 .pa_point {color:#fff;}
+.partner_about .p_s03 {background:url("../img/contents/partner03.jpg") center center no-repeat;}
+.partner_about .p_s04 {background:#21db7a;}
+.partner_about .p_s04 .pa_point {color:#fff;}
+.partner_about .p_s04 .pa_sub span {display:block; font-size:20px; font-weight:600; margin:12px 0 0 0;}
+
+.partner_about .pa_button {margin:24px 0 0 0;}
+.partner_about .pa_button a {display:inline-block; line-height:48px; vertical-align:middle; padding:0 50px; border-radius:25px; letter-spacing:0px; border:1px solid #222; background:#222; color:#fff; cursor:pointer;}
+.partner_about .pa_button a:hover {border:1px solid #11c266; background:#11c266; color:#fff;}
+
+
+@media screen and (max-width:1280px) {
+.partner {margin:42px 0 0 0;}
+.partner_about .pa {padding:100px 0;}
+.partner_about .pa .pa_tit {font-size:26px;}
+.partner_about .pa_button a {line-height:36px; padding:0 28px; border-radius:18px; font-size:14px;}
+.partner_about .pa_img {position:relative;top:0; left:0; transform:translate(0, 0); display:block; text-align:left; margin:0 0 24px 0;}
+
+.partner_about .p_s03 {background:url("../img/contents/partner03_1.jpg") center center no-repeat; background-size:cover;}
+}
+
+@media screen and (max-width:640px) {
+.partner_about .pa {padding:60px 0; background-size:cover !important;}
+.partner_about .pa .pa_tit {font-size:20px; margin:0 0 12px 0;}
+.partner_about .pa .pa_sub {font-size:15px;}
+.partner_about .pa .pa_sub br {display:none;}
+.partner_about .pa .pa_point {font-size:12px; letter-spacing:2px; margin:0 0 6px 0; }
+.partner_about .pa_button {margin:12px 0 0 0;}
+.partner_about .pa_button a {line-height:32px; padding:0 24px; border-radius:16px; }
+.partner_about .p_s04 .pa_sub span {font-size:17px; margin:10px 0 0 0;}
+}
+
+
+
+
+
+
+
+
+
+
+
+/* 오프라인쇼룸 */
+.reservation {position:relative; padding:0 0 0 0; margin:42px 0 0 0;}
+.reservation_intro {background:#222; padding:80px 0;}
+.reservation_intro .contents_title {color:#fff !important;}
+.reservation_intro .contents_title span {border-bottom:1px solid #fff !important;}
+.reservation_intro .reservation_form {background:#f3f3f3; box-shadow:rgba(0, 0, 0, 0.8) 0px 1px 4px -1px;}
+.reservation_intro .reservation_form:after {clear:both; display:block; content:"";}
+
+
+
+
+
+
+/* 쇼룸상담예약 */
+.reservation_intro .reservation_form .calendar {float:left; width:70%; background:#fff;}
+.reservation_intro .reservation_form .calendar .calendar_inner {position:relative; padding:52px;}
+.reservation_intro .reservation_form .calendar .c_arrow a {position:absolute;}
+.reservation_intro .reservation_form .calendar .c_arrow a img {width:40px;}
+.reservation_intro .reservation_form .calendar .c_arrow a.c_prv {left:18%;}
+.reservation_intro .reservation_form .calendar .c_arrow a.c_nxt {right:18%;}
+
+.reservation_intro .reservation_form .calendar .c_tit {text-align:center;}
+.reservation_intro .reservation_form .calendar .c_tit span {display:block; color:#222; }
+.reservation_intro .reservation_form .calendar .c_tit .year {font-size:22px; font-weight:200; }
+.reservation_intro .reservation_form .calendar .c_tit .month {font-size:58px; line-height:60px; font-weight:800;}
+.reservation_intro .reservation_form .calendar .c_sub {text-align:center; color:#888; margin:12px 0 0 0;}
+
+.reservation_intro .reservation_form .calendar .c_date {text-align:center; margin:32px 0 0 0;}
+.reservation_intro .reservation_form .calendar .c_date ul:after {clear:both; display:block; content:"";}
+.reservation_intro .reservation_form .calendar .c_date ul li {position:relative; float:left; width:14.2857%;}
+.reservation_intro .reservation_form .calendar .c_date ul li p {position:relative; line-height:72px;}
+.reservation_intro .reservation_form .calendar .c_date ul li p.sun {color:#bb1420;}
+.reservation_intro .reservation_form .calendar .c_date ul li p.holy {color:#bb1420;}
+.reservation_intro .reservation_form .calendar .c_date ul li p.sat {color:#2d45ac;}
+.reservation_intro .reservation_form .calendar .c_date ul li p.dim {opacity:0.3;}
+.reservation_intro .reservation_form .calendar .c_date ul li p a {position:relative; display:block;border:1px solid #fff;}
+.reservation_intro .reservation_form .calendar .c_date ul li p a:hover {border:1px solid #222; font-weight:800;}
+.reservation_intro .reservation_form .calendar .c_date ul li p a.today {background:#eee; border:1px solid #eee; color:#222 !important; font-weight:800;}
+.reservation_intro .reservation_form .calendar .c_date ul li p a.on {background:#21db7a; border:1px solid #21db7a; color:#222 !important; font-weight:800;}
+.reservation_intro .reservation_form .calendar .c_date .c_week {border-top:1px solid #e9e9e9; border-bottom:1px solid #e9e9e9;}
+.reservation_intro .reservation_form .calendar .c_date .c_week ul li p {color:#777;}
+.reservation_intro .reservation_form .calendar .c_date .c_day ul li p {font-size:18px;}
+.reservation_intro .reservation_form .calendar .c_date ul li p a span {position:absolute; display:inline-block; width:100%; line-height:20px; height:20px; left:0; bottom:3px; font-weight:400; font-size:12.5px; letter-spacing:2px; }
+
+.reservation_intro .reservation_form .reservation_list {float:left; width:30%; background:;}
+.reservation_intro .reservation_form .reservation_list .list_inner {position:relative; padding:52px;}
+.reservation_intro .reservation_form .reservation_list .list_tit {font-size:26px; font-weight:600; color:#222; line-height:normal;}
+.reservation_intro .reservation_form .reservation_list .list_sub {font-size:18px; color:#222;}
+.reservation_intro .reservation_form .reservation_list .list_ex {color:#c62828; margin:12px 0 0 0;}
+.reservation_intro .reservation_form .reservation_list .list_ex span {display:block; color:#888; font-size:13px; line-height:normal;}
+.reservation_intro .reservation_form .reservation_list .list_ex_box {margin:40px 0 8px 0; font-size:14px; line-height:22px; vertical-align:middle;}
+.reservation_intro .reservation_form .reservation_list .list_ex_box span.list_ex_guide {display:inline-block; margin:0 6px 0 0;}
+.reservation_intro .reservation_form .reservation_list .list_ex_box span.box {display:inline-block; width:14px; height:14px; vertical-align:middle;}
+.reservation_intro .reservation_form .reservation_list .list_ex_box span.box.ok {background:#21db7a; border:1px solid #21db7a;}
+.reservation_intro .reservation_form .reservation_list .list_ex_box span.box.cancel {background:#444; border:1px solid #444;}
+
+.reservation_intro .reservation_form .reservation_list .time_list {margin:20px 0 0 0;}
+.reservation_intro .reservation_form .reservation_list .time_list ul li dl {margin:0 0 20px 0;}
+.reservation_intro .reservation_form .reservation_list .time_list ul li:last-child dl {margin:0 0 0 0;}
+.reservation_intro .reservation_form .reservation_list .time_list ul li dl:after {clear:both; display:block; content:"";}
+.reservation_intro .reservation_form .reservation_list .time_list ul li dl dt {float:left; width:65%; line-height:30px;}
+.reservation_intro .reservation_form .reservation_list .time_list ul li dl dt span.day {margin:0 12px 0 0; }
+.reservation_intro .reservation_form .reservation_list .time_list ul li dl dt span.time {font-weight:800; font-size:17px; }
+.reservation_intro .reservation_form .reservation_list .time_list ul li dl dd {float:left; width:35%;}
+
+.reservation_intro .reservation_form .reservation_list .time_list ul {margin:0 0 0 -10px;}
+.reservation_intro .reservation_form .reservation_list .time_list ul:after {clear:both; display:block; content:"";}
+.reservation_intro .reservation_form .reservation_list .time_list ul li {width:50%; float:left;}
+.reservation_intro .reservation_form .reservation_list .time_list ul li p {margin:0 0 16px 10px;}
+.reservation_intro .reservation_form .reservation_list .time_list ul li a.button {text-align:center; display:block; font-size:14px; line-height:36px; vertical-align:middle; letter-spacing:0px;}
+.reservation_intro .reservation_form .reservation_list .time_list ul li a.button.ok {background:#21db7a; border:1px solid #21db7a; color:#222;}
+.reservation_intro .reservation_form .reservation_list .time_list ul li a.button.cancel {background:#444; border:1px solid #444; color:#fff; cursor:default;}
+.reservation_intro .reservation_form .reservation_list .time_list ul li a.button span {font-weight:500; font-size:12px;}
+
+
+
+
+
+/* 오프라인쇼룸 */
+.reservation_about {position:relative;}
+.reservation_about ul.icon_grid {margin:0 0 0 -40px;}
+.reservation_about ul.icon_grid:after {clear:both; display:block; content:"";}
+.reservation_about ul.icon_grid li {width:25%; float:left;}
+.reservation_about ul.icon_grid li dl {margin:0 0 0 40px; text-align:center;}
+.reservation_about ul.icon_grid li dl dt {margin:18px 0;}
+
+.reservation_about .rounds_pic {padding:80px 0 0 0;}
+.reservation_about ul.pic_grid {margin:0 0 0 -40px;}
+.reservation_about ul.pic_grid:after {clear:both; display:block; content:"";}
+.reservation_about ul.pic_grid li {width:33.333%; float:left;}
+.reservation_about ul.pic_grid li dl {margin:0 0 0 40px; text-align:center;}
+.reservation_about ul.pic_grid li dl dt {margin:18px 0;}
+.reservation_about ul.pic_grid li dl dt img {width:260px;}
+.reservation_about ul.pic_grid li dl dd .a_lar br {display:none;}
+
+.reservation_about ul li dl dd .a_lar {font-size:18px; color:#222; font-weight:500;}
+.reservation_about ul li dl dd .a_sma {margin:6px 0 0 0; color:#777;}
+
+.reservation_tum {padding:80px 0; background:url("../img/contents/showroom_bg.jpg")center center no-repeat; background-attachment:fixed;}
+.reservation_tum .tum_lar {font-size:26px; font-weight:600; margin:0 0 18px 0; color:#222;}
+.reservation_tum .tum_sma {font-size:16px; line-height:normal;}
+.reservation_tum .tum_se {margin:8px 0 0 0; font-size:18px; font-weight:600; color:#03575f; }
+
+.reservation_about .reservation_overview {position:relative;}
+.reservation_about .reservation_overview .overviews {position:relative;}
+.reservation_about .reservation_overview .overviews {padding:120px 0;}
+.reservation_about .reservation_overview .overviews .img {display:none;}
+.reservation_about .reservation_overview .overview01 {background:url("../img/contents/showroom_overview01.jpg")center center no-repeat;}
+.reservation_about .reservation_overview .overview02 {background:url("../img/contents/showroom_overview02.jpg")center center no-repeat; text-align:right;}
+.reservation_about .reservation_overview .overview03 {background:url("../img/contents/showroom_overview03.jpg")center center no-repeat;}
+.reservation_about .reservation_overview .overview01 .txt {margin:0 0 0 54%;}
+.reservation_about .reservation_overview .overview02 .txt {margin:0 54% 0 0;}
+.reservation_about .reservation_overview .overview03 .txt {margin:0 0 0 54%;}
+.reservation_about .reservation_overview .overviews .txt .ov_t {font-family:'Jeju Myeongjo', serif; font-weight:800; font-size:52px; line-height:normal;}
+.reservation_about .reservation_overview .overviews .txt .ov_line {margin:20px 0; width:24px; height:1px; background:#ddd;}
+.reservation_about .reservation_overview .overview02 .txt .ov_line {float:right;}
+.reservation_about .reservation_overview .overview02 .txt .ov_s {clear:both;}
+
+.reservation_location {position:relative; padding:0 0 80px 0;}
+.reservation_location .location_info {position:relative; background:#f7f7f7; height:480px;}
+.reservation_location .location_info:after {clear:both; display:block; content:"";}
+.reservation_location .location_info .map_img {width:70%; float:left;}
+.reservation_location .location_info .map_img iframe {width:100%; height:480px;}
+.reservation_location .location_info .map_txt {width:30%; float:left;}
+.reservation_location .location_info .map_txt ul {padding:52px;}
+.reservation_location .location_info .map_txt ul li p {line-height:1.8em; background:url("../img/common/bullet_black.png")left 10px no-repeat; padding:0 0 0 10px; }
+.reservation_location .location_info .map_txt ul li p.t_lar {font-size:18px; color:#222; font-weight:500; background:none; padding:0 0 0 0; margin:0 0 8px 0;}
+
+@media screen and (max-width:1300px){
+.reservation_intro {padding:40px 0;}
+.reservation_intro .reservation_form .calendar .calendar_inner {padding:32px;}
+.reservation_intro .reservation_form .reservation_list .list_inner {padding:32px;}
+}
+@media screen and (max-width:1200px){
+.reservation_intro {background:none; padding:0 0;}
+.reservation_intro .contents_title {display:none;}
+.reservation_intro .wrap {margin:0 0 !important;}
+.reservation_intro .reservation_form {background:#eee; box-shadow:rgba(0, 0, 0, 0) 0px 0px 0px 0px;}
+.reservation_intro .reservation_form .calendar {background:#fff;}
+
+.reservation_intro .reservation_form .reservation_list .list_ex_box {margin:20px 0 8px 0;}
+.reservation_intro .reservation_form .reservation_list .time_list {margin:12px 0 0 0;}
+.reservation_intro .reservation_form .reservation_list .time_list ul li p {margin:0 0 10px 10px;}
+.reservation_intro .reservation_form .reservation_list .time_list ul li a.button {line-height:30px;}
+
+.reservation_intro .reservation_form .reservation_list .list_tit {font-size:20px;}
+.reservation_intro .reservation_form .reservation_list .list_ex br {display:none;}
+}
+@media screen and (max-width:1000px){
+.reservation_intro .reservation_form .reservation_list .list_ex_box {margin:20px 0 0 0;}
+
+.reservation_about ul.icon_grid li dl dt img {width:60px;}
+.reservation_about ul li dl dd br {display:none;}
+.reservation_about ul li dl dd br.on {display:block;}
+
+.reservation_location .location_info {background:none; height:auto;}
+.reservation_location .location_info .map_img {width:100%;}
+.reservation_location .location_info .map_img iframe {height:360px;}
+.reservation_location .location_info .map_txt {width:100%;}
+.reservation_location .location_info .map_txt ul {padding:12px 0 0 0;}
+.reservation_location .location_info .map_txt ul li p {line-height:1.6em;}
+}
+@media screen and (max-width:920px){
+.reservation_about .reservation_overview .overviews {padding:0 0;}
+.reservation_about .reservation_overview .overviews .img {display:block;}
+.reservation_about .reservation_overview .overviews .txt {padding:20px 0 40px 0;}
+.reservation_about .reservation_overview .overview01 {background:none;}
+.reservation_about .reservation_overview .overview02 {background:none; text-align:left;}
+.reservation_about .reservation_overview .overview03 {background:none;}
+.reservation_about .reservation_overview .overview01 .txt {margin:0 0 0 0;}
+.reservation_about .reservation_overview .overview02 .txt {margin:0 0 0 0;}
+.reservation_about .reservation_overview .overview03 .txt {margin:0 0 0 0;}
+.reservation_about .reservation_overview .overviews .txt .ov_t {font-size:34px;}
+.reservation_about .reservation_overview .overviews .txt .ov_line {margin:10px 0; background:#444;}
+.reservation_about .reservation_overview .overview02 .txt .ov_line {float:none; clear:both;}
+
+.reservation_intro .reservation_form .calendar .c_arrow a img {width:30px;}
+
+.reservation_intro .reservation_form .calendar .c_tit .year {font-size:20px;}
+.reservation_intro .reservation_form .calendar .c_tit .month {font-size:48px; line-height:50px;}
+.reservation_intro .reservation_form .calendar .c_sub {font-size:13.5px; margin:10px 0 0 0;}
+
+.reservation_intro .reservation_form .calendar .c_date {margin:20px 0 0 0;}
+.reservation_intro .reservation_form .calendar .c_date ul li p {line-height:;}
+.reservation_intro .reservation_form .calendar .c_date .c_day ul li p {font-size:17px;}
+.reservation_intro .reservation_form .calendar .c_date ul li p a span {line-height:14px; height:14px;font-size:11.5px; letter-spacing:1px; }
+}
+@media screen and (max-width:840px){
+.reservation_intro .reservation_form .calendar {width:100%;}
+.reservation_intro .reservation_form .reservation_list {width:100%;}
+.reservation_intro .reservation_form .reservation_list .time_list ul li {width:16.666%;}
+}
+@media screen and (max-width:720px){
+.reservation_intro .reservation_form .reservation_list .time_list ul li {width:20%;}
+}
+@media screen and (max-width:640px){
+.reservation_intro .reservation_form .calendar .calendar_inner {padding:26px 4%;}
+.reservation_intro .reservation_form .calendar .c_arrow a img {width:30px;}
+.reservation_intro .reservation_form .calendar .c_arrow a.c_prv {left:4%; }
+.reservation_intro .reservation_form .calendar .c_arrow a.c_nxt {right:4%; }
+
+.reservation_intro .reservation_form .calendar .c_tit .year {font-size:18px; font-weight:400; }
+.reservation_intro .reservation_form .calendar .c_tit .month {font-size:42px; line-height:44px;}
+.reservation_intro .reservation_form .calendar .c_sub { margin:10px 0 0 0; font-size:14px;}
+
+.reservation_intro .reservation_form .calendar .c_date {margin:24px 0 0 0;}
+.reservation_intro .reservation_form .calendar .c_date ul li p {line-height:52px;}
+.reservation_intro .reservation_form .calendar .c_date .c_week ul li p {font-size:14px;}
+.reservation_intro .reservation_form .calendar .c_date .c_day ul li p {font-size:16px;}
+.reservation_intro .reservation_form .calendar .c_date ul li p a span {line-height:18px; height:18px; bottom:0px; font-size:11.5px; letter-spacing:0px; }
+
+.reservation_intro .reservation_form .reservation_list .list_inner {padding:26px 4%;}
+.reservation_intro .reservation_form .reservation_list .list_tit {font-size:; }
+.reservation_intro .reservation_form .reservation_list .list_sub {font-size:16px;}
+.reservation_intro .reservation_form .reservation_list .list_ex {font-size:14px; margin:10px 0 0 0;}
+
+.reservation_intro .reservation_form .reservation_list .time_list {margin:24px 0 0 0;}
+.reservation_intro .reservation_form .reservation_list .time_list ul li {width:25%;}
+.reservation_intro .reservation_form .reservation_list .time_list ul li dl {margin:0 0 20px 0;}
+
+
+.reservation_about ul.icon_grid li {width:50%;}
+.reservation_about ul.icon_grid li:nth-child(3) {clear:both;}
+.reservation_about ul.icon_grid li dl {margin:0 0 20px 40px;}
+.reservation_about ul.icon_grid li:nth-child(3) dl {margin:0 0 0 40px;}
+.reservation_about ul.icon_grid li:nth-child(4) dl {margin:0 0 0 40px;}
+.reservation_about ul.icon_grid li dl dt {margin:10px 0;}
+.reservation_about ul li dl dd .a_lar {font-size:16px;}
+.reservation_about ul li dl dd .a_sma {margin:2px 0 0 0; font-size:14px; line-height:normal;}
+
+.reservation_about .rounds_pic {padding:40px 0 0 0;}
+.reservation_about ul.pic_grid {margin:0 0 0 -20px;}
+.reservation_about ul.pic_grid li dl {margin:0 0 0 20px;}
+
+.reservation_tum {padding:40px 0;}
+.reservation_tum .tum_lar {font-size:18px; margin:0 0 10px 0;}
+.reservation_tum .tum_sma {font-size:14px;}
+.reservation_tum .tum_sma br {display:none;}
+.reservation_tum .tum_se {margin:6px 0 0 0; font-size:16px; font-weight:500;}
+
+.reservation_location {padding:0 0 40px 0;}
+.reservation_location .location_info .map_img iframe {height:280px;}
+.reservation_location .location_info .map_txt ul li p.t_lar {font-size:16px; margin:0 0 6px 0;}
+}
+@media screen and (max-width:500px){
+.reservation_about ul.pic_grid li dl dd .a_sma {display:none;}
+.reservation_about ul.pic_grid li dl dd .a_lar br {display:block;}
+
+.reservation_about .reservation_overview .overviews .txt {padding:16px 0 20px 0;}
+.reservation_about .reservation_overview .overviews .txt .ov_t {font-size:28px;}
+.reservation_about .reservation_overview .overviews .txt .ov_s br {display:none;}
+}
+@media screen and (max-width:480px){
+.reservation_intro .reservation_form .reservation_list .time_list ul li {width:33.333%;}
+}
+@media screen and (max-width:350px){
+.reservation_intro .reservation_form .reservation_list .time_list ul li {width:50%;}
+}
+
+
+
+
+.reservation_about {position:relative;}
+.reservation_about .rc {position:relative; padding:180px 0;}
+.reservation_about .rc .r_s_tit {color:#222; font-weight:600; font-size:36px; line-height:normal; margin:0 0 24px 0;}
+.reservation_about .rc .r_s_sub {margin:0 0 8px 0; font-size:17px;}
+.reservation_about .rc .r_s_sub:last-child {margin:0 0 0 0;}
+.reservation_about .rc .r_s_point {font-size:14px; font-weight:800; letter-spacing:4px; margin:0 0 10px 0; color:#11c266;}
+
+.reservation_about .r_s_img {position:absolute; top:50%; right:0; transform:translate(0, -50%);}
+
+.reservation_about .r_overview {background:url("../img/contents/showroom_type01.jpg") center center no-repeat;}
+.reservation_about .r_s01 {background:url("../img/contents/showroom_type02.jpg") bottom center no-repeat;}
+.reservation_about .r_s01 .r_s_img {display:none;}
+.reservation_about .r_s01 .r_s_tit {color:#fff;}
+.reservation_about .r_s01 .r_s_sub {color:#fff;}
+.reservation_about .r_s02 {background:url("../img/contents/showroom_type03.jpg") center center no-repeat; background-attachment:fixed; color:#fff;}
+.reservation_about .r_s02 .r_s_tit {color:#fff;}
+.reservation_about .r_s02 .r_s_point {color:#fff;}
+.reservation_about .r_s03 {background:url("../img/contents/showroom_type04.jpg") center center no-repeat;}
+.reservation_about .r_s04 {background:url("../img/contents/showroom_type05.jpg") center center no-repeat;}
+.reservation_about .r_s04 .r_s_tit {color:#fff;}
+.reservation_about .r_s04 .r_s_sub {color:#fff;}
+
+.reservation_about .r_s_button {margin:24px 0 0 0;}
+.reservation_about .r_s_button a {display:inline-block; line-height:48px; vertical-align:middle; padding:0 50px; border-radius:25px; letter-spacing:0px; border:1px solid #222; background:#222; color:#fff;}
+.reservation_about .r_s_button a:hover {border:1px solid #11c266; background:#11c266; color:#fff;}
+
+@media screen and (max-width:1280px) {
+.reservation_about .rc {padding:100px 0; background-size:cover !important;}
+.reservation_about .rc .r_s_tit {font-size:26px;}
+.reservation_about .r_s_button a {line-height:36px; padding:0 28px; border-radius:18px; font-size:14px;}
+.reservation_about .r_s_img {position:relative;top:0; left:0; transform:translate(0, 0); display:block; text-align:left; margin:0 0 24px 0;}
+
+.reservation_about .r_s03 {background:url("../img/contents/showroom_type04_1.jpg") center center no-repeat;}
+.reservation_about .r_s04 {background:url("../img/contents/showroom_type05_1.jpg") center center no-repeat;}
+}
+
+@media screen and (max-width:640px) {
+.reservation_about .rc {padding:60px 0;}
+.reservation_about .rc .r_s_tit {font-size:20px; margin:0 0 12px 0;}
+.reservation_about .rc .r_s_sub {font-size:15px;}
+.reservation_about .rc .r_s_sub br {display:none;}
+.reservation_about .rc .r_s_point {font-size:12px; letter-spacing:2px; margin:0 0 6px 0; }
+.reservation_about .r_s_button {margin:12px 0 0 0;}
+.reservation_about .r_s_button a {line-height:32px; padding:0 24px; border-radius:16px; }
+}
+
+
+
+
+
+
+
+/* 오! 하우스 */
+.sub_container.ohouse .rc {padding:120px 0 !important;}
+.sub_container.ohouse .r_overview {background: url("../img/contents/ohouse_overview01.jpg") center center no-repeat;}
+.sub_container.ohouse .r_overview img.o_logo {width:100px;}
+.sub_container.ohouse .r_s01 {background:#fff !important; background-image:none !important;}
+.sub_container.ohouse .r_s01 .r_s_tit {color:#222;}
+.sub_container.ohouse .r_s01 .r_s_sub {color:#444;}
+.sub_container.ohouse .r_s02 {background:#21db7a;}
+.sub_container.ohouse .r_s02 .r_s_tit {color:#222;}
+.sub_container.ohouse .r_s02 .r_s_point {color:#222;}
+.sub_container.ohouse .r_s02 .r_s_sub {color:#444;}
+.sub_container.ohouse .r_s03 {background:none;}
+
+.sub_container.ohouse .r_s01-1 {background: url("../img/contents/ohouse_estimate_bg.jpg") center center no-repeat; text-align:left;}
+.sub_container.ohouse .r_s01-1 .r_s_tit {color:#fff;}
+.sub_container.ohouse .r_s01-1 .r_s_sub {color:#fff;}
+
+.sub_container.ohouse ul.o_icon_grid {margin:0 0 0 -10px;}
+.sub_container.ohouse ul.o_icon_grid:after {clear:both; display:block; content:"";}
+.sub_container.ohouse ul.o_icon_grid li {float:left; width:9.090%;}
+.sub_container.ohouse ul.o_icon_grid li dl {margin:0 0 0 10px; text-align:center;}
+.sub_container.ohouse ul.o_icon_grid li dl dt p {margin:0 auto; background:#222; width:90px; height:90px; line-height:90px; border-radius:50%;}
+.sub_container.ohouse ul.o_icon_grid li dl dt p img {vertical-align:middle; width:54px;}
+.sub_container.ohouse ul.o_icon_grid li dl dd p {margin:12px 0 0 0; color:#222; font-size:18px;}
+.sub_container.ohouse .plus_style .plus_style_t {font-size:30px; font-weight:600; color:#222; line-height:normal;}
+.sub_container.ohouse .plus_style .plus_style_t span {font-size:18px; font-weight:400; display:block;}
+
+.sub_container.ohouse ul.etc_icon_grid {position:relative; clear:both; text-align:center;}
+.sub_container.ohouse ul.etc_icon_grid li {display:inline-block; margin:0 10px;}
+.sub_container.ohouse ul.etc_icon_grid li dl dt p {margin:0 auto; background:#d2f5e3; width:54px; height:54px; line-height:54px; border-radius:50%;}
+.sub_container.ohouse ul.etc_icon_grid li dl dt p img {vertical-align:middle; width:32px;}
+.sub_container.ohouse ul.etc_icon_grid li dl dd p {margin:8px 0 0 0; color:#444; font-size:14px;}
+
+
+@media screen and (max-width:1280px) {
+.sub_container.ohouse .rc {padding:80px 0 !important;}
+}
+@media screen and (max-width:1200px) {
+.sub_container.ohouse ul.o_icon_grid li {width:16.666%;}
+.sub_container.ohouse ul.o_icon_grid li dl {margin:0 0 24px 10px;}
+
+.sub_container.ohouse ul.etc_icon_grid li {margin:0 10px 5px 10px;}
+.sub_container.ohouse ul.etc_icon_grid li dl dt p {width:50px; height:50px; line-height:50px;}
+.sub_container.ohouse ul.etc_icon_grid li dl dt p img {vertical-align:middle; width:28px;}
+.sub_container.ohouse ul.etc_icon_grid li dl dd p {margin:5px 0 0 0; font-size:13.5px;}
+
+.sub_container.ohouse .r_s01-1 {background: url("../img/contents/ohouse_estimate_bg_s.jpg") center center no-repeat; text-align:center !important;}
+}
+@media screen and (max-width:640px) {
+.sub_container.ohouse .rc {padding:60px 0 !important;}
+.sub_container.ohouse ul.o_icon_grid {margin:0 0 0 -6px;}
+.sub_container.ohouse ul.o_icon_grid li dl {margin:0 0 12px 6px;}
+.sub_container.ohouse ul.o_icon_grid li dl dt p {width:70px; height:70px; line-height:70px;}
+.sub_container.ohouse ul.o_icon_grid li dl dt p img {width:40px;}
+.sub_container.ohouse ul.o_icon_grid li dl dd p {margin:6px 0 0 0; font-size:15px;}
+
+.sub_container.ohouse .plus_style .plus_style_t {font-size:24px;}
+.sub_container.ohouse .plus_style .plus_style_t span {font-size:15px;}
+
+}
+@media screen and (max-width:540px) {
+.sub_container.ohouse ul.o_icon_grid li {width:25%;}
+.sub_container.ohouse ul.o_icon_grid li dl {margin:0 0 8px 6px;}
+.sub_container.ohouse ul.o_icon_grid li dl dt p {width:62px; height:62px; line-height:62px;}
+.sub_container.ohouse ul.o_icon_grid li dl dt p img {width:40px;}
+.sub_container.ohouse ul.o_icon_grid li dl dd p {margin:4px 0 0 0; font-size:14px;}
+
+.sub_container.ohouse .plus_style .plus_style_t {font-size:20px;}
+}
+
+
+
+
+
+
+/* 동그라미하우스 X 한샘 이벤트 */
+.colabo_event {position:relative;}
+.colabo_event .ev_title {font-size:42px; font-weight:200; color:#222; line-height:normal;}
+.colabo_event .ev_title span {font-weight:600;}
+.colabo_event .ev_sub {margin:12px 0 0 0;}
+.colabo_ev {/*border-bottom:1px solid #e9e9e9;*/ padding:0 0 80px 0; margin:0 0 80px 0;}
+.colabo_ev:last-child {border-bottom:0px; padding:0 0 0 0; margin:0 0 0 0;}
+.colabo_ev .colabo_ev_title {font-size:24px; color:#222; line-height:1.4em; margin:0 0 20px 0;}
+.colabo_ev .colabo_ev_title span {color:#11c266; font-weight:800; font-size:12px; letter-spacing:1px; margin:0 0 0 5px;}
+
+@media screen and (max-width:1300px){
+.sub_container.event {margin:0 0 0 0;}
+}
+@media screen and (max-width:920px) {
+.colabo_event .ev_title {font-size:36px;}
+}
+@media screen and (max-width:720px) {
+.colabo_event .ev_title {font-size:30px;}
+.colabo_event .ev_sub {margin:8px 0 0 0;}
+.colabo_event .ev_sub br {display:none;}
+.colabo_ev .colabo_ev_title {font-size:20px; font-weight:600; margin:0 0 12px 0;}
+.colabo_ev .colabo_ev_title span {font-weight:200; letter-spacing:0px; margin:0 0 0 3px;}
+}
+@media screen and (max-width:640px) {
+.colabo_ev {padding:0 0 40px 0; margin:0 0 40px 0;}
+}
+@media screen and (max-width:480px) {
+.colabo_event .ev_title {font-size:26px;}
+}
+
+
+
+.colabo_ev .colabo_ev_grid {position:relative;}
+.colabo_ev .colabo_ev_grid ul {margin:0 0 0 -24px;}
+.colabo_ev .colabo_ev_grid ul:after {clear:both; display:block; content:"";}
+.colabo_ev .colabo_ev_grid ul li {float:left; width:50%; position:relative;}
+.colabo_ev .colabo_ev_grid ul li dl {display:block; margin:0 0 20px 24px; position:relative;}
+.colabo_ev .colabo_ev_grid ul li dl a {display:block; position:relative;}
+.colabo_ev .colabo_ev_grid ul li dl dt img {width:100%;}
+.colabo_ev .colabo_ev_grid ul li dl dd {border-bottom:1px solid #ddd; padding:20px 0 15px 0;}
+.colabo_ev .colabo_ev_grid ul li dl dd .ev_list_tit {font-size:18px; color:#222; overflow: hidden;overflow: hidden; text-overflow: ellipsis; white-space: nowrap; word-wrap: normal; line-height: 1.4em; height:25px;}
+.colabo_ev .colabo_ev_grid ul li dl dd .ev_list_sub {padding:2px 0 0 0; font-size:14px; font-weight:600; color:#c62828;}
+
+@media screen and (max-width:720px) {
+.colabo_ev .colabo_ev_grid ul li {width:100%;}
+.colabo_ev .colabo_ev_grid ul li dl dd {padding:10px 0;}
+.colabo_ev .colabo_ev_grid ul li dl dd .ev_list_tit {font-size:15px; height:21px;}
+.colabo_ev .colabo_ev_grid ul li dl dd .ev_list_sub {padding:0 0 0 0;}
+}
+
+
+
+.colabo_ev.ev_work {position:relative;}
+.colabo_ev.ev_work ul {margin:0 0 0 -24px;}
+.colabo_ev.ev_work ul:after {clear:both; display:block; content:"";}
+.colabo_ev.ev_work ul li {width:33.333%; float:left;}
+.colabo_ev.ev_work ul li dl {margin:0 0 0 24px; border:1px solid #e9e9e9; }
+.colabo_ev.ev_work ul li dl dd {padding:32px;}
+.colabo_ev.ev_work ul li dl dd .ev_work_grid_t {font-size:18px; font-weight:600; color:#222; margin:0 0 12px 0;}
+.colabo_ev.ev_work ul li dl dd .ev_work_grid_s {background:url("../img/common/bullet_green.png")left 8px no-repeat; padding:0 0 6px 10px; color:#777;}
+.colabo_ev.ev_work ul li dl dd .ev_work_grid_s:last-child {padding:0 0 0 10px;}
+.colabo_ev.ev_work ul li dl dd .ev_work_grid_s span {font-weight:600; color:#444;}
+
+@media screen and (max-width:920px) {
+.colabo_ev.ev_work ul {margin:0 0 0 -12px;}
+.colabo_ev.ev_work ul li dl {margin:0 0 0 12px;}
+.colabo_ev.ev_work ul li dl dd {padding:24px;}
+.colabo_ev.ev_work ul li dl dd .ev_work_grid_t {font-size:17px;}
+}
+@media screen and (max-width:640px) {
+.colabo_ev.ev_work ul li {width:100%;}
+.colabo_ev.ev_work ul li dl {margin:0 0 20px 12px;}
+}
+@media screen and (max-width:480px) {
+.colabo_ev.ev_work ul li dl dd {padding:16px;}
+}
+
+
+
+
+.colabo_ev .ev_pic_grid {position:relative;}
+.colabo_ev .ev_pic_grid .txt {position:absolute; width:100%; top:50%; transform:translate(0,-50%); z-index:15; color:#fff; text-align:center;}
+.colabo_ev .ev_pic_grid .txt .ev_pic_grid_t {font-size:25px; font-weight:600; line-height:normal;}
+.colabo_ev .ev_pic_grid .txt .ev_pic_grid_s {margin:8px 0 0 0; font-size:17px;}
+.colabo_ev .ev_pic_grid .dim {position:absolute; background:rgba(0,0,0,.4); z-index:13; width:100%; height:100%;}
+.colabo_ev .ev_pic_grid ul {position:relative; z-index:12;}
+.colabo_ev .ev_pic_grid ul:after {clear:both; display:block; content:"";}
+.colabo_ev .ev_pic_grid ul li {float:left;}
+.colabo_ev .ev_pic_grid.pic_grid2 ul li {width:50%;}
+.colabo_ev .ev_pic_grid ul li p img {width:100%;}
+
+@media screen and (max-width:720px) {
+.colabo_ev .ev_pic_grid .txt .ev_pic_grid_t {font-size:20px;}
+.colabo_ev .ev_pic_grid .txt .ev_pic_grid_s {margin:6px 0 0 0; font-size:15px;}
+}
+@media screen and (max-width:480px) {
+.colabo_ev .ev_pic_grid .txt .ev_pic_grid_t {font-size:16px;}
+.colabo_ev .ev_pic_grid .txt .ev_pic_grid_s {margin:3px 0 0 0; font-size:14px; line-height:1.3em;}
+}
+
+
+
+.colabo_ev .ev_num_grid {position:relative;}
+.colabo_ev .ev_num_grid ul {position:relative; margin:0 0 0 -30px;}
+.colabo_ev .ev_num_grid ul:after {clear:both; display:block; content:"";}
+.colabo_ev .ev_num_grid ul li {float:left;}
+.colabo_ev .ev_num_grid.num_grid5 ul li {width:20%;}
+.colabo_ev .ev_num_grid.num_grid6 ul li {width:16.666%;}
+.colabo_ev .ev_num_grid ul li dl {margin:0 0 0 30px;}
+.colabo_ev .ev_num_grid ul li dl dt {font-size:92px; font-weight:100; color:rgba(0,0,0,.15); line-height:normal; }
+.colabo_ev .ev_num_grid ul li dl dd {margin:-40px 0 0 0;}
+.colabo_ev .ev_num_grid ul li dl dd .ev_num_grid_t {font-weight:600; font-size:18px; color:#222; margin:0 0 8px 0;}
+
+@media screen and (max-width:1200px) {
+.colabo_ev .ev_num_grid ul li dl dt {font-size:70px;}
+.colabo_ev .ev_num_grid ul li dl dd {margin:-25px 0 0 0;}
+.colabo_ev .ev_num_grid.num_grid5 ul li {width:33.333%;}
+.colabo_ev .ev_num_grid.num_grid6 ul li {width:33.333%;}
+.colabo_ev .ev_num_grid ul li:nth-child(4) {clear:both;}
+.colabo_ev .ev_num_grid ul li dl dd .ev_num_grid_t {font-size:17px;}
+}
+@media screen and (max-width:640px) {
+.colabo_ev .ev_num_grid.num_grid5 ul li {width:50%;}
+.colabo_ev .ev_num_grid.num_grid6 ul li {width:50%;}
+.colabo_ev .ev_num_grid ul li:nth-child(4) {float:left; clear:inherit;}
+.colabo_ev .ev_num_grid ul li:nth-child(3) {clear:both;}
+.colabo_ev .ev_num_grid ul li:nth-child(5) {clear:both;}
+.colabo_ev .ev_num_grid ul li dl dt {font-size:48px;}
+.colabo_ev .ev_num_grid ul li dl dd {margin:-20px 0 0 0;}
+.colabo_ev .ev_num_grid ul li dl dd .ev_num_grid_t {font-size:16px; margin:0 0 6px 0;}
+.colabo_ev .ev_num_grid ul li dl dd .ev_num_grid_s {font-size:14px;}
+}
+@media screen and (max-width:420px) {
+.colabo_ev .ev_num_grid.num_grid5 ul li {width:100%;}
+.colabo_ev .ev_num_grid.num_grid6 ul li {width:100%;}
+}
+
+
+@media screen and (max-width:1300px) {
+.sub_container.tip {padding:20px 0 40px 0;}
+}
+@media screen and (max-width:1280px) {
+.sub_container.tip {margin:42px 0 0 0;}
+}
+
+
+
+
+

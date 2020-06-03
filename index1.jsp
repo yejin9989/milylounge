@@ -27,6 +27,7 @@
 <meta name="theme-color" content="#ffffff">
 <link rel="stylesheet" type = "text/css" href="https://static-smartstore.pstatic.net/markup/m/dist/renew/css/smartstore!!!MjAxOS0wMy0xM1QxODo1MjowMFpfbWY%3D.css">
 <link rel="stylesheet" type = "text/css" href="menu.css">
+<link rel="stylesheet" type="text/css" href="https://pm.pstatic.net/css/webfont_v170623.css"/>
 <style type="text/css">
 body {
   position: absolute;

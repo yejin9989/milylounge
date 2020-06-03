@@ -1,0 +1,215 @@
+@charset "utf-8";
+/* 레이어 */
+.layer {position:relative; width:100%; height:100%; z-index:3000;}
+.layer .layer_bg {position:absolute; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.7); z-index:3001; cursor:pointer;}
+.layer .layer_close {position:absolute; width:45px; height:45px; line-height:45px; vertical-align:middle; text-align:center; display:block; top:20px; right:20px; z-index:3005;}
+.layer .layer_inner {position:absolute; top:50%; left:50%; transform:translate(-50%, -50%); background:#fff; box-shadow:rgba(0, 0, 0, 0.3) 0px 1px 4px -1px; z-index:3002; text-align:center; height:auto; max-height:680px; }
+.layer .layer_inner .layer_con {padding:52px;}
+.layer .layer_inner .layer_tit {font-size:28px; font-weight:600; color:#222;}
+.layer .layer_inner .layer_sub {margin:10px 0 0 0; line-height:normal;}
+
+
+
+
+/* 신청 레이어 */
+/* SNS 공유 */
+.sns_share {position:fixed; display:none;}
+.sns_share.on {display:block;}
+.sns_share .share_inner {width:500px; }
+.sns_share .share_inner .sns_list {margin:24px 0 0 0;}
+.sns_share .share_inner .sns_list a {display:inline-block; margin:0 4px;}
+
+
+
+/* 준비중 */
+.coming_soon {position:fixed; display:none; z-index:30009999999999999999999999999;}
+.coming_soon.on {display:block;}
+.coming_soon .coming_inner {width:500px; text-align:center;}
+.coming_soon .coming_inner .layer_con .layer_tit img {width:142px;}
+.coming_soon .coming_inner .layer_con .layer_sub {margin:20px 0 0 0;}
+.coming_soon .coming_inner .layer_con .layer_sub span {display:block;}
+.coming_soon .coming_inner .layer_con .layer_sub span.coming_lar {color:#222; font-size:20px; line-height:1.3em;}
+.coming_soon .coming_inner .layer_con .layer_sub span.coming_lar span {font-weight:600; font-size:28px;line-height:1.4em;}
+.coming_soon .coming_inner .layer_con .layer_sub span.coming_sma {margin:6px 0 0 0; color:#777;}
+
+
+
+/* 이 견적 상담신청 */
+.consult_view {position:fixed; display:none;}
+.consult_view.on {display:block;}
+.consult_view .consult_inner {width:500px; }
+.consult_view .consult_inner .consult_info {margin:24px 0 0 0; text-align:left;}
+.consult_view .consult_inner .consult_info.expert-form {padding:0 0; background:none;}
+.consult_view .consult_inner .consult_info.expert-form .expert-form-group {position:relative !important; margin:0 0 12px 0; float:none; width:100%; clear:both; top:0; left:0; right:0;}
+.consult_view .consult_inner .consult_info.expert-form .expert-form-group:last-child {margin:0 0 0 0;}
+.consult_view .consult_inner .consult_info.expert-form .expert-form-group .expert-form-group_title {margin:0 0; font-weight:600;}
+.consult_view .consult_inner .consult_info.expert-form .expert-form-group .expert-form-group_content {margin:8px 0 0 0;}
+.consult_view .consult_inner .consult_info.expert-form .expert-form-group .expert-form-group_content .expert-field.tel input {}
+.consult_view .consult_inner .consult_info.expert-form .expert-form-group .expert-form-group_content .check_item {font-size:13px; color:#777;  margin:0 0 0 0;}
+
+
+
+/* 이 견적 시공사례 상담신청 */
+.portfolio_consult_view {position:fixed; display:none;}
+.portfolio_consult_view.on {display:block;}
+.portfolio_consult_view .portfolio_consult_inner {width:500px; }
+.portfolio_consult_view .portfolio_consult_inner .portfolio_consult_info {margin:24px 0 0 0; text-align:left;}
+.portfolio_consult_view .portfolio_consult_inner .portfolio_consult_info.expert-form {padding:0 0; background:none;}
+.portfolio_consult_view .portfolio_consult_inner .portfolio_consult_info.expert-form .expert-form-group {position:relative !important; margin:0 0 12px 0; float:none; width:100%; clear:both; top:0; left:0; right:0;}
+.portfolio_consult_view .portfolio_consult_inner .portfolio_consult_info.expert-form .expert-form-group:last-child {margin:0 0 0 0;}
+.portfolio_consult_view .portfolio_consult_inner .portfolio_consult_info.expert-form .expert-form-group .expert-form-group_title {margin:0 0; font-weight:600;}
+.portfolio_consult_view .portfolio_consult_inner .portfolio_consult_info.expert-form .expert-form-group .expert-form-group_content {margin:8px 0 0 0;}
+.portfolio_consult_view .portfolio_consult_inner .portfolio_consult_info.expert-form .expert-form-group .expert-form-group_content .expert-field.tel input {}
+.portfolio_consult_view .portfolio_consult_inner .portfolio_consult_info.expert-form .expert-form-group .expert-form-group_content .check_item {font-size:13px; color:#777;  margin:0 0 0 0;}
+
+
+
+/* 쇼룸 방문예약 */
+.reservation_view {position:fixed; display:none;}
+.reservation_view.on {display:block;}
+.reservation_view .reservation_inner {width:500px; }
+.reservation_view .reservation_inner .reservation_info {margin:24px 0 0 0; text-align:left;}
+.reservation_view .reservation_inner .reservation_info .date {position:relative; margin:0 0 18px 0; text-align:center; color:#03575f;}
+.reservation_view .reservation_inner .reservation_info .date .day {font-weight:600; font-size:22px;}
+.reservation_view .reservation_inner .reservation_info .date .time {font-size:17px; padding:4px 0 0 0;}
+.reservation_view .reservation_inner .reservation_info .date .time span {font-weight:600;}
+.reservation_view .reservation_inner .reservation_info.expert-form {padding:0 0; background:none;}
+.reservation_view .reservation_inner .reservation_info.expert-form .expert-form-group {margin:0 0 12px 0; float:none; width:100%; clear:both;}
+.reservation_view .reservation_inner .reservation_info.expert-form .expert-form-group:last-child {margin:0 0 0 0;}
+.reservation_view .reservation_inner .reservation_info.expert-form .expert-form-group .expert-form-group_title {margin:0 0; font-weight:600;}
+.reservation_view .reservation_inner .reservation_info.expert-form .expert-form-group .expert-form-group_content {margin:8px 0 0 0;}
+.reservation_view .reservation_inner .reservation_info.expert-form .expert-form-group .expert-form-group_content .expert-field.tel input {width:100%; padding:0 0 0 0;}
+.reservation_view .reservation_inner .reservation_info.expert-form .expert-form-group .expert-form-group_content .check_item {margin:0 0 0 0;}
+.reservation_view .reservation_inner .reservation_info.expert-form .expert-form-group .expert-form-group_content .guide {font-size:14px; color:#888; line-height:normal; margin:0 0 18px 0;}
+
+
+
+/* 파트너 신청 */
+.partner_view {position:fixed; display:none;}
+.partner_view.on {display:block;}
+.partner_view .partner_inner {width:500px; }
+.partner_view .partner_inner .partner_info {margin:24px 0 0 0; text-align:left;}
+.partner_view .partner_inner .partner_info.expert-form {padding:0 0; background:none;}
+.partner_view .partner_inner .partner_info.expert-form .expert-form-group .select-group .select-input {width:100%;}
+.partner_view .partner_inner .partner_info.expert-form .expert-form-group {margin:0 0 12px 0; float:none; width:100%; clear:both;}
+.partner_view .partner_inner .partner_info.expert-form .expert-form-group:last-child {margin:0 0 0 0;}
+.partner_view .partner_inner .partner_info.expert-form .expert-form-group .expert-form-group_title {margin:0 0; font-weight:600;}
+.partner_view .partner_inner .partner_info.expert-form .expert-form-group .expert-form-group_content {margin:8px 0 0 0;}
+.partner_view .partner_inner .partner_info.expert-form .expert-form-group .expert-form-group_content .expert-field input {width:100%; padding:0 0 0 0;}
+.partner_view .partner_inner .partner_info.expert-form .expert-form-group .expert-form-group_content .guide {font-size:14px; color:#888; line-height:normal; margin:0 0 18px 0;}
+.partner_view .partner_inner .partner_info.expert-form .check_item {margin:0 0 0 0;}
+
+
+
+
+@media screen and (max-width:640px){
+.layer .layer_inner {max-height:500px; }
+.partner_view .partner_inner {max-height:inherit !important;  }
+.layer .layer_close {width:32px; height:32px; line-height:32px; top:12px; right:12px;}
+.layer .layer_inner .layer_con {padding:32px;}
+.layer .layer_inner .layer_tit {font-size:22px;}
+.layer .layer_inner .layer_sub {margin:6px 0 0 0; font-size:14px;}
+
+.coming_soon {display: !important;}
+.coming_soon .coming_inner {width:320px; }
+.coming_soon .coming_inner .layer_con .layer_tit img {width:120px;}
+.coming_soon .coming_inner .layer_con .layer_sub {margin:20px 0 0 0;}
+.coming_soon .coming_inner .layer_con .layer_sub span.coming_lar {font-size:17px; line-height:1.3em;}
+.coming_soon .coming_inner .layer_con .layer_sub span.coming_lar span {font-size:22px;line-height:1.4em;}
+.coming_soon .coming_inner .layer_con .layer_sub span.coming_sma {margin:2px 0 0 0; }
+.coming_soon .coming_inner .layer_con .layer_sub span.coming_sma br {display:none;}
+
+.sns_share .share_inner {width:320px;}
+.sns_share .share_inner .sns_list a {margin:0 2px;}
+.sns_share .share_inner .sns_list a img {width:52px;}
+
+.consult_view .consult_inner {width:320px; }
+.portfolio_consult_view .portfolio_consult_inner {width:320px; }
+
+.reservation_view .reservation_inner {width:320px; }
+.reservation_view .reservation_inner .reservation_info .date {margin:0 0 10px 0;}
+.reservation_view .reservation_inner .reservation_info .date .day {font-size:18px;}
+.reservation_view .reservation_inner .reservation_info .date .time {font-size:16px; padding:2px 0 0 0;}
+.reservation_view .reservation_inner .reservation_info.expert-form .expert-form-group .expert-form-group_content .guide {margin:0 0 10px 0; font-size:13px;}
+.reservation_view .reservation_inner .reservation_info.expert-form .expert-form-group .expert-form-group_content .guide br {display:none;}
+
+.partner_view .partner_inner {width:320px; }
+}
+
+
+
+
+
+
+
+/* 시공상품 레이어 */
+.layer_bt {display:inline-block; background:#11c266; color:#fff; font-weight:600; font-size:13px; line-height:19px; vertical-align:middle; letter-spacing:0.5px; padding:0 8px; float:right;}
+.layer_bt:after {clear:both; display:block; content:"";}
+
+
+
+.product_layer {position:fixed; display:none;}
+.product_layer.on {display:block;}
+.product_layer .product_inner {width:720px; overflow-y:scroll;}
+.product_layer .product_inner .product_layer_info {margin:40px 0 0 0;}
+
+.product_layer .layer_guide {text-align:left; color:#c62828; margin:0 0 12px 0; }
+.product_layer .layer_guide img {width:16px;}
+
+.p_layer_grid {position:relative;}
+.p_layer_grid ul {margin:0 0 0 -20px;}
+.p_layer_grid ul:after {clear:both; display:block; content:"";}
+.p_layer_grid ul li {float:left;}
+.p_layer_grid ul li dl {margin:0 0 20px 20px;}
+.p_layer_grid ul li:last-child dl {margin:0 0 0 20px;}
+.p_layer_grid ul li dl:after {clear:both; display:block; content:"";}
+.p_layer_grid ul li dl dt {width:60%; float:left;}
+.p_layer_grid ul li dl dt p {margin:0 40px 0 0;}
+.p_layer_grid.lining ul li dl dt p {border:1px solid #e9e9e9;}
+.p_layer_grid ul li dl dt p img {width:100%;}
+.p_layer_grid ul li dl dd {width:40%; float:left; text-align:left;}
+.p_layer_grid ul li dl dd .lg_tit {font-size:20px; font-weight:600; color:#222; margin:20px 0 0 0;}
+.p_layer_grid ul li dl dd .lg_point {margin:6px 0 0 0; color:#11c266; font-weight:500;}
+.p_layer_grid ul li dl dd .lg_sub {margin:12px 0 0 0; color:#777; font-size:14px;}
+
+.p_layer_grid ul li dl dd.recommend .lg_tit {color:#c62828; background:url("../img/common/star.png")left 0px no-repeat;background-size:19px; padding:0 0 0 23px;}
+
+.p_layer_grid.layer_grid1 ul li {width:100%;}
+
+.p_layer_grid.layer_grid2 ul li {width:50%;}
+.p_layer_grid.layer_grid2 ul li dl dt {width:100%;}
+.p_layer_grid.layer_grid2 ul li dl dt p {margin:0 0 0 0;}
+.p_layer_grid.layer_grid2 ul li dl dd {width:100%; text-align:center;}
+.p_layer_grid.layer_grid2 ul li dl dd .lg_tit {font-size:18px; margin:12px 0 0 0; font-weight:500;}
+
+.p_layer_about {position:relative;}
+.p_layer_about dl dt {margin:0 0 30px 0;}
+.p_layer_about dl dd {text-align:left;}
+.p_layer_about dl dd .lg_tit {font-size:20px; font-weight:600; color:#222; margin:20px 0 12px 0;}
+.p_layer_about dl dd .lg_sub {margin:0 0 8px 0; color:#777; font-size:14px;}
+.p_layer_about dl dd .lg_sub:last-child {margin:0 0 0 0;}
+
+
+@media screen and (max-width:800px){
+.product_layer .layer_close {width:32px; height:32px; line-height:32px; top:12px; right:12px;}
+.product_layer .product_inner {width:320px;}
+.product_layer .product_inner .layer_con {padding:32px; }
+.product_layer .product_inner .product_layer_info {margin:20px 0 0 0;}
+
+.p_layer_grid.layer_grid2 ul li {width:100%;}
+.p_layer_grid ul li dl dt {width:100%;}
+.p_layer_grid ul li dl dt p {margin:0 0 0 0;}
+.p_layer_grid ul li dl dd {width:100%;}
+.p_layer_grid ul li dl dd .lg_tit {font-size:16px; margin:10px 0 0 0;}
+.p_layer_grid ul li dl dd .lg_point {margin:4px 0 0 0; }
+.p_layer_grid ul li dl dd .lg_sub {margin:6px 0 0 0;}
+.p_layer_grid ul li dl dd .lg_sub br {display:none;}
+
+.p_layer_about dl dd .lg_tit {font-size:16px; margin:12px 0 6px 0;}
+.p_layer_about dl dd .lg_sub {margin:0 0 6px 0;}
+
+.p_layer_grid ul li dl dd.recommend .lg_tit {background-size:17px; padding:0 0 0 21px;}
+
+.p_layer_grid.layer_grid2 ul li dl dd .lg_tit {font-size:16px; margin:10px 0 0 0;}
+}
+

@@ -107,6 +107,20 @@
 		session.setAttribute("s_id", index);
 		session.setAttribute("name", username);
 		error++;
+
+		Calendar cal = Calendar.getInstance();
+		String year = Integer.toString(cal.get(Calendar.YEAR));
+		String month = Integer.toString(cal.get(Calendar.MONTH)+1);
+		String date = Integer.toString(cal.get(Calendar.DATE));
+		String todayformat = year+"-"+month+"-"+date;
+		java.sql.Date d = java.sql.Date.valueOf(todayformat);
+		query = "UPDATE USERS SET MODIFY_DATE = ? WHERE ID = ?";
+		PreparedStatement pstmt = null;
+		pstmt = conn.prepareStatement(query);	
+		pstmt.setDate(1, d);	
+		pstmt.setInt(2, index);
+		pstmt.executeUpdate();
+		
 		response.sendRedirect("index.jsp");
 		}
 		else if(gender == "" || gender == null){
@@ -183,7 +197,7 @@
 */			
 			PreparedStatement pstmt = null;
 			String sql = "INSERT INTO USERS VALUES"
-				+ "(?,?,?,?,?,null,null,?,?,?,?,?,?,?,?,?,default,default)";
+				+ "(?,?,?,?,?,null,null,?,?,?,?,?,?,?,?,?,default,default, default)";
 			/*현재날짜 받아오기*/
 			Calendar cal = Calendar.getInstance();
 			String year = Integer.toString(cal.get(Calendar.YEAR));
