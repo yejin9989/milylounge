@@ -91,7 +91,7 @@ conn.close();
 %>
 <jsp:include page="navbar.jsp" flush="false"/>
 <%
-if(s_id.equals("0"))//관리자 계정일 경우
+if(s_id.equals("100"))//관리자 계정일 경우
 	{%><br><br><br>
 <form method="post" enctype="multipart/form-data" action="_imgup.jsp">
 <input type="file" name="filename1" size=40>
@@ -99,9 +99,9 @@ if(s_id.equals("0"))//관리자 계정일 경우
 </form>
 <%}%>
 
-<div id="container" style="top:160px;position:relative;">
+<div id="container" style="width:100%;max-width:750px;margin:40px auto;border:1px solid #c8c8c8; border-top:0;height:100%;display:flex;">
 
-<div style="text-align:center;">
+<div style="text-align:center;margin:auto auto;">
  <div id="login_section" style="text-align:center; display:inline-block; width:50%;min-width:300px; padding:10px;">
  <h2>LOGIN</h2>
  <p>밀리무드라운지에 오신것을 환영합니다.</p>
@@ -120,12 +120,12 @@ if(s_id.equals("0"))//관리자 계정일 경우
  </div>
  </div>
  </div>
- <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
 <script type="text/javascript" src="//wcs.naver.net/wcslog.js"></script>
 <script type="text/javascript">
 if(!wcs_add) var wcs_add = {};
 wcs_add["wa"] = "3602e31fd32c7e";
 wcs_do();
 </script>
+<jsp:include page="footer.jsp" flush="false"/>
  </body>
 </html>

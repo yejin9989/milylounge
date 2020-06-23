@@ -27,12 +27,12 @@
 	stmt.close();
 	if(true){
 		session.setAttribute("page", "");
-		session.setAttribute("s_id", "0");
+		session.setAttribute("s_id", "100");
 		response.sendRedirect("managermenu.jsp");
 	}
 	else{
 		session.setAttribute("page", "");
-		session.setAttribute("s_id", "0");
+		session.setAttribute("s_id", "100");
 		response.sendRedirect("managermenu.jsp");
 	}
 %>

@@ -142,7 +142,7 @@ conn.close();
 	<li id="content"><a href="order_status.jsp"style="color:black;text-decoration:none;"><nobr>신청현황</nobr></a></li>
 	<li id="content"><a href="sample_request.jsp" style="color:black;text-decoration:none;"><nobr>샘플신청하기</nobr></a></li>
 	<!--li id="content"><a href="myinfo.jsp" style="color:black;text-decoration:none;"><nobr>나의 정보</nobr></a></li-->
-	<li id="content"><a href="cal.jsp" style="color:black;text-decoration:none;"><nobr>커튼 계산기</nobr></a></li>
+	<li id="content"><a href="calselect.jsp" style="color:black;text-decoration:none;"><nobr>커튼 계산기</nobr></a></li>
 	<!--li id="content"><a href="signup.jsp" style="color:black;text-decoration:none;"><nobr>회원가입</nobr></a></li-->
 	<li id="content"><a href="story.jsp" style="color:black;text-decoration:none;"><nobr>story</nobr></a></li>
 	<li id="content"><a href="sample_collect.jsp" style="color:black;text-decoration:none;"><nobr>후기게시판</nobr></a></li>

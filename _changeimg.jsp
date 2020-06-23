@@ -9,10 +9,11 @@
 <head>
 	<%
 	String now = session.getAttribute("page")+"";
-	request.setCharacterEncoding("euc-kr");
-	String id = request.getParameter("id");
-	String greet = request.getParameter("greet");
+	request.setCharacterEncoding("utf-8");
+	String id = "";
+	//String greet = request.getParameter("greet");
 	 String realFolder = "";
+	 String url = "";
 	 String filename1 = "";
 	 int maxSize = 1024*1024*5;
 	 String encType = "utf-8";
@@ -27,6 +28,8 @@
 		  Enumeration<?> files = multi.getFileNames();
 		     String file1 = (String)files.nextElement();
 		     filename1 = multi.getFilesystemName(file1);
+		     id = multi.getParameter("id")+"";
+		     url = multi.getParameter("url")+"";
 		 } catch(Exception e) {
 		  e.printStackTrace();
 		 }
@@ -34,11 +37,12 @@
 	String fullpath = "img" + "/" + filename1;
 	
 	PreparedStatement pstmt = null;
-	String sql = "UPDATE IMG SET ImgPath = ? WHERE Page = ? AND Id = ?";
+	String sql = "UPDATE IMG SET ImgPath = ?, URI = ? WHERE ID = ? And Page = ?";
 	pstmt = conn.prepareStatement(sql);
 	pstmt.setString(1, fullpath);
-	pstmt.setString(2, now);
+	pstmt.setString(2, url);
 	pstmt.setString(3, id);
+	pstmt.setString(4, now);
 	pstmt.executeUpdate();
 	pstmt.close();
 	conn.close();
@@ -53,6 +57,5 @@
 <%=fullpath%>
 <%=now%>
 <%=id%>
-<%=greet%>
 </body>
 </html>

@@ -38,9 +38,10 @@ while(rs.next()){
 }
 %>
 <jsp:include page="navbar.jsp" flush="false"/>
-<img src="<%=img%>" width="100%" style="padding:40px 0 0 0;">
+<div style="width:100%;max-width:750px;margin:40px auto;border:1px solid #c8c8c8;border-top:0;">
+<img src="<%=img%>" width="100%">
 <%
-if(s_id.equals("admin"))//관리자 계정일 경우
+if(s_id.equals("100"))//관리자 계정일 경우
 	{%><br>
 			
 <form method="post" enctype="multipart/form-data" action="_imgup.jsp">
@@ -48,7 +49,7 @@ if(s_id.equals("admin"))//관리자 계정일 경우
 	<input type="submit" value="업로드"><br><br>
 </form>
  	<%}%>
- 	
+ </div>
 <jsp:include page="footer.jsp" flush="false"/>
 </body>
 </html>

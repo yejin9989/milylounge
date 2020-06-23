@@ -13,7 +13,7 @@
 	 String realFolder = "";
 	 String filename1 = "";
 	 int maxSize = 1024*1024*5;
-	 String encType = "euc-kr";
+	 String encType = "utf-8";
 	 String savefile = "img";
 	 ServletContext scontext = getServletContext();
 	 realFolder = scontext.getRealPath(savefile);

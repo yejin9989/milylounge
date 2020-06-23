@@ -98,8 +98,8 @@ query="";
 conn.close();
 %>
 <jsp:include page="navbar.jsp" flush="false"/>
-<div id="container" style="top:160px;position:relative;">
-<div style="text-align:center;">
+<div id="container" style="height:100%;width:100%;max-width:750px;margin: 40px auto;display:flex;border:1px solid #c8c8c8; border-top:0;">
+<div style="text-align:center;margin:auto auto;">
  <div id="login_section" style="text-align:center; display:inline-block; width:50%;min-width:300px; padding:10px;">
  <h2>회원가입</h2>
  <p>밀리무드라운지에 오신것을 환영합니다.</p>

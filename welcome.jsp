@@ -27,16 +27,17 @@
     apiURL += "&state=" + state;
     session.setAttribute("state", state);
  %>
- <jsp:include page="navbar.jsp" flush="false"/>
-<div id="container" style="top:200px;position:relative;">
-<div style="text-align:center;">
- <div id="login_section" style="text-align:center; display:inline-block; width:50%;min-width:300px; padding:10px;">
- <h2>환영합니다.</h2>
- <p>회원가입이 완료되었습니다. 이제 밀리무드라운지의 서비스와 혜택을 받아보실 수 있습니다:)</p>
- <a href="index.jsp">홈으로가기 </a>
- <br>
- </div>
- </div>
- </div>
+<jsp:include page="navbar.jsp" flush="false"/>
+<div id="container" style="display:flex;width:100%;height:100%;max-width:750px;margin:40px auto;border:1px solid #c8c8c8;border-top:0;">
+<div style="text-align:center;margin:auto auto;">
+<div id="login_section" style="text-align:center; display:inline-block; width:50%;min-width:300px; padding:10px;">
+<h2>환영합니다.</h2>
+<p>회원가입이 완료되었습니다. 이제 밀리무드라운지의 서비스와 혜택을 받아보실 수 있습니다:)</p>
+<a href="index.jsp">홈으로가기 </a>
+<br>
+</div>
+</div>
+</div>
+<jsp:include page="footer.jsp" flush="false"/>
  </body>
 </html>

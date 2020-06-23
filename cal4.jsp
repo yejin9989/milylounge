@@ -208,7 +208,7 @@ conn.close();
 </div>
 
 <%
-if(s_id.equals("0"))//관리자 계정일 경우
+if(s_id.equals("100"))//관리자 계정일 경우
 	{%>
 	<div style="margin: 60px 0 0 0; padding:30px 0; text-align:center; font-size:30px; border:1px solid; border-radius:5px;">
 	<a href="#"onClick="window.open('manage_image1.jsp','_blank','width=550 height=500')">이미지등록</a>
@@ -228,7 +228,7 @@ if(s_id.equals("0"))//관리자 계정일 경우
     	}
     	</script>
     	<%
-		if(s_id.equals("0"))//관리자 계정일 경우
+		if(s_id.equals("100"))//관리자 계정일 경우
 		{%>
 			<a href="_dropitem.jsp?id=<%=item[i][0]%>" target="_blank" style="color:red; text-decoration:underline;">X삭제</a>
 		<%}%>

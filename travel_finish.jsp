@@ -53,7 +53,7 @@ while(rs.next()){
 	</div>
 </div>
 <a href="https://m.smartstore.naver.com/milymood"><img src="img/culjang.png" width="100%" style="padding:40px 0 0 0;"></a>
-<%if(s_id.equals("admin"))//관리자 계정일 경우
+<%if(s_id.equals("100"))//관리자 계정일 경우
 {%><br>
 	<form method="post" enctype="multipart/form-data" action="_imgup.jsp">
 	<input type="file" name="filename1" size=40>

@@ -67,7 +67,7 @@ while(rs.next()){
 
 <jsp:include page="navbar.jsp" flush="false"/>
 <%
-if(s_id.equals("admin"))//관리자 계정일 경우
+if(s_id.equals("100"))//관리자 계정일 경우
 	{%><br><br><br>
 <form method="post" enctype="multipart/form-data" action="_imgup.jsp">
 <input type="file" name="filename1" size=40>

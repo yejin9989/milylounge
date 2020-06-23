@@ -35,6 +35,7 @@ body {
   margin: 0;
   border:0px;
   width: 100%;
+  max-width:750px;
   height: 100%;
   background-color: #fff;
   align-items: center;
@@ -135,14 +136,40 @@ state = request.getParameter("state");
 
 %>
 <div style="margin:40px 0 0 0;">
-	<%for(i=0; i<imgnum; i++){
-		if(s_id.equals("0"))
-		%><a href="_changeimg.jsp?id=3">수정</a><a href="_delimg.jsp?id=3">삭제</a>
-		<a href="sample_request.jsp">
-		<img src=<%=img[i][2]%> id=<%=img[i][0]%> style="width:100%;display:blcok;">
-		</a>
-		<%
-	}%>
+	<% if(s_id.equals("0"))%><a href="_changeimg.jsp?id=3">수정</a><a href="_delimg.jsp?id=3">삭제</a>
+    <a href="sample_request.jsp">
+    <img src="img/copycopy.png" class="modifiable" id="3" style="width:100%;display:block;">
+    </a>
+    <% if(s_id.equals("0"))%><a href="_changeimg.jsp?id=2">수정</a><a href="_delimg.jsp?id=2">삭제</a>
+    <a href="sample_request.jsp">
+    <img src="img/angel_2.png" class="modifiable" id="2" style="width:100%;display:block;">
+    </a>
+    <div style="width:100%;display:block;position:relative;">
+    <img src="img/angel_1.png" class="modifiable" id="2" style="width:100%;display:block;">
+    <%//비로그인 상태
+    if(s_id==null || s_id.equals("") || s_id.equals("null")) {%>
+		<div style="text-align:center;position:absolute;display:block; bottom:25%;left:48%;transform:translate(-50%,-50%);color:white;border:solid 2px white;padding:5px 10px;"><a style="color:white;" href="login.jsp">로그인</a> / <a style="color:white;" href="signup.jsp">가입</a></div>
+    <%} 
+    else {//로그인 상태, 포인트확인창%>
+    	<div style="text-align:center;position:absolute;display:block; bottom:15%;left:48%;transform:translate(-50%,-50%);color:white;">
+    	<p style="padding:3px;"><span style="font-weight:bold;"><%=name%></span>님 환영합니다!</p>
+    	<p style="padding:3px;">point<br><%=point%>/100</p>
+    	</div>
+    	<div class="playground">
+	<div class="bar-container">
+	<progress class="progressTag" value="0" max="100"></progress>
+	</div>
+	</div>
+    	<%} %>
+    </div>
+    <% if(s_id.equals("0"))%><a href="_changeimg.jsp?id=4">수정</a><a href="_delimg.jsp?id=4">삭제</a>
+    <a href="https://m.smartstore.naver.com/milymood">
+    <img src="img/angel_4.png" class="modifiable" id="4" style="width:100%;display:block;">
+    </a>
+    <% if(s_id.equals("0"))%><a href="_changeimg.jsp?id=5">수정</a><a href="_delimg.jsp?id=5">삭제</a>
+    <a href="https://m.smartstore.naver.com/milymood">
+    <img src="img/angel_5.png" class="modifiable" id="5" style="width:100%;display:block;">
+    </a>
     <% if(s_id.equals("0"))%><a href="_changeimg.jsp?id=5">배너추가</a>
 </div>
 <jsp:include page="footer.jsp" flush="false"/>

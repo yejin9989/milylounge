@@ -49,10 +49,11 @@ while(rs.next()){
 }
 %>
 <jsp:include page="navbar.jsp" flush="false"/>
+<div style="margin: 40px auto; width:100%; max-width: 750px; border:1px solid #c8c8c8; border-top: 0;">
 <img src="<%=img%>" width="100%" style="margin: 40px 0 0 0;">
 <%
 s_id = session.getAttribute("s_id")+"";
-if(s_id.equals("admin"))
+if(s_id.equals("100"))
 	{%>
 	<div style="text-align:center;">
 	<br><br><br>
@@ -105,6 +106,7 @@ else{%>
 	<br>
 	<%}%>
 	</div>
+</div>
 </div>
 <jsp:include page="footer.jsp" flush="false"/>
 	</body>

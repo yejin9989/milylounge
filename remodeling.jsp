@@ -170,23 +170,28 @@ if(!s_id.equals("") && !s_id.equals("null"))
 state = request.getParameter("state");
 %>
 <%
-float x = Float.parseFloat(request.getParameter("entX"));
-float y = Float.parseFloat(request.getParameter("entY"));
+String xx = request.getParameter("entX");
+String yy = request.getParameter("entY");
+float x = 0;
+float y = 0;
+if (xx != null) x = Float.parseFloat(xx);
+if (yy != null) y = Float.parseFloat(yy);
 pstmt = null;
 query = "";
 conn = DBUtil.getMySQLConnection();
 rs = null;
 String build = null;
 build = request.getParameter("bdNm");
-if(build != null && !build.equals("null")){
+/*if(build != null && !build.equals("null")){
 	query = "Select * from REMODELING where Building = ?";
 	pstmt = conn.prepareStatement(query);
 	pstmt.setString(1, build);
 }
-else{
+else{*/
 	query = "Select * from REMODELING";
 	pstmt = conn.prepareStatement(query);
-}
+//}
+rs = pstmt.executeQuery();
 String item[][] = new String[10000][14];
 int i = 0;
 while(rs.next()){
@@ -202,7 +207,8 @@ while(rs.next()){
 	item[i][9] = rs.getString("Xpos");
 	item[i][10] = rs.getString("Ypos");
 	item[i][11] = rs.getString("Content");
-	item[i][12] = String.valueOf(Math.sqrt(((x-Float.parseFloat(item[i][10]))*(x-Float.parseFloat(item[i][10])))+((y-Float.parseFloat(item[i][11]))*(y-Float.parseFloat(item[i][11])))));
+	item[i][12] = "0";
+	item[i][12] = String.valueOf(Math.sqrt(((x-Float.parseFloat(item[i][10]))*(x-Float.parseFloat(item[i][10])))+((y-Float.parseFloat(item[i][9]))*(y-Float.parseFloat(item[i][9])))));
 }
 int itemnum = i;
 int min = 0;
@@ -210,8 +216,8 @@ int j;
 String temp[] = new String[14];
 for(i = 0; i < item.length; i++){
 	min = i;
-	for(j = i+1; j < item.length(); j++){
-		if (parseFloat(item[min][12]) > parseFloat(item[j][12])) min = j;
+	for(j = i+1; j < item.length; j++){
+		if (Float.parseFloat(item[min][12]) > Float.parseFloat(item[j][12])) min = j;
 	}
 	temp = item[i];
 	item[i] = item[j];
@@ -289,16 +295,16 @@ for(i = 0; i < item.length; i++){
 		<%classes = Integer.toString(Integer.parseInt(classes)+1);%>
     	</div>
     	<div>
-    	<%=작성일시 : item[i][3]%><br>
-    	<%=시공사 : item[i][4]%><br>
-    	<%=시공비용 : item[i][5]%><br>
-    	<%=상세주소 : item[i][6]%><br>
+    	작성일시 : <%=item[i][3]%><br>
+    	시공사 : <%=item[i][4]%><br>
+    	시공비용 : <%=item[i][5]%><br>
+    	상세주소 : <%=item[i][6]%><br>
     	<%=item[i][7]%>
-    	<%=item[i][8] 동%><br>
-    	<%=거리 : item[i][12] %><br>
+    	<%=item[i][8]%> 동<br>
+    	거리 : <%=item[i][12] %><br>
     	</div>
     	<%
-		if(s_id.equals("0") || s_id.equals(item[i][1]))//관리자 계정이거나 본인 글 일 경우
+		if(s_id.equals("100") || s_id.equals(item[i][1]))//관리자 계정이거나 본인 글 일 경우
 		{%>
 			<a href="_dropremodeling.jsp?id=<%=item[i][0]%>" target="_blank" style="color:red; text-decoration:underline;">X삭제</a>
 		<%}%>

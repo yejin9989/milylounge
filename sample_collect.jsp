@@ -166,8 +166,8 @@ pstmt.close();
 rs.close();
 query="";
 %>
-<div id="cover"></div>
 <jsp:include page="navbar.jsp" flush="false"/>
+<div style="width:100%;max-width:750px;margin:40px auto;border:1px solid #c8c8c8;border-top:0;">
 <%
 if(!s_id.equals("") && !s_id.equals("null"))
 	{%>
@@ -182,13 +182,12 @@ if(!s_id.equals("") && !s_id.equals("null"))
 //콜백 응답에서 state 파라미터의 값을 가져옴
 state = request.getParameter("state");
 %>
-<div style="margin:40px 0 0 0;">
     <div style="width:100%;display:block;position:relative;padding:100px 0;">
     <h2 style="text-align:center; line-height:2em">후기게시판</h2><h3 style="color:gray;text-align:center; line-height:2em; padding-bottom:100px;">로그인 후 이용 가능합니다.</h3>
     <%
     //검색창 & 필터 만들기!
     %>
-    <div style="width:100%;padding:20px 0;display:block;">
+    <div style="max-width:500px;padding:20px 0;display:block;margin:0 auto;">
     <form method="POST" action="sample_collect.jsp">
     <select style="padding:5px; width:60px;"name="attr">
     	<option value="null">전체</option>
@@ -205,16 +204,29 @@ state = request.getParameter("state");
     </form>
     </div>
     <%String classes = "0"; %>
-    <div style="text-align:center;width:100%;">
-     <%
+    <div style="width:100%;">
+    <%
     for(i=0; i<imgnum; i++){
     	%>
-    	<div style="max-width:500px;display:block;text-align:center;margin:30px auto; background-color:white; border-radius:5px; border:1px solid #e4e4e4;">
+    	<div style="max-width:500px;display:block;margin:30px auto; background-color:white; border-radius:5px; border:1px solid #e4e4e4;">
     	<!--a href="sample_detail.jsp?item=<%=item[i][0]%>"-->
     	<div style="position:relative;float:left;width:100%;height:60px; border-radius: 5px 5px 0 0 / 5px 5px 0 0 ; border-bottom:1px solid #e9e9e9;">
     	<div style="position: absolute;top: 50%;transform: translate(0, -50%);-webkit-transform: translate(0, -50%);-moz-transform: translate(0, -50%);-o-transform: translate(0, -50%); margin:0 20px;"><!-- 프로필 영역 내 수직 가운데정렬(프로필사진, 닉네임, 아이디) -->
-    	<img src="img/1.png" style="width:32px;height:32px;border-radius:70%;float:left;border:1px solid #f7f7f7;">
-    	<span style="position: absolute;top: 50%;transform: translate(0, -50%);-webkit-transform: translate(0, -50%);-moz-transform: translate(0, -50%);-o-transform: translate(0, -50%); margin: 0 15px;"><b>nickname</b></span>
+    	<%
+    	query = "select * from USERS where Id = ?";
+    	pstmt = conn.prepareStatement(query);
+    	pstmt.setString(1, item[i][2]);
+    	rs = pstmt.executeQuery();
+    	String profile = "";
+    	String nickname = "";
+    	while(rs.next()){
+    		profile = rs.getString("PROFILE");
+    		nickname = rs.getString("NICKNAME");
+    	}
+    	//if(nickname.equals("na"));
+    	%>
+    	<img src=<%=profile%> style="width:32px;height:32px;border-radius:70%;float:left;border:1px solid #f7f7f7;">
+    	<span style="line-height:32px; margin: 0 15px;"><b><%=nickname%></b></span>
     	</div>
     	</div>
     	<div class="" style="max-width:100%; max-height:300px; min-width:200px; min-height:200px; overflow:hidden; margin:0; display:inline-block;">
@@ -247,6 +259,41 @@ state = request.getParameter("state");
     	%>
     	</div>
     	<!-- div style="padding:20px 20px 0px 20px;">상품이름:<%=item[i][1]%></div-->
+    	<div style="padding:10px 10px 0 20px;">
+    	<%
+    	int heart=0;
+    	
+    	query = "select count(*) from HEART where ReviewId = ?";
+    	pstmt = conn.prepareStatement(query);
+    	pstmt.setString(1, item[i][0]);
+    	rs = pstmt.executeQuery();
+    	while(rs.next()){
+    		heart = rs.getInt("count(*)");
+    	}
+    	int yesorno = 0;
+    	query = "select count(*) from HEART where UserId = ? AND ReviewId = ?";
+    	pstmt = conn.prepareStatement(query);
+    	pstmt.setString(1, s_id);
+    	pstmt.setString(2, item[i][0]);
+    	rs = pstmt.executeQuery();
+    	while(rs.next()){
+    		yesorno = rs.getInt("count(*)");
+    	}
+    	if(yesorno > 0){%>
+    	<button class="heart" id="<%=item[i][0]%>" value = "1">
+    		<svg aria-label="Unlike" class="_8-yf5 " fill="#ed4956" height="24" viewBox="0 0 48 48" width="24"><path d="M34.6 3.1c-4.5 0-7.9 1.8-10.6 5.6-2.7-3.7-6.1-5.5-10.6-5.5C6 3.1 0 9.6 0 17.6c0 7.3 5.4 12 10.6 16.5.6.5 1.3 1.1 1.9 1.7l2.3 2c4.4 3.9 6.6 5.9 7.6 6.5.5.3 1.1.5 1.6.5s1.1-.2 1.6-.5c1-.6 2.8-2.2 7.8-6.8l2-1.8c.7-.6 1.3-1.2 2-1.7C42.7 29.6 48 25 48 17.6c0-8-6-14.5-13.4-14.5z"></path></svg>
+       		좋아요 <span id="heartnum"><%=heart%></span>개
+        </button>
+        <%}
+    	else{%>
+    	<button class="heart" id="<%=item[i][0]%>" value = "0">
+    		<svg aria-label="like" class="_8-yf5 " fill="#c8c8c8" height="24" viewBox="0 0 48 48" width="24"><path d="M34.6 3.1c-4.5 0-7.9 1.8-10.6 5.6-2.7-3.7-6.1-5.5-10.6-5.5C6 3.1 0 9.6 0 17.6c0 7.3 5.4 12 10.6 16.5.6.5 1.3 1.1 1.9 1.7l2.3 2c4.4 3.9 6.6 5.9 7.6 6.5.5.3 1.1.5 1.6.5s1.1-.2 1.6-.5c1-.6 2.8-2.2 7.8-6.8l2-1.8c.7-.6 1.3-1.2 2-1.7C42.7 29.6 48 25 48 17.6c0-8-6-14.5-13.4-14.5z"></path></svg>
+    		좋아요 <span id="heartnum"><%=heart%></span>개
+    	</button>
+    	<%}
+    	
+    	%>
+    	</div>
     	<div style="padding:20px 25px 25px 25px; text-align:left; line-height:1.5em;">
     	<%
     	query = "SELECT * FROM PLUS WHERE Review_id = ? order by Id";
@@ -282,7 +329,7 @@ state = request.getParameter("state");
     	}%>
     	</div>
     	<%
-		if(s_id.equals("0") || s_id.equals(item[i][2]))//관리자 계정이거나 본인 글 일 경우
+		if(s_id.equals("100") || s_id.equals(item[i][2]))//관리자 계정이거나 본인 글 일 경우
 		{%>
 			<a href="_dropitem.jsp?id=<%=item[i][0]%>" target="_blank" style="color:red; text-decoration:underline;">X삭제</a>
 		<%}%>
@@ -304,22 +351,43 @@ if(!wcs_add) var wcs_add = {};
 wcs_add["wa"] = "3602e31fd32c7e";
 wcs_do();
 </script>
+<script>
+$('.heart').click(function(){
+	var id=$(this).attr("id");
+	var s_id = <%=s_id%>;
+	//하트 색깔 바꾸고 디비에 반영하기
+	if(s_id == null || s_id == ""){
+		if(confirm("로그인 후 이용가능합니다. 로그인 하시겠습니까?"))
+			$(location).attr('href', 'login.jsp')
+	}
+	if($(this).val() == '1'){ // 좋 -> 안좋
+		$(this).val("0");
+		$(this).children().attr("aria-label", "Unlike");
+		$(this).children().attr("fill", "#c8c8c8");
+		var heartnum = parseInt($(this).children("#heartnum").text()) - 1;
+		$(this).children("#heartnum").text(heartnum);
+		}
+	else { // 안좋 -> 좋
+		$(this).val("1");
+		$(this).children().attr("aria-label", "like");
+		$(this).children().attr("fill", "#ed4956");
+		var heartnum = parseInt($(this).children("#heartnum").text()) + 1;
+		$(this).children("#heartnum").text(heartnum);
+		}
+	//$(location).attr('href', '_heart.jsp?UserId=5&ReviewId='+id);
+	//비동기식 -> 화면 깜빡임 없이 디비 전송 가능
+	$.ajax({
+		url: "_heart.jsp",
+		type: "POST",
+		data: {
+			UserId: s_id,
+			ReviewId: id
+		}
+	})
+	//값에 따라 디비에 하트를 추가하거나, 삭제
+});
+</script>
 
 <script type="text/javascript" src="slick-1.8.1/slick/slick.min.js"></script>
 </body>
 </html>
-
-
-	item[i][0] = rs.getString("Number");
-	item[i][1] = rs.getString("Id");
-	item[i][2] = rs.getString("Title");
-	item[i][3] = rs.getString("Write_date");
-	item[i][4] = rs.getString("Company");
-	item[i][5] = rs.getString("Fee");
-	item[i][6] = rs.getString("Address");
-	item[i][7] = rs.getString("Apart_name");
-	item[i][8] = rs.getString("Building");
-	item[i][9] = rs.getString("Xpos");
-	item[i][10] = rs.getString("Ypos");
-	item[i][11] = rs.getString("Content");
-	item[i][12] = 거리;

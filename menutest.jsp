@@ -163,7 +163,7 @@ conn.close();
 	</ul>
 </div>
 <%
-if(s_id.equals("0"))//관리자 계정일 경우
+if(s_id.equals("100"))//관리자 계정일 경우
 	{%><br><br><br>
 <form method="post" enctype="multipart/form-data" action="_imgup.jsp">
 <input type="file" name="filename1" size=40>
@@ -179,26 +179,26 @@ state = request.getParameter("state");
 
 %>
 <div style="margin:40px 0 0 0;">
-	<% if(s_id.equals("0"))%><a href="_changeimg.jsp?id=3">수정</a><a href="_delimg.jsp?id=3">삭제</a>
+	<% if(s_id.equals("100"))%><a href="_changeimg.jsp?id=3">수정</a><a href="_delimg.jsp?id=3">삭제</a>
     <a href="sample_request.jsp">
     <img src="img/copycopy.png" class="modifiable" id="3" style="width:100%;display:block;">
     </a>
-    <% if(s_id.equals("0"))%><a href="_changeimg.jsp?id=2">수정</a><a href="_delimg.jsp?id=2">삭제</a>
+    <% if(s_id.equals("100"))%><a href="_changeimg.jsp?id=2">수정</a><a href="_delimg.jsp?id=2">삭제</a>
     <a href="sample_request.jsp">
     <img src="img/angel_2.png" class="modifiable" id="2" style="width:100%;display:block;">
     </a>
     <div style="width:100%;display:block;position:relative;">
     <img src="img/angel_1.png" class="modifiable" id="2" style="width:100%;display:block;">
     </div>
-    <% if(s_id.equals("0"))%><a href="_changeimg.jsp?id=4">수정</a><a href="_delimg.jsp?id=4">삭제</a>
+    <% if(s_id.equals("100"))%><a href="_changeimg.jsp?id=4">수정</a><a href="_delimg.jsp?id=4">삭제</a>
     <a href="https://m.smartstore.naver.com/milymood">
     <img src="img/angel_4.png" class="modifiable" id="4" style="width:100%;display:block;">
     </a>
-    <% if(s_id.equals("0"))%><a href="_changeimg.jsp?id=5">수정</a><a href="_delimg.jsp?id=5">삭제</a>
+    <% if(s_id.equals("100"))%><a href="_changeimg.jsp?id=5">수정</a><a href="_delimg.jsp?id=5">삭제</a>
     <a href="https://m.smartstore.naver.com/milymood">
     <img src="img/angel_5.png" class="modifiable" id="5" style="width:100%;display:block;">
     </a>
-    <% if(s_id.equals("0"))%><a href="_changeimg.jsp?id=5">배너추가</a>
+    <% if(s_id.equals("100"))%><a href="_changeimg.jsp?id=5">배너추가</a>
 </div>
 <div id="footer" class="g_footer _footer">
     <!-- 법적고지 -->

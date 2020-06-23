@@ -43,7 +43,7 @@ body {
 </style>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-<title>Milymood</title>
+<title>Milymood Lounge ::: 밀리무드 라운지에 오신것을 환영합니다!</title>
 </head>
 <body>
   <%
@@ -64,6 +64,11 @@ session.setAttribute("page", "index.jsp"); // 현재 페이지 current page
 String now = session.getAttribute("page")+""; // 현재 페이지 current page
 String s_id = session.getAttribute("s_id")+"";// 현재 사용자 current user
 String name = session.getAttribute("name")+"";
+%>
+<%/*
+response.getWriter().println("<script type=\"text/javascript\">");
+response.getWriter().println("location.href='sample_request.jsp'");
+response.getWriter().println("</script>");*/
 %>
 <% //데스크탑 금지
 /*String ua=request.getHeader("User-Agent").toLowerCase();
@@ -88,15 +93,18 @@ rs = pstmt.executeQuery();
 String imgpath;
 String id;
 String cls;
-String[][] img = new String[100][3];
+String url;
+String[][] img = new String[100][4];
 int i = 0;
 while(rs.next()){
 	id = rs.getString("Id");
 	cls = rs.getString("Class");
 	imgpath = rs.getString("ImgPath");
+	url = rs.getString("URI");
 	img[i][0] = id;
 	img[i][1] = cls;
 	img[i][2] = imgpath;
+	img[i][3] = url;
 	i++;
 }
 int imgnum = i;
@@ -119,7 +127,7 @@ conn.close();
 %>
 <jsp:include page="navbar.jsp" flush="false"/>
 <%
-/*if(s_id.equals("0"))//관리자 계정일 경우
+/*if(s_id.equals("100"))//관리자 계정일 경우
 	{%><br><br><br>
 <form method="post" enctype="multipart/form-data" action="_imgup.jsp">
 <input type="file" name="filename1" size=40>
@@ -134,42 +142,24 @@ conn.close();
 state = request.getParameter("state");
 
 %>
-<div style="margin:40px 0 0 0;">
-	<% if(s_id.equals("0"))%><a href="_changeimg.jsp?id=3">수정</a><a href="_delimg.jsp?id=3">삭제</a>
-    <a href="sample_request.jsp">
-    <img src="img/copycopy.png" class="modifiable" id="3" style="width:100%;display:block;">
-    </a>
-    <% if(s_id.equals("0"))%><a href="_changeimg.jsp?id=2">수정</a><a href="_delimg.jsp?id=2">삭제</a>
-    <a href="sample_request.jsp">
-    <img src="img/angel_2.png" class="modifiable" id="2" style="width:100%;display:block;">
-    </a>
-    <div style="width:100%;display:block;position:relative;">
-    <img src="img/angel_1.png" class="modifiable" id="2" style="width:100%;display:block;">
-    <%//비로그인 상태
-    if(s_id==null || s_id.equals("") || s_id.equals("null")) {%>
-		<div style="text-align:center;position:absolute;display:block; bottom:25%;left:48%;transform:translate(-50%,-50%);color:white;border:solid 2px white;padding:5px 10px;"><a style="color:white;" href="login.jsp">로그인</a> / <a style="color:white;" href="signup.jsp">가입</a></div>
-    <%} 
-    else {//로그인 상태, 포인트확인창%>
-    	<div style="text-align:center;position:absolute;display:block; bottom:15%;left:48%;transform:translate(-50%,-50%);color:white;">
-    	<p style="padding:3px;"><span style="font-weight:bold;"><%=name%></span>님 환영합니다!</p>
-    	<p style="padding:3px;">point<br><%=point%>/100</p>
-    	</div>
-    	<div class="playground">
-	<div class="bar-container">
-	<progress class="progressTag" value="0" max="100"></progress>
-	</div>
-	</div>
-    	<%} %>
-    </div>
-    <% if(s_id.equals("0"))%><a href="_changeimg.jsp?id=4">수정</a><a href="_delimg.jsp?id=4">삭제</a>
-    <a href="https://m.smartstore.naver.com/milymood">
-    <img src="img/angel_4.png" class="modifiable" id="4" style="width:100%;display:block;">
-    </a>
-    <% if(s_id.equals("0"))%><a href="_changeimg.jsp?id=5">수정</a><a href="_delimg.jsp?id=5">삭제</a>
-    <a href="https://m.smartstore.naver.com/milymood">
-    <img src="img/angel_5.png" class="modifiable" id="5" style="width:100%;display:block;">
-    </a>
-    <% if(s_id.equals("0"))%><a href="_changeimg.jsp?id=5">배너추가</a>
+<div style="margin:40px auto;width:100%;max-width:750px;border:1px solid #c8c8c8; border-top:0;">
+	<%for(i=0; i<imgnum; i++){
+		%>
+		<div style="position:relative;width:auto;">
+		<a href=<%=img[i][3]%>>
+		<img src=<%=img[i][2]%> id=<%=img[i][0]%> style="width:100%;display:block;">
+		</a>
+		<%
+		if(s_id.equals("100")){
+			%>
+			<div style="position:absolute;top:0;left:0;text-shadow: 1px 0px white, -1px 0px white, 0px 1px white, 0px -1px white;">
+			<a href="changeimg.jsp?id=<%=i%>">수정</a>
+			<a href="_delimg.jsp?id=<%=i%>">삭제</a>
+			</div>
+			<a href="insertimg.jsp?id<%=i%>">추가</a>
+			<%} %>
+		</div>
+	<%}%>
 </div>
 <jsp:include page="footer.jsp" flush="false"/>
 

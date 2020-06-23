@@ -146,10 +146,10 @@ query="";
 conn.close();
 %>
 <jsp:include page="navbar.jsp" flush="false"/>
-<div id="content" style="width:100%;padding-top:40px; text-align:center;">
+<div id="content" style="width:100%;margin:40px auto;max-width:750px; border:1px solid #c8c8c8; border-top:0;text-align:center;">
 <span id="caltitle"></span>
-<span>높이를 cm단위로 입력하세요. Ex)243 </span><input style="margin:10px 0 0 0;" id="val1" type="text" onkeydown='return onlyNumber(event)' onkeyup='removeChar(event)' style='ime-mode:disabled;'><br><br>
-가로폭을 cm단위로 입력하세요. <br><input style="margin:10px 0;" id="val2" type="text" onkeydown='return onlyNumber(event)' onkeyup='removeChar(event)' style='ime-mode:disabled;'><br>
+<span>높이를 cm단위로 입력하세요. Ex)243 </span><br><input style="margin:10px 0 0 0;" id="val1" type="text" onkeydown='return onlyNumber(event)' onkeyup='removeChar(event)' style='ime-mode:disabled;'><br><br>
+<span>가로폭을 cm단위로 입력하세요. </span><br><input style="margin:10px 0;" id="val2" type="text" onkeydown='return onlyNumber(event)' onkeyup='removeChar(event)' style='ime-mode:disabled;'><br>
 <div style="padding:10px 0 20px 0;">
 <label class = "cur"><input type="radio" value="1" name="curtain"><span>암막커튼</span></label>
 <label class = "cur"><input type="radio" value="2" name="curtain"><span>속커튼</span></label>
@@ -200,7 +200,7 @@ conn.close();
 </div>
 
 <%
-if(s_id.equals("0"))//관리자 계정일 경우
+if(s_id.equals("100"))//관리자 계정일 경우
 	{%>
 	<div style="margin: 60px 0 0 0; padding:30px 0; text-align:center; font-size:30px; border:1px solid; border-radius:5px;">
 	<a href="#"onClick="window.open('manage_image.jsp','_blank','width=550 height=500')">이미지등록</a>
@@ -220,7 +220,7 @@ if(s_id.equals("0"))//관리자 계정일 경우
     	}
     	</script>
     	<%
-		if(s_id.equals("admin"))//관리자 계정일 경우
+		if(s_id.equals("100"))//관리자 계정일 경우
 		{%>
 			<a href="_dropitem.jsp?id=<%=item[i][0]%>" target="_blank" style="color:red; text-decoration:underline;">X삭제</a>
 		<%}%>

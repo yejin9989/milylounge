@@ -197,7 +197,7 @@
 */			
 			PreparedStatement pstmt = null;
 			String sql = "INSERT INTO USERS VALUES"
-				+ "(?,?,?,?,?,null,null,?,?,?,?,?,?,?,?,?,default,default, default)";
+				+ "(?,?,?,?,?,null,null,?,?,?,?,?,?,?,?,?,default,default, default, NULL)";
 			/*현재날짜 받아오기*/
 			Calendar cal = Calendar.getInstance();
 			String year = Integer.toString(cal.get(Calendar.YEAR));

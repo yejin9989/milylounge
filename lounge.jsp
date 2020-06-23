@@ -45,7 +45,7 @@ query=null;
 <jsp:include page="navbar.jsp" flush="false"/>
 <%
 s_id = session.getAttribute("s_id")+"";
-if(s_id.equals("admin"))//관리자 계정일 경우
+if(s_id.equals("100"))//관리자 계정일 경우
 {%>	
 <br><br><br>
 <form method="post" enctype="multipart/form-data" action="_imgup.jsp">

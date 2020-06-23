@@ -42,7 +42,7 @@ session.setAttribute("page", "managermenu.jsp"); // 현재 페이지 current pag
 String now = session.getAttribute("page")+""; // 현재 페이지 current page
 String s_id = session.getAttribute("s_id")+""; // 현재 사용자 current user
 
-if(s_id.equals("0")){
+if(s_id.equals("100")){
 	%>
 	<div style="text-align:center;font-size:30px;">
 	<ul>

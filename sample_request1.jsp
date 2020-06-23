@@ -67,7 +67,7 @@ while(rs.next()){
 <img src="<%=img%>" width="100%" style="margin: 40px 0 0 0;">
 <%
 s_id = session.getAttribute("s_id")+"";
-if(s_id.equals("admin"))
+if(s_id.equals("100"))
 	{%>
 	<div style="text-align:center;">
 	<br><br><br>

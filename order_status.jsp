@@ -29,10 +29,13 @@ else{
 	}
 	table {
 	margin:auto;
-    width: 80%;
+    width: 100%;
    	font-size:1em;
     border-collapse: collapse;
     text-align:center;
+  	}
+  	tr{
+  	height:30px;
   	}
     td {
     border-bottom: 1px solid #bbbbbb;
@@ -50,7 +53,7 @@ else{
 </head>
 <body>
 <jsp:include page="navbar.jsp" flush="false"/>
-<div style="top:60px;position:relative;text-align:center;display:block;clear:both;">
+<div style="top:40px;position:relative;text-align:center;display:block;clear:both;border:1px solid #c8c8c8;border-top:0;width:100%;max-width:750px;margin:0 auto;">
 <br><br><b style="font-size:26px">신청현황</b><br><br>
 	<table style="text-align:center;width:100%;margin:auto;background-color:white;">
 	<th>이름</th>
