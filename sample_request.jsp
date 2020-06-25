@@ -50,7 +50,6 @@ while(rs.next()){
 %>
 <jsp:include page="navbar.jsp" flush="false"/>
 <div style="margin: 40px auto; width:100%; max-width: 750px; border:1px solid #c8c8c8; border-top: 0;">
-<img src="<%=img%>" width="100%" style="margin: 40px 0 0 0;">
 <%
 s_id = session.getAttribute("s_id")+"";
 if(s_id.equals("100"))
@@ -75,8 +74,20 @@ if(s_id.equals("100"))
 	<%}	
 else{%>
 <div style="width:100%;text-align:center;">
-	<div style="background:white;width:75%;margin:0px;display:inline-block;text-align:left;"> 
+	<div style="background:white;width:90%;margin:0px;display:inline-block;text-align:left;"> 
 	<form method="post" action="_sample_request.jsp">
+	<img src = " img/curtaindetail.png" style="width:100%;">
+	<p style="padding-bottom:10px;padding-top:20px;">
+	*샘플 종류를 선택해주세요.
+	</p>
+	<p>
+	<input type="radio" name="type" value="1"><label style="padding:5px;margin-bottom:5px;">커튼 원단 샘플</label><br>
+	<!--  input type="radio" name="type" value="2"><label style="padding:5px;margin-bottom:5px;">기능성 이불 원단 샘플</label><br-->
+	<input type="radio" name="type" value="3"><label style="padding:5px;margin-bottom:5px;">커튼&이불커버 원단 샘플</label><br><br>
+	</p>
+	
+	<img src="<%=img%>" width="100%">
+	
 	<p><input type="text" placeholder="이름" name="name" style ="width:95%;height:25px;padding:0 0 0 5px;margin:3px 0 3px 0;"/></p>
 	<p><input type="text" placeholder="주소" name="address" style ="width:95%;height:25px;padding:0 0 0 5px;margin:3px 0 3px 0;"/></p>
 	<nobr>
@@ -92,14 +103,6 @@ else{%>
 	-
 	<input type="tel" name="mobile_last" maxlength=4 style="width:32%;height:25px;margin:3px 0 3px 0;">
 	</nobr>
-	<p style="padding-bottom:10px;padding-top:20px;">
-	*샘플 종류를 선택해주세요.
-	</p>
-	<p>
-	<input type="radio" name="type" value="1"><label style="padding:5px;margin-bottom:5px;">커튼 원단 샘플</label><br>
-	<input type="radio" name="type" value="2"><label style="padding:5px;margin-bottom:5px;">기능성 이불 원단 샘플</label><br>
-	<input type="radio" name="type" value="3"><label style="padding:5px;margin-bottom:5px;">모든 샘플 원단</label><br><br>
-	</p>
 	<p style="margin:5px 0 5px 0;position:relative;"><input type="checkbox" name="agree" value="yes">개인정보 활용에 동의함&nbsp;<a href="personal.html" target="_blanck" style="font-size:11px;">전문보기</a></p>
 	<p style="text-align:center;"><input type="submit" value="신청하기" style></p>
 	</form>
