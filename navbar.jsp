@@ -8,6 +8,11 @@
 <!DOCTYPE html>
 <html>
 <head>
+<meta property="og:url" content="https://milymoodlounge.com">
+<meta property="og:title" content="milymoodLounge - 아늑한 공간 밀리무드 라운지 ">
+<meta property="og:type" content="website">
+<meta property="og:image" content="img/milylounge.png">
+<meta property="og:description" content="기분 좋아지는 상담, 현명한 가격, 좋은 퀄리티 - 밀리무드에서는 당신의 선택을 도와드리겠습니다:)">
 <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
 <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
 <link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">

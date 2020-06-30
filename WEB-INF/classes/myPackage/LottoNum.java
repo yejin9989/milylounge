@@ -1,4 +1,6 @@
 package myPackage;
+import org.jsoup.*;
+import org.jsoup.nodes.*;
 public class LottoNum{
 	public LottoNum() {
 		try {
