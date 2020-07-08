@@ -3,7 +3,9 @@
     pageEncoding="UTF-8"%>
 <%@ page language="java" import="java.text.*,java.sql.*,java.util.Calendar,java.util.*" %>
 <%@ page import="com.oreilly.servlet.MultipartRequest,com.oreilly.servlet.multipart.DefaultFileRenamePolicy" %>
-<%@ page language="java" import="myPackage.*" %> 
+<%@ page language="java" import="myPackage.DBUtil" %> 
+<%@ page language="java" import="myPackage.LottoNum" %> 
+<%@ page language="java" import="myPackage.Link" %> 
 <% request.setCharacterEncoding("UTF-8"); %>
 <% response.setCharacterEncoding("UTF-8"); %>
 <!DOCTYPE html>
@@ -11,27 +13,23 @@
 <head>
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 	<%
+	String id = session.getAttribute("s_id")+"";
 	String now = "_remodeling.jsp";
-	String name ="";
-	String price ="";
-	String url ="";
-	String tags ="";
-	String attr ="";
-	String detail ="";
-	String s_id = session.getAttribute("s_id")+"";
-	String id = "";
+	String url = "";
+ 	String roadAddrPart1 = "";
+	String bdNm = "";
+	String building = "";
+	String title = "";
+	String content = "";
+	String company = "";
+	String fee = "";
+	String etc = "";
+	String entX = "";
+	String entY = "";
+	String file1 = "";
 	request.setCharacterEncoding("UTF-8");
 	 String realFolder = "";
 	 String filename1 = "";
-	 String filename2 = "";
-	 String filename3 = "";
-	 String filename4 = "";
-	 String filename5 = "";
-	 String filename6 = "";
-	 String filename7 = "";
-	 String filename8 = "";
-	 String filename9 = "";
-	 String filename10 = "";
 	 int maxSize = 1024*1024*5;
 	 String encType = "UTF-8";
 	 String savefile = "img";
@@ -41,74 +39,57 @@
 	Connection conn = DBUtil.getMySQLConnection();
 	try{
 		  MultipartRequest multi=new MultipartRequest(request, realFolder, maxSize, encType, new DefaultFileRenamePolicy());
-		 	 name = multi.getParameter("name")+"";
-		 	 price = multi.getParameter("price")+"";
-		 	 url = multi.getParameter("url")+"";
-		 	 tags = multi.getParameter("tags")+"";
-		 	 attr = multi.getParameter("attr")+"";
-		 	 detail = multi.getParameter("detail")+"";
+		 	url = multi.getParameter("url")+"";
+		 	if(url.equals("")) url = "NULL";
+		 	roadAddrPart1 = multi.getParameter("roadAddrPart1")+"";
+		 	if(roadAddrPart1.equals("")) roadAddrPart1 = "NULL";
+			bdNm = multi.getParameter("bdNm")+"";
+			if(bdNm.equals("")) bdNm = "NULL";
+			building = multi.getParameter("building")+"";
+			if(building.equals("")) building = "NULL";
+			title = multi.getParameter("title")+"";
+			if(title.equals("")) title = "NULL";
+			content = multi.getParameter("content")+"";
+			if(content.equals("")) content = "NULL";
+			company = multi.getParameter("company")+"";
+			if(company.equals("")) company = "NULL";
+			fee = multi.getParameter("fee")+"";
+			if(fee.equals("")) fee = "NULL";
+			etc = multi.getParameter("etc")+"";
+			if(etc.equals("")) etc = "NULL";
+			entX = multi.getParameter("entX")+"";
+			if(entX.equals("")) entX = "NULL";
+			entY = multi.getParameter("entY")+"";
+			if(entY.equals("")) entY = "NULL";
 		  Enumeration<?> files = multi.getFileNames();
-		     String file1 = (String)files.nextElement();
-		     String file2 = (String)files.nextElement();
-		     String file3 = (String)files.nextElement();
-		     String file4 = (String)files.nextElement();
-		     String file5 = (String)files.nextElement();
-		     String file6 = (String)files.nextElement();
-		     String file7 = (String)files.nextElement();
-		     String file8 = (String)files.nextElement();
-		     String file9 = (String)files.nextElement();
-		     String file10 = (String)files.nextElement();
+		     file1 = (String)files.nextElement();
 		     filename1 = multi.getFilesystemName(file1);
-		     filename2 = multi.getFilesystemName(file2);
-		     filename3 = multi.getFilesystemName(file3);
-		     filename4 = multi.getFilesystemName(file4);
-		     filename5 = multi.getFilesystemName(file5);
-		     filename6 = multi.getFilesystemName(file6);
-		     filename7 = multi.getFilesystemName(file7);
-		     filename8 = multi.getFilesystemName(file8);
-		     filename9 = multi.getFilesystemName(file9);
-		     filename10 = multi.getFilesystemName(file10);
 		 } catch(Exception e) {
 		  e.printStackTrace();
 		 }
-
-	String[] tag = tags.split(",");
-	
-	String file1 = "img" + "/" + filename1;
-	String file2 = "img" + "/" + filename2;
-	String file3 = "img" + "/" + filename3;
-	String file4 = "img" + "/" + filename4;
-	String file5 = "img" + "/" + filename5;
-	String file6 = "img" + "/" + filename6;
-	String file7 = "img" + "/" + filename7;
-	String file8 = "img" + "/" + filename8;
-	String file9 = "img" + "/" + filename9;
-	String file10 = "img" + "/" + filename10;
-	if(id.equals("")){
-		while(true){
-			int i;
-			Random gen = new Random();
-			for(i=0; i<10; i++){
-				id += gen.nextInt(10);
-			}
-			String query = "SELECT * FROM ITEM WHERE ID = ?";
-			PreparedStatement pstmt = null;
-			pstmt = conn.prepareStatement(query);	
-			pstmt.setString(1, id);
-			ResultSet rs = null;
-			rs = pstmt.executeQuery();
-			int count=0;
-			while(rs.next()){
-				count++;
-			}
-			if(count == 0) break;
-			id="";
+	int error=0;
+	if((title.equals("NULL") || filename1.equals("NULL")) && url.equals("")){
+		%><script>alert("제목,사진과 url중 하나를 입력해주시길 바랍니다"); window,history.back();</script><%
+		error++;
+	}
+	else if(title.equals("NULL") || filename1.equals("NULL")){
+		Link MyLink = new Link(url);
+		if(title.equals("NULL")){
+			title = MyLink.getTitle();
+		}
+		if(filename1 == null){
+			file1 = MyLink.getImg();
 		}
 	}
+
+	if(filename1 != null)
+			file1 = "img" + "/" + filename1;
+	out.println(filename1);
 	PreparedStatement pstmt = null;
-	String sql = "INSERT INTO ITEM VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, NULL, ?, NULL, NULL, ?, ?, ?, ?)";
+	String sql = "INSERT INTO REMODELING VALUES(Default, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 	
-	/*현재날짜 받아오기*/
+	
+	//현재날짜 받아오기
 	Calendar cal = Calendar.getInstance();
 	String year = Integer.toString(cal.get(Calendar.YEAR));
 	String month = Integer.toString(cal.get(Calendar.MONTH)+1);
@@ -118,33 +99,36 @@
 	
 	pstmt = conn.prepareStatement(sql);
 	pstmt.setString(1, id);
-	pstmt.setString(2, name);
-	pstmt.setString(3, detail);
-	pstmt.setString(4, file9);
-	pstmt.setString(5, file8);
-	pstmt.setString(6, file7);
-	pstmt.setString(7, file6);
-	pstmt.setString(8, file5);
-	pstmt.setString(9, file4);
-	pstmt.setString(10, file3);
-	pstmt.setString(11, file2);
-	pstmt.setString(12, file1);
-	pstmt.setString(13, file1);
-	pstmt.setString(14, now);
-	pstmt.setString(15, s_id);
-	pstmt.setString(16, price);
-	pstmt.setString(17, url);
-	pstmt.setString(18, attr);
-	pstmt.setDate(19, d);
-	pstmt.executeUpdate();
-
-	//태그 넣어주기
-	for(int i = 0; i < tag.length; i++){
-		tag[i] = tag[i].trim();
-		sql = "INSERT INTO ITEM_TAG(Item_id, Name) VALUES( ?, ?)";
-		pstmt = conn.prepareStatement(sql);
-		pstmt.setString(1, id);
-		pstmt.setString(2, tag[i]);
+	pstmt.setString(2, title);
+	pstmt.setDate(3, d);
+	pstmt.setString(4, company);
+	pstmt.setString(5, fee);
+	pstmt.setString(6, roadAddrPart1);
+	pstmt.setString(7, bdNm);
+	pstmt.setString(8, building);
+	pstmt.setString(9, entX);
+	pstmt.setString(10, entY);
+	pstmt.setString(11, etc);
+	pstmt.setString(12, content);
+	pstmt.setString(13, url);
+	if(error == 0){
+		pstmt.executeUpdate();
+	}
+	
+	//사진 넣기
+	sql = "SELECT MAX(Number) FROM REMODELING";
+	pstmt = conn.prepareStatement(sql);
+	ResultSet rs = pstmt.executeQuery();
+	int max = 0;
+	while(rs.next()){
+		max = rs.getInt("MAX(Number)");
+	}
+	
+	sql = "Insert into RMDL_IMG values(?, 1, ?)";
+	pstmt = conn.prepareStatement(sql);
+	pstmt.setInt(1, max);
+	pstmt.setString(2, file1);
+	if(error == 0){
 		pstmt.executeUpdate();
 	}
 	pstmt.close();

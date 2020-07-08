@@ -126,7 +126,7 @@ function jusoCallBack(roadFullAddr,roadAddrPart1,addrDetail,roadAddrPart2,engAdd
  %>
 <%
 // 세션 생성 create session
-session.setAttribute("page", "sample_collect.jsp"); // 현재 페이지 current page
+session.setAttribute("page", "remodeling.jsp"); // 현재 페이지 current page
 // 세션 가져오기 get session
 String now = session.getAttribute("page")+""; // 현재 페이지 current page
 String s_id = session.getAttribute("s_id")+"";// 현재 사용자 current user
@@ -159,7 +159,7 @@ query="";
 if(!s_id.equals("") && !s_id.equals("null"))
 	{%>
 	<div style="margin: 60px 0 0 0; padding:30px 0; text-align:center; font-size:30px; border:1px solid; border-radius:5px;">
-	<a href="#"onClick="window.open('_remodeling.jsp','_blank','width=550 height=500')">리모델링후기등록</a>
+	<a href="#"onClick="window.open('remodeling_insert.jsp','_blank','width=850 height=400')">리모델링후기등록</a>
 	</div>
 <%}%>
 <%
@@ -208,9 +208,12 @@ while(rs.next()){
 	item[i][10] = rs.getString("Ypos");
 	item[i][11] = rs.getString("Content");
 	item[i][12] = "0";
-	item[i][12] = String.valueOf(Math.sqrt(((x-Float.parseFloat(item[i][10]))*(x-Float.parseFloat(item[i][10])))+((y-Float.parseFloat(item[i][9]))*(y-Float.parseFloat(item[i][9])))));
+	//거리계산//item[i][12] = String.valueOf(Math.sqrt(((x-Float.parseFloat(item[i][10]))*(x-Float.parseFloat(item[i][10])))+((y-Float.parseFloat(item[i][9]))*(y-Float.parseFloat(item[i][9])))));
+	i++;
 }
 int itemnum = i;
+//거리순정렬
+/*
 int min = 0;
 int j;
 String temp[] = new String[14];
@@ -222,7 +225,7 @@ for(i = 0; i < item.length; i++){
 	temp = item[i];
 	item[i] = item[j];
 	item[j] = temp;
-}
+}*/
 %>
 <div style="margin:40px 0 0 0;">
     <div style="width:100%;display:block;position:relative;padding:100px 0;">
@@ -283,6 +286,7 @@ for(i = 0; i < item.length; i++){
     	rs = null;
     	pstmt = conn.prepareStatement(query);
     	pstmt.setString(1, item[i][0]);
+    	rs = pstmt.executeQuery();
     	%><div class="slider<%=classes%>"><%
     	while(rs.next()){
     		%><div><img style="width:100%; height:100%" src="<%=rs.getString("Path")%>"></div><%
@@ -295,6 +299,7 @@ for(i = 0; i < item.length; i++){
 		<%classes = Integer.toString(Integer.parseInt(classes)+1);%>
     	</div>
     	<div>
+    	<h2><%=item[i][2]%></h2>
     	작성일시 : <%=item[i][3]%><br>
     	시공사 : <%=item[i][4]%><br>
     	시공비용 : <%=item[i][5]%><br>
