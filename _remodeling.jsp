@@ -4,8 +4,8 @@
 <%@ page language="java" import="java.text.*,java.sql.*,java.util.Calendar,java.util.*" %>
 <%@ page import="com.oreilly.servlet.MultipartRequest,com.oreilly.servlet.multipart.DefaultFileRenamePolicy" %>
 <%@ page language="java" import="myPackage.DBUtil" %> 
-<%@ page language="java" import="myPackage.LottoNum" %> 
 <%@ page language="java" import="myPackage.Link" %> 
+<%@ page language="java" import="myPackage.GetImage" %>
 <% request.setCharacterEncoding("UTF-8"); %>
 <% response.setCharacterEncoding("UTF-8"); %>
 <!DOCTYPE html>
@@ -136,7 +136,7 @@
 	%>
 	<script>
 	alert('등록을 완료했습니다.');
-	self.close();
+	//self.close();
 	</script>
 </head>
 <body>
