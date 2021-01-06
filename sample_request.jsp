@@ -15,6 +15,13 @@ else{
 }
 */
 %>
+<% //이용할 수 없는 페이지
+/*
+	 response.getWriter().println("<script type=\"text/javascript\">");
+     response.getWriter().println("location.href='not_available.jsp'");
+     response.getWriter().println("</script>");
+     */
+%>
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -76,20 +83,20 @@ else{%>
 <div style="width:100%;text-align:center;">
 	<div style="background:white;width:90%;margin:0px;display:inline-block;text-align:left;"> 
 	<form method="post" action="_sample_request.jsp">
-	<img src = " img/curtaindetail.png" style="width:100%;">
+	<img src = " img/curtain_edit.png" style="width:100%;">
 	<p style="padding-bottom:10px;padding-top:20px;">
 	*샘플 종류를 선택해주세요.
 	</p>
 	<p>
 	<input type="radio" name="type" value="1"><label style="padding:5px;margin-bottom:5px;">커튼 원단 샘플</label><br>
 	<!--  input type="radio" name="type" value="2"><label style="padding:5px;margin-bottom:5px;">기능성 이불 원단 샘플</label><br-->
-	<input type="radio" name="type" value="3"><label style="padding:5px;margin-bottom:5px;">커튼&이불커버 원단 샘플</label><br><br>
+	<!-- input type="radio" name="type" value="3"><label style="padding:5px;margin-bottom:5px;">커튼&이불커버 원단 샘플</label><br><br-->
 	</p>
 	
 	<img src="<%=img%>" width="100%">
 	
 	<p><input type="text" placeholder="이름" name="name" style ="width:95%;height:25px;padding:0 0 0 5px;margin:3px 0 3px 0;"/></p>
-	<p><input type="text" placeholder="주소" name="address" style ="width:95%;height:25px;padding:0 0 0 5px;margin:3px 0 3px 0;"/></p>
+	<p><input type="text" placeholder="지역을 포함한 정확한 도로명 주소를 기재해주세요.(주소가 정확하지 않은 경우, 발송이 불가합니다.)" name="address" style ="width:95%;height:25px;padding:0 0 0 5px;margin:3px 0 3px 0;"/></p>
 	<nobr>
 	<select name="first" style="width:22%;height:25px;margin:3px 0 3px 0;">
 	<option value="010" selected>010</option>

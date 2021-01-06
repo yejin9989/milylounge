@@ -2,14 +2,15 @@
     pageEncoding="UTF-8"%>
 <%@ page language="java" import="java.text.*,java.sql.*" %>
 <%@ page language="java" import="myPackage.*" %>
-<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script> 
 <% request.setCharacterEncoding("UTF-8"); %>
 <!DOCTYPE HTML>
 <html>
 <head>
+<script src="//code.jquery.com/jquery.min.js"></script>
 <link rel="stylesheet" type = "text/css" href="menu.css">
 <link rel="stylesheet" type = "text/css" href="https://static-smartstore.pstatic.net/markup/m/dist/renew/css/smartstore!!!MjAxOS0wMy0xM1QxODo1MjowMFpfbWY%3D.css">
 <link rel="stylesheet" type="text/css" href="https://pm.pstatic.net/css/webfont_v170623.css"/>
+<script type="text/javascript" src="js/jquery.techbytarun.excelexportjs.js"></script>
 	<style type="text/css">
 	body{
 	width:100%;
@@ -45,7 +46,7 @@
 <b style="color:red;">변경사항이 있을 시 저장 버튼을 꼭 눌러주세요!!</b>
 <br><br>
 	<form action="_result.jsp" method="POST">
-	<table style="text-align:center;margin:auto;">
+	<table id="sample_request" style="text-align:center;margin:auto;">
 	<th>no.</th>
 	<th>이름</th>
 	<th>주소</th>
@@ -104,17 +105,13 @@
 	</select>
 	</td>
 	<td><a href="/_delete.jsp?&num=<%=num%>" onclick="return delchk();">X</a></td>
-	<script>
-		function delchk(){
-			return confirm('정말 삭제하시겠습니까?')
-		}
-	</script>
 	</tr>
 	<%
 	}
 	%>
 	</table>
 	<input type="submit" value="저장">
+	<button id='btnExport' type='button'>Export</button>
 	</form>
 	<% 
 	conn.close();
@@ -122,7 +119,11 @@
 	stmt.close();
 	query=null;
 	%>
-	<script src="//code.jquery.com/jquery.min.js"></script>
+	<script>
+		function delchk(){
+			return confirm('정말 삭제하시겠습니까?')
+		}
+	</script>
 	<script>
 	$(function(){
 		$('.btn').click( function() {
@@ -140,6 +141,13 @@
 		});
 	});
 	</script>
+<script type="text/javascript"> 
+$(document).ready(function () { 
+	$("#btnExport").click(function () { 
+		$("#sample_request").excelexportjs({ containerid: "tblExport" , datatype: 'table' }); 
+		}); 
+	}); 
+</script>
 <jsp:include page="footer.jsp" flush="false"/>
 	</body>
 </html>

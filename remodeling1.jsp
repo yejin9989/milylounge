@@ -37,6 +37,100 @@ right:16px;
 top:147px;
 z-index : 10;
 }
+#somun_navbar{
+/*border: 1px solid red;*/
+border-bottom: 1px solid #c8c8c8;
+display: inline-block;
+/*height: 150px;*/
+width: 100%;
+}
+#somun_logo{
+/*border: 1px solid blue;*/
+display: block;
+background: url("img/somunhouselogo.png") no-repeat;
+height: 200px;
+width: 60px;
+margin: 10px;
+float:left;
+position: relative;
+left: 25px;
+top: 15px;
+}
+#somun_search{
+margin: 10px;
+float:left;
+width:70%;
+min-width:40px;
+max-width:700px;
+margin:10px;
+position: relative;
+left: 25px;
+top: 14px;
+height:200px;
+}
+.search_item{
+width:100%;
+display: block;
+/*border: 1px solid black;*/
+margin:5px;
+}
+#search_item1{
+width:100%;
+height:40px;
+border-radius:20px;
+border: 1px solid #c8c8c8;
+line-height:40px;
+}
+#search_item1 input[type="text"]{
+width: 85%;
+border: 0px;
+position: relative;
+padding:5px 0;
+left: 15px;
+}
+#search_item1 input[type="submit"]{
+float:right;
+position: relative;
+right: 8px;
+height:40px;
+width: 32px;
+background: url(img/search_btn.png) no-repeat;
+border: none;
+}
+#search_item2{
+position: relative;
+left: 2px;
+top:3px;
+}
+.btn{
+height:33px;
+background-color:white;
+border:1px solid #9d9d9d;
+border-radius: 3px;
+}
+
+#jusobtn{
+width:70px;
+margin-right:5px;
+}
+
+#search_item2>div>select{
+border: none;
+padding: 5px;
+margin: 0 7px 0 0;
+}
+
+@media (max-width : 768px){
+
+#somun_logo{
+	left: 5px;
+	float: left;
+	}
+#somun_search{
+	left:0px;
+}
+}
+
 </style>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
@@ -90,6 +184,68 @@ function jusoCallBack(roadFullAddr,roadAddrPart1,addrDetail,roadAddrPart2,engAdd
 </script>
 </head>
 <body>
+<div id="somun_navbar">
+	<div id="somun_logo"></div>
+	    <!-- 
+	<input type="button" onClick="goPopup();" value="주소찾기"/>
+    <input type="text" id="bdNm"  name="bdNm" />
+    <input type="text" id="building" name="building" />동
+	<input id="search" type="submit" value="검색">
+	-->
+	<div id="somun_search">
+		<div class = "search_item" id="search_item1">
+			<input type="text" id="bdNm"  name="bdNm" placeholder = "아파트 명으로 찾기">
+			<input type="submit" value="">
+		</div>
+		<div class = "search_item" id="search_item2">
+			<div>
+				<input type="button" id="jusobtn" class="btn" onClick="goPopup();" value="주소찾기"/>
+				<select name = "rootarea" onchange="categoryChange(this)">
+				<%
+					Connection conn = DBUtil.getMySQLConnection();
+					ResultSet rs = null;
+					PreparedStatement pstmt = null;
+					String query = "";
+					
+					query = "Select * from ROOT_AREA";
+					pstmt = conn.prepareStatement(query);
+					rs=pstmt.executeQuery();
+					
+					while(rs.next()){
+						String rootarea_name = rs.getString("Area_name");
+						int rootarea_num = rs.getInt("Area_number");
+						%>
+						<option value="<%=rootarea_num%>"><%=rootarea_name%></option>
+						<%
+					}
+				%>
+				</select>
+				<%
+				query = "Select count(*) from ROOT_AREA";// number of ROOTAREA
+				pstmt = conn.prepareStatement(query);
+				rs = pstmt.executeQuery();
+				
+				%>
+				<select name = "secondarea">
+					<option value="대구전체">대구전체</option>
+					<option value="중구">중구</option>
+					<option value="동구">동구</option>
+					<option value="서구">서구</option>
+					<option value="남구">남구</option>
+					<option value="북구">북구</option>
+					<option value="수성구">수성구</option>
+					<option value="달서구">달서구</option>
+					<option value="달성군">달성군</option>
+				</select>
+				<select name = "building">
+					<option value="침산코오롱하늘채">침산코오롱하늘채</option>
+					<option value="성광우방아파트">성광우방아파트</option>
+					<option value="칠곡e그린타운아파트">칠곡e그린타운아파트</option>
+				</select>
+			</div>
+		</div>
+	</div>
+</div>
   <%
     String clientId = "RO12hlpvFt7WEiDVKCDB";//애플리케이션 클라이언트 아이디값";
     String redirectURI = URLEncoder.encode("http://milymoodlounge.com/callback.jsp", "UTF-8");
@@ -114,10 +270,10 @@ String tag = request.getParameter("tag")+"";
 %>
 <%
 now = session.getAttribute("page") + "";
-Connection conn = DBUtil.getMySQLConnection();
-ResultSet rs = null;
-PreparedStatement pstmt = null;
-String query = "";
+conn = DBUtil.getMySQLConnection();
+rs = null;
+pstmt = null;
+query = "";
 int point=0;
 query="SELECT * FROM USERS WHERE Id = ?";
 pstmt = conn.prepareStatement(query);
@@ -211,11 +367,12 @@ for(i = 0; i < item.length; i++){
     %>
     <div style="width:100%;padding:20px 0;display:block;">
     <form id="form" name="form" method="POST" action="remodeling.jsp">
-    <input type="button" style="height:33px;width:70px;background-color:white;border:1px solid #9d9d9d;"onClick="goPopup();" value="주소찾기"/>
+    <!-- <input type="button" style="height:33px;width:70px;background-color:white;border:1px solid #9d9d9d;"onClick="goPopup();" value="주소찾기"/>
     <input type="text"  style="width:170px;height:30px;" id="bdNm"  name="bdNm" />
     <input type="text" style="width:40px;height:30px;" id="building" name="building" />동
 	<input id="search" type="submit" value="검색">
-    <%String classes = "0"; %>
+     -->
+     <%String classes = "0"; %>
     	<input type="hidden"  style="width:500px;" id="jibunAddr"  name="jibunAddr" />
     	<input type="hidden"  style="width:500px;" id="roadFullAddr"  name="roadFullAddr" />
 		<input type="hidden"  style="width:500px;" id="roadAddrPart1"  name="roadAddrPart1" />
@@ -279,7 +436,7 @@ for(i = 0; i < item.length; i++){
 		<%classes = Integer.toString(Integer.parseInt(classes)+1);%>
     	</div>
     	<div>
-    	<h2><%=item[i][2]%></h2>
+    	<h2 style="line-height:1.5em"><%=item[i][2]%></h2>
     	작성일시 : <%=item[i][3]%><br>
     	시공사 : <%=item[i][4]%><br>
     	시공비용 : <%=item[i][5]%><br>

@@ -236,10 +236,12 @@ for(i = 0; i < item.length; i++){
     %>
     <div style="width:100%;padding:20px 0;display:block;">
     <form id="form" name="form" method="POST" action="remodeling.jsp">
+    <!--  
     <input type="button" style="height:33px;width:70px;background-color:white;border:1px solid #9d9d9d;"onClick="goPopup();" value="주소찾기"/>
     <input type="text"  style="width:170px;height:30px;" id="bdNm"  name="bdNm" />
     <input type="text" style="width:40px;height:30px;" id="building" name="building" />동
 	<input id="search" type="submit" value="검색">
+    -->
     <%String classes = "0"; %>
     	<input type="hidden"  style="width:500px;" id="jibunAddr"  name="jibunAddr" />
     	<input type="hidden"  style="width:500px;" id="roadFullAddr"  name="roadFullAddr" />
@@ -277,7 +279,7 @@ for(i = 0; i < item.length; i++){
     	<div style="position:relative;float:left;width:100%;height:60px; border-radius: 5px 5px 0 0 / 5px 5px 0 0 ; border-bottom:1px solid #e9e9e9;">
     	<div style="position: absolute;top: 50%;transform: translate(0, -50%);-webkit-transform: translate(0, -50%);-moz-transform: translate(0, -50%);-o-transform: translate(0, -50%); margin:0 20px;"><!-- 프로필 영역 내 수직 가운데정렬(프로필사진, 닉네임, 아이디) -->
     	<img src="img/1.png" style="width:32px;height:32px;border-radius:70%;float:left;border:1px solid #f7f7f7;">
-    	<span style="position: absolute;top: 50%;transform: translate(0, -50%);-webkit-transform: translate(0, -50%);-moz-transform: translate(0, -50%);-o-transform: translate(0, -50%); margin: 0 15px;"><b>nickname</b></span>
+    	<span style="width: 100px; text-align:left; position: absolute;top: 50%;transform: translate(0, -50%);-webkit-transform: translate(0, -50%);-moz-transform: translate(0, -50%);-o-transform: translate(0, -50%); margin: 0 15px;"><b><%=item[i][4] %></b></span>
     	</div>
     	</div>
     	<div class="" style="max-width:100%; max-height:300px; min-width:200px; min-height:200px; overflow:hidden; margin:0; display:inline-block;">
@@ -291,7 +293,7 @@ for(i = 0; i < item.length; i++){
     	%><div class="slider<%=classes%>"><%
     	while(rs.next()){
     		%>
-    		<a href = <%=item[i][13]%>>
+    		<a href = <%=item[i][13]%> target="_blank">
     		<div><img style="width:100%; height:100%" src="<%=rs.getString("Path")%>"></div>
     		</a>
     		<%
@@ -304,19 +306,21 @@ for(i = 0; i < item.length; i++){
 		<%classes = Integer.toString(Integer.parseInt(classes)+1);%>
     	</div>
     	<div>
-    	<h2><%=item[i][2]%></h2>
-    	작성일시 : <%=item[i][3]%><br>
-    	시공사 : <%=item[i][4]%><br>
-    	시공비용 : <%=item[i][5]%><br>
-    	상세주소 : <%=item[i][6]%><br>
-    	<%=item[i][7]%>
-    	<%=item[i][8]%> 동<br>
-    	거리 : <%=item[i][12] %><br>
+    	<h2 style="padding:20px;line-height:1.5em;"><%=item[i][2]%></h2>
+    	<!-- 작성일시 : <%=item[i][3]%><br> -->
+    	<!--시공사 : <%=item[i][4]%><br> -->
+    	<!--시공비용 : <%=item[i][5]%><br> -->
+    	<!-- 상세주소 : <%=item[i][6]%><br> -->
+    	<!--<%=item[i][7]%> -->
+    	<!--<%=item[i][8]%> 동<br> -->
+    	<!--거리 : <%=item[i][12] %><br> -->
     	</div>
     	<%
 		if(s_id.equals("100") || s_id.equals(item[i][1]))//관리자 계정이거나 본인 글 일 경우
 		{%>
 			<a href="_dropremodeling.jsp?id=<%=item[i][0]%>" target="_blank" style="color:red; text-decoration:underline;">X삭제</a>
+			<a href="remodeling_edit.jsp?num=<%=item[i][0]%>" target="_blank" style="color:blue;text-decoration:underline;">수정</a>
+		
 		<%}%>
     	</div>
     	<%

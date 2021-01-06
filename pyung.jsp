@@ -357,105 +357,105 @@ function cal(){
 		document.getElementById('1').innerHTML = "1장";
 		document.getElementById('2').innerHTML = "2장";
 		document.getElementById('3').innerHTML = "6자 레일";
-		document.getElementById('4').innerHTML = "6자커튼봉";
+		document.getElementById('4').innerHTML = "6자 커튼봉";
 		document.getElementById('5').innerHTML = "커튼링 1세트(10개)";
 	}
 	else if(100<val2 && val2 <=170){
 		document.getElementById('1').innerHTML = "2장";
 		document.getElementById('2').innerHTML = "3장";
 		document.getElementById('3').innerHTML = "6자 레일";
-		document.getElementById('4').innerHTML = "6자커튼봉";
+		document.getElementById('4').innerHTML = "6자 커튼봉";
 		document.getElementById('5').innerHTML = "커튼링 2세트(20개)";
 	}
 	else if(170<val2 && val2 <=200){
 		document.getElementById('1').innerHTML = "2장";
 		document.getElementById('2').innerHTML = "3장";
 		document.getElementById('3').innerHTML = "8자 레일";
-		document.getElementById('4').innerHTML = "8자커튼봉";
+		document.getElementById('4').innerHTML = "8자 커튼봉";
 		document.getElementById('5').innerHTML = "커튼링 2세트(20개)";
 	}
 	else if(200<val2 && val2 <=230){
 		document.getElementById('1').innerHTML = "3장";
 		document.getElementById('2').innerHTML = "4장";
 		document.getElementById('3').innerHTML = "8자 레일";
-		document.getElementById('4').innerHTML = "8자커튼봉";
+		document.getElementById('4').innerHTML = "8자 커튼봉";
 		document.getElementById('5').innerHTML = "커튼링 2세트(20개)";
 	}
 	else if(230<val2 && val2 <=290){
 		document.getElementById('1').innerHTML = "3장";
 		document.getElementById('2').innerHTML = "4장";
 		document.getElementById('3').innerHTML = "10자 레일";
-		document.getElementById('4').innerHTML = "10자커튼봉";
+		document.getElementById('4').innerHTML = "10자 커튼봉";
 		document.getElementById('5').innerHTML = "커튼링 3세트(30개)";
 	}
 	else if(290<val2 && val2 <=350){
 		document.getElementById('1').innerHTML = "4장";
 		document.getElementById('2').innerHTML = "5장";
 		document.getElementById('3').innerHTML = "12자 레일";
-		document.getElementById('4').innerHTML = "12자커튼봉";
+		document.getElementById('4').innerHTML = "12자 커튼봉";
 		document.getElementById('5').innerHTML = "커튼링 3세트(30개)";
 	}
 	else if(350<val2 && val2 <=365){
 		document.getElementById('1').innerHTML = "4장";
 		document.getElementById('2').innerHTML = "5장";
 		document.getElementById('3').innerHTML = "14자 레일";
-		document.getElementById('4').innerHTML = "14자커튼봉";
+		document.getElementById('4').innerHTML = "14자 커튼봉";
 		document.getElementById('5').innerHTML = "커튼링 3세트(30개)";
 	}
 	else if(365<val2 && val2 <=400){
 		document.getElementById('1').innerHTML = "4장";
 		document.getElementById('2').innerHTML = "6장";
 		document.getElementById('3').innerHTML = "14자 레일";
-		document.getElementById('4').innerHTML = "14자커튼봉";
+		document.getElementById('4').innerHTML = "14자 커튼봉";
 		document.getElementById('5').innerHTML = "커튼링 4세트(40개)";
 	}
 	else if(400<val2 && val2 <=410){
 		document.getElementById('1').innerHTML = "5장";
 		document.getElementById('2').innerHTML = "6장";
 		document.getElementById('3').innerHTML = "14자 레일";
-		document.getElementById('4').innerHTML = "14자커튼봉";
+		document.getElementById('4').innerHTML = "14자 커튼봉";
 		document.getElementById('5').innerHTML = "커튼링 4세트(40개)";
 	}
 	else if(410<val2 && val2 <=440){
 		document.getElementById('1').innerHTML = "5장";
 		document.getElementById('2').innerHTML = "6장";
 		document.getElementById('3').innerHTML = "16자 레일";
-		document.getElementById('4').innerHTML = "16자커튼봉";
+		document.getElementById('4').innerHTML = "16자 커튼봉";
 		document.getElementById('5').innerHTML = "커튼링 4세트(40개)";
 	}
 	else if(440<val2 && val2 <=470){
 		document.getElementById('1').innerHTML = "5장";
 		document.getElementById('2').innerHTML = "7장";
 		document.getElementById('3').innerHTML = "16자 레일";
-		document.getElementById('4').innerHTML = "16자커튼봉";
+		document.getElementById('4').innerHTML = "16자 커튼봉";
 		document.getElementById('5').innerHTML = "커튼링 4세트(40개)";
 	}
 	else if(470<val2 && val2 <=495){
 		document.getElementById('1').innerHTML = "5장";
 		document.getElementById('2').innerHTML = "7장";
 		document.getElementById('3').innerHTML = "18자 레일";
-		document.getElementById('4').innerHTML = "18자커튼봉";
+		document.getElementById('4').innerHTML = "18자 커튼봉";
 		document.getElementById('5').innerHTML = "커튼링 4세트(40개)";
 	}
 	else if(495<val2 && val2 <=510){
 		document.getElementById('1').innerHTML = "6장";
 		document.getElementById('2').innerHTML = "7장";
 		document.getElementById('3').innerHTML = "18자 레일";
-		document.getElementById('4').innerHTML = "18자커튼봉";
+		document.getElementById('4').innerHTML = "18자 커튼봉";
 		document.getElementById('5').innerHTML = "커튼링 5세트(50개)";
 	}
 	else if(510<val2 && val2 <=530){
 		document.getElementById('1').innerHTML = "6장";
 		document.getElementById('2').innerHTML = "8장";
 		document.getElementById('3').innerHTML = "18자 레일";
-		document.getElementById('4').innerHTML = "18자커튼봉";
+		document.getElementById('4').innerHTML = "18자 커튼봉";
 		document.getElementById('5').innerHTML = "커튼링 5세트(50개)";
 	}
 	else if(530<val2 && val2 <=580){
 		document.getElementById('1').innerHTML = "6장";
 		document.getElementById('2').innerHTML = "8장";
 		document.getElementById('3').innerHTML = "20자 레일";
-		document.getElementById('4').innerHTML = "20자커튼봉";
+		document.getElementById('4').innerHTML = "20자 커튼봉";
 		document.getElementById('5').innerHTML = "커튼링 5세트(50개)";
 	}
 	if(val2<0 || val2>580){
@@ -475,119 +475,119 @@ function cal2(){
 	if(0<val2 && val2 <=90){
 		document.getElementById('1').innerHTML = "1장";
 		document.getElementById('2').innerHTML = "2장";
-		document.getElementById('3').innerHTML = "4자 커튼봉";
+		document.getElementById('3').innerHTML = "4자 레일";
 		document.getElementById('4').innerHTML = "4자 커튼봉";
 		document.getElementById('5').innerHTML = "커튼링 1세트(10개)";
 	}
 	else if(90<val2 && val2 <=170){
 		document.getElementById('1').innerHTML = "2장";
 		document.getElementById('2').innerHTML = "3장";
-		document.getElementById('3').innerHTML = "6자 커튼봉";
+		document.getElementById('3').innerHTML = "6자 레일";
 		document.getElementById('4').innerHTML = "6자 커튼봉";
 		document.getElementById('5').innerHTML = "커튼링 1세트(10개)";
 	}
 	else if(170<val2 && val2 <=180){
 		document.getElementById('1').innerHTML = "2장";
 		document.getElementById('2').innerHTML = "3장";
-		document.getElementById('3').innerHTML = "8자 커튼봉";
+		document.getElementById('3').innerHTML = "8자 레일";
 		document.getElementById('4').innerHTML = "8자 커튼봉";
 		document.getElementById('5').innerHTML = "커튼링 1세트(10개)";
 	}
 	else if(180<val2 && val2 <=230){
 		document.getElementById('1').innerHTML = "3장";
 		document.getElementById('2').innerHTML = "4장";
-		document.getElementById('3').innerHTML = "8자 커튼봉";
+		document.getElementById('3').innerHTML = "8자 레일";
 		document.getElementById('4').innerHTML = "8자 커튼봉";
 		document.getElementById('5').innerHTML = "커튼링 1세트(10개)";
 	}
 	else if(230<val2 && val2 <=270){
 		document.getElementById('1').innerHTML = "3장";
 		document.getElementById('2').innerHTML = "4장";
-		document.getElementById('3').innerHTML = "10자 커튼봉";
+		document.getElementById('3').innerHTML = "10자 레일";
 		document.getElementById('4').innerHTML = "10자 커튼봉";
 		document.getElementById('5').innerHTML = "커튼링 2세트(20개)";
 	}
 	else if(270<val2 && val2 <=290){
 		document.getElementById('1').innerHTML = "4장";
 		document.getElementById('2').innerHTML = "5장";
-		document.getElementById('3').innerHTML = "10자 커튼봉";
+		document.getElementById('3').innerHTML = "10자 레일";
 		document.getElementById('4').innerHTML = "10자 커튼봉";
 		document.getElementById('5').innerHTML = "커튼링 3세트(30개)";
 	}
 	else if(290<val2 && val2 <=330){
 		document.getElementById('1').innerHTML = "4장";
 		document.getElementById('2').innerHTML = "5장";
-		document.getElementById('3').innerHTML = "12자 커튼봉";
+		document.getElementById('3').innerHTML = "12자 레일";
 		document.getElementById('4').innerHTML = "12자 커튼봉";
 		document.getElementById('5').innerHTML = "커튼링 3세트(30개)";
 	}
 	else if(330<val2 && val2 <=350){
 		document.getElementById('1').innerHTML = "4장";
 		document.getElementById('2').innerHTML = "6장";
-		document.getElementById('3').innerHTML = "12자 커튼봉";
+		document.getElementById('3').innerHTML = "12자 레일";
 		document.getElementById('4').innerHTML = "12자 커튼봉";
 		document.getElementById('5').innerHTML = "커튼링 3세트(30개)";
 	}
 	else if(350<val2 && val2 <=365){
 		document.getElementById('1').innerHTML = "4장";
 		document.getElementById('2').innerHTML = "6장";
-		document.getElementById('3').innerHTML = "14자 커튼봉";
+		document.getElementById('3').innerHTML = "14자 레일";
 		document.getElementById('4').innerHTML = "14자 커튼봉";
 		document.getElementById('5').innerHTML = "커튼링 4세트(40개)";
 	}
 	else if(365<val2 && val2 <=400){
 		document.getElementById('1').innerHTML = "5장";
 		document.getElementById('2').innerHTML = "6장";
-		document.getElementById('3').innerHTML = "14자 커튼봉";
+		document.getElementById('3').innerHTML = "14자 레일";
 		document.getElementById('4').innerHTML = "14자 커튼봉";
 		document.getElementById('5').innerHTML = "커튼링 4세트(40개)";
 	}
 	else if(400<val2 && val2 <=410){
 		document.getElementById('1').innerHTML = "5장";
 		document.getElementById('2').innerHTML = "7장";
-		document.getElementById('3').innerHTML = "14자 커튼봉";
+		document.getElementById('3').innerHTML = "14자 레일";
 		document.getElementById('4').innerHTML = "14자 커튼봉";
 		document.getElementById('5').innerHTML = "커튼링 4세트(40개)";
 	}
 	else if(410<val2 && val2 <=450){
 		document.getElementById('1').innerHTML = "5장";
 		document.getElementById('2').innerHTML = "7장";
-		document.getElementById('3').innerHTML = "16자 커튼봉";
+		document.getElementById('3').innerHTML = "16자 레일";
 		document.getElementById('4').innerHTML = "16자 커튼봉";
 		document.getElementById('5').innerHTML = "커튼링 4세트(40개)";
 	}
 	else if(450<val2 && val2 <=470){
 		document.getElementById('1').innerHTML = "6장";
 		document.getElementById('2').innerHTML = "7장";
-		document.getElementById('3').innerHTML = "16자 커튼봉";
+		document.getElementById('3').innerHTML = "16자 레일";
 		document.getElementById('4').innerHTML = "16자 커튼봉";
 		document.getElementById('5').innerHTML = "커튼링 4세트(40개)";
 	}
 	else if(470<val2 && val2 <=475){
 		document.getElementById('1').innerHTML = "6장";
 		document.getElementById('2').innerHTML = "7장";
-		document.getElementById('3').innerHTML = "18자 커튼봉";
+		document.getElementById('3').innerHTML = "18자 레일";
 		document.getElementById('4').innerHTML = "18자 커튼봉";
 		document.getElementById('5').innerHTML = "커튼링 4세트(40개)";
 	}
 	else if(475<val2 && val2 <=530){
 		document.getElementById('1').innerHTML = "6장";
 		document.getElementById('2').innerHTML = "8장";
-		document.getElementById('3').innerHTML = "18자 커튼봉";
+		document.getElementById('3').innerHTML = "18자 레일";
 		document.getElementById('4').innerHTML = "18자 커튼봉";
 		document.getElementById('5').innerHTML = "커튼링 5세트(50개)";
 	}
 	else if(530<val2 && val2 <=540){
 		document.getElementById('1').innerHTML = "6장";
 		document.getElementById('2').innerHTML = "8장";
-		document.getElementById('3').innerHTML = "20자 커튼봉";
+		document.getElementById('3').innerHTML = "20자 레일";
 		document.getElementById('4').innerHTML = "20자 커튼봉";
 		document.getElementById('5').innerHTML = "커튼링 5세트(50개)";
 	}
 	else if(541<val2 && val2 <=610){
 		document.getElementById('1').innerHTML = "6장";
 		document.getElementById('2').innerHTML = "8장";
-		document.getElementById('3').innerHTML = "20자 커튼봉";
+		document.getElementById('3').innerHTML = "20자 레일";
 		document.getElementById('4').innerHTML = "20자 커튼봉";
 		document.getElementById('5').innerHTML = "커튼링 5세트(50개)";
 	}
